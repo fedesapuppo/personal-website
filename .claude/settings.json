@@ -1,0 +1,19 @@
+{
+  "attribution": {
+    "commit": "Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>",
+    "pr": "AI-assisted development with Claude Code"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(git *)",
+      "Bash(ls *)",
+      "Bash(grep *)",
+      "WebFetch(domain:github.com)",
+      "WebSearch",
+      "Read(/Users/fedesapuppo/resume-website/**)"
+    ],
+    "deny": [],
+    "ask": [],
+    "defaultMode": "acceptEdits"
+  }
+}
