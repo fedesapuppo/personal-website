@@ -1,7 +1,20 @@
+// Hamburger menu toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    hamburger.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             const offsetTop = target.offsetTop - 80;
@@ -18,7 +31,7 @@ let ticking = false;
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
 const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
+const navLinkAnchors = document.querySelectorAll('.nav-links a');
 const hero = document.querySelector('.hero');
 const heroShapes = document.querySelectorAll('.hero-shapes .shape');
 const scrollIndicator = document.querySelector('.scroll-indicator');
@@ -46,7 +59,7 @@ function handleScroll() {
         }
     });
 
-    navLinks.forEach(link => {
+    navLinkAnchors.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
             link.classList.add('active');

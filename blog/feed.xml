@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/Atom">
+  <channel>
+    <title>Off The Rails — Federico Sapuppo</title>
+    <link>https://fedesapuppo.com/blog/</link>
+    <description>Field notes from a Ruby on Rails developer. Bug autopsies, refactor diaries, and lessons from the Rails Way.</description>
+    <language>en</language>
+    <lastBuildDate>Tue, 15 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://fedesapuppo.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>From 3 AM deploys to a notifications skill: shipping web push with Noticed and AI help</title>
+      <link>https://fedesapuppo.com/blog/noticed-push-journey.html</link>
+      <guid>https://fedesapuppo.com/blog/noticed-push-journey.html</guid>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <description>Migrating 25 legacy mailers to email + PWA web push at scale, building a reusable skill, and chasing a nasty cross-user subscription bug.</description>
+      <author>fedesapuppo@gmail.com (Federico Sapuppo)</author>
+    </item>
+
+    <item>
+      <title>If your MacBook falls off a desk, install Omarchy</title>
+      <link>https://fedesapuppo.com/blog/omarchy-t2-journey.html</link>
+      <guid>https://fedesapuppo.com/blog/omarchy-t2-journey.html</guid>
+      <pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate>
+      <description>From a cracked M3 Pro to a batch of merged PRs in Omarchy 3.5, plus one kernel patch for the T2 SMC.</description>
+      <author>fedesapuppo@gmail.com (Federico Sapuppo)</author>
+    </item>
+  </channel>
+</rss>

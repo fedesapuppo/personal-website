@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Off The Rails — Field notes from a Ruby on Rails developer. Bug autopsies, refactor diaries, and lessons from the Rails Way.">
+    <title>Off The Rails — Blog | Federico Sapuppo</title>
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Off The Rails — Blog | Federico Sapuppo">
+    <meta property="og:description" content="Field notes from a Ruby on Rails developer. Bug autopsies, refactor diaries, and lessons from the Rails Way.">
+    <meta property="og:url" content="https://fedesapuppo.com/blog/">
+    <meta property="og:image" content="https://fedesapuppo.com/og-image.jpg">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="1600">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://fedesapuppo.com/og-image.jpg">
+    <meta name="twitter:title" content="Off The Rails — Blog | Federico Sapuppo">
+    <meta name="twitter:description" content="Field notes from a Ruby on Rails developer.">
+
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="alternate" type="application/rss+xml" title="Off The Rails — Federico Sapuppo" href="https://fedesapuppo.com/blog/feed.xml">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../" class="logo">FS</a>
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../#about">About</a></li>
+                <li><a href="../#projects">Projects</a></li>
+                <li><a href="../#open-source">Open Source</a></li>
+                <li><a href="../#experience">Experience</a></li>
+                <li><a href="../#education">Education</a></li>
+                <li><a href="./">Blog</a></li>
+                <li><a href="../#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="blog-index">
+        <div class="container">
+            <div class="blog-index-header">
+                <h1 class="off-the-rails-title">
+                    <span class="off-the-rails-word">Off</span><span class="off-the-rails-word">The</span><span class="off-the-rails-word off-the-rails-accent">Rails</span>
+                </h1>
+                <p class="off-the-rails-subtitle">Field notes from a Ruby on Rails developer who writes down every correction twice so he doesn't make it three times.</p>
+                <button class="rss-link" id="copy-rss" aria-label="Copy feed URL to clipboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
+                    <span>Subscribe</span>
+                </button>
+            </div>
+
+            <div class="blog-cards blog-cards-index">
+                <a href="noticed-push-journey.html" class="blog-card animate-in">
+                    <div class="blog-card-glow"></div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <span class="blog-tag">Rails</span>
+                            <span class="blog-tag">Noticed</span>
+                            <span class="blog-tag">Web Push</span>
+                        </div>
+                        <h3 class="blog-card-title">From 3 AM deploys to a notifications skill: shipping web push with Noticed and AI help</h3>
+                        <p class="blog-card-excerpt">The last time I shipped push notifications, I did it from my bed at 3 AM. A few years later, on a different app, I had to do it again. This time, at scale: 25 legacy mailers, a feature flag, an AI workflow, and one nasty bug where push subscriptions leaked between users on the same laptop.</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-byline">
+                                <span class="blog-card-author">Federico Sapuppo</span>
+                                <span class="blog-card-dot">&middot;</span>
+                                <time class="blog-card-date" datetime="2026-04-15">April 15, 2026</time>
+                                <span class="blog-card-dot">&middot;</span>
+                                <span class="blog-card-readtime">~8 min read</span>
+                            </div>
+                            <span class="blog-card-cta">
+                                Read more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="omarchy-t2-journey.html" class="blog-card animate-in">
+                    <div class="blog-card-glow"></div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <span class="blog-tag">Open Source</span>
+                            <span class="blog-tag">Omarchy</span>
+                            <span class="blog-tag">Linux</span>
+                        </div>
+                        <h3 class="blog-card-title">If your MacBook falls off a desk, install Omarchy</h3>
+                        <p class="blog-card-excerpt">My M3 Pro's screen cracked, my backup was a 2018 Intel MacBook Air that macOS had given up on, so I installed DHH's Arch distro on it. One discussion comment later, I was sending pull requests to basecamp/omarchy. Most merged within hours, and two days later they shipped inside Omarchy 3.5, plus a three-line kernel patch for the T2 SMC.</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-byline">
+                                <span class="blog-card-author">Federico Sapuppo</span>
+                                <span class="blog-card-dot">&middot;</span>
+                                <time class="blog-card-date" datetime="2026-04-03">April 3, 2026</time>
+                                <span class="blog-card-dot">&middot;</span>
+                                <span class="blog-card-readtime">~7 min read</span>
+                            </div>
+                            <span class="blog-card-cta">
+                                Read more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="blog-index-footer">
+        <div class="container">
+            <p>&copy; 2026 Federico Sapuppo. <a href="../">Back to home</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('open');
+            hamburger.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', isOpen);
+        });
+        document.getElementById('copy-rss').addEventListener('click', () => {
+            const feedUrl = window.location.origin + '/blog/feed.xml';
+            navigator.clipboard.writeText(feedUrl).then(() => {
+                const btn = document.getElementById('copy-rss');
+                const label = btn.querySelector('span');
+                label.textContent = 'Copied! Paste in your feed reader';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    label.textContent = 'Subscribe';
+                    btn.classList.remove('copied');
+                }, 3000);
+            });
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+</html>
