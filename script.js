@@ -115,7 +115,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe timeline items, education cards, skill categories, contact cards, contribution cards, and section titles
-document.querySelectorAll('.timeline-item, .education-card, .skill-category, .contact-card, .contribution-card, .section-title').forEach((el, index) => {
+document.querySelectorAll('.timeline-item, .education-card, .skill-category, .contact-card, .contribution-card, .project-card, .blog-card, .off-the-rails-header, .section-title').forEach((el, index) => {
     el.style.willChange = 'opacity, transform';
     observer.observe(el);
 
