@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An open-source agent on Fly.io, a Telegram bot named Sergio that files my monthly tax return and drafts labor documents from voice memos, and the bundle I now sell to other people.">
+    <title>Sergio rides shotgun | Federico Sapuppo</title>
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Sergio rides shotgun">
+    <meta property="og:description" content="Filing a tax return without opening a browser, drafting a labor settlement from a voice memo at a toll booth, and turning a Hermes deploy into a product.">
+    <meta property="article:published_time" content="2026-05-09">
+    <meta property="article:author" content="Federico Sapuppo">
+    <meta property="og:image" content="https://fedesapuppo.com/og-image.jpg">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="1600">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://fedesapuppo.com/og-image.jpg">
+    <meta name="twitter:title" content="Sergio rides shotgun">
+    <meta name="twitter:description" content="Filing a tax return without opening a browser, drafting a labor settlement from a voice memo at a toll booth, and turning a Hermes deploy into a product.">
+
+    <link rel="alternate" type="application/rss+xml" title="Off The Rails: Federico Sapuppo" href="https://fedesapuppo.com/blog/feed.xml">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Sergio rides shotgun",
+      "datePublished": "2026-05-09",
+      "author": {
+        "@type": "Person",
+        "name": "Federico Sapuppo"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Federico Sapuppo"
+      },
+      "description": "A voice memo from the highway, a labor-law package by the time I got home, and a Hermes deploy that became a product."
+    }
+    </script>
+</head>
+<body class="blog-post">
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">FS</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../index.html#off-the-rails">Blog</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="post-hero">
+        <div class="container">
+            <a href="../index.html#off-the-rails" class="post-back-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to OffTheRails
+            </a>
+            <span class="post-eyebrow">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Field Notes · 5 min read
+            </span>
+            <h1 class="post-title">Sergio rides shotgun</h1>
+            <div class="post-meta">
+                <div class="post-meta-author">
+                    <div class="post-author-avatar">FS</div>
+                    <span>Federico Sapuppo</span>
+                </div>
+                <span class="post-meta-divider"></span>
+                <time datetime="2026-05-09">May 9, 2026</time>
+                <span class="post-meta-divider"></span>
+                <span>Alta Gracia, GMT-3</span>
+            </div>
+            <div class="post-meta-tags">
+                <span class="post-meta-tag">Hermes</span>
+                <span class="post-meta-tag">AI Agents</span>
+                <span class="post-meta-tag">Argentina</span>
+                <span class="post-meta-tag">Telegram</span>
+                <span class="post-meta-tag">Skills</span>
+            </div>
+        </div>
+    </header>
+
+    <article class="post-body">
+        <div class="container">
+            <div class="post-content">
+                <p>At 9:30 AM on the first of last month, my phone buzzed with a Telegram message from a contact I had created six weeks earlier. "Monthly tax return is due. Want me to handle it?" I sent back "do it." A few minutes later, the reply came: a transaction number from the federal tax authority and a status of "filed." I hadn't opened a browser, typed in any ID, or been at a desk. That's Sergio doing his job.</p>
+
+                <p>Sergio is what I named my deployment of <a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener noreferrer">Hermes Agent</a>, Nous Research's open-source agent. It runs on a Fly.io app called <code>hermes-fede</code>, with a single dedicated volume, and I talk to it through a Telegram bot. Voice memos get transcribed. Files come back as files. There is no laptop in this loop. The whole point of putting an agent on a remote server with a Telegram gateway is that it doesn't care where I am or what I'm doing.</p>
+
+                <h2>How the tax skill got built</h2>
+
+                <p>The first time I had to file my monthly Argentine cross-province gross-income return through SIFERE (the federal system for taxpayers operating in more than one province), I drove the browser myself and narrated each step to Sergio as I went. At the end I asked him to save what we had just done as a skill. He wrote a markdown file under <code>skills/argentina-tax/sifere-monthly-filing</code>:</p>
+
+<pre><code class="language-none">---
+name: sifere-monthly-filing
+description: File a monthly cross-province gross-income
+  return via Argentina's SIFERE web portal.
+---
+
+## Step 1. Sign in
+1. Open the federal tax authority portal.
+2. Sign in with the taxpayer ID and password.
+3. From the services menu, click the SIFERE Web entry.
+
+## Step 2. Open the monthly filing list
+1. Click "Monthly returns".
+2. Identify the period that still needs to be filed.
+3. Click "New monthly return" and pick the year and month.
+
+## Step 3. Fill in jurisdiction values
+1. For each jurisdiction, calculate the total and the deduction.
+2. Confirm the totals before submitting.</code></pre>
+
+                <h2>The next month, Sergio filed it himself</h2>
+
+                <p>The next month, the cron-triggered reminder fired in the morning. I sent back a single message: "do it." Sergio loaded the skill, opened a real browser session, signed into the tax portal, opened the new period's filing, copied the previous month's structure, signed it, and submitted. The reply was a transaction number and a status of "filed." <strong>The agent doesn't get smarter; the skill file does, and the agent reads it.</strong> That's the closed loop. Every successful run becomes a paragraph in a markdown file the next run consults.</p>
+
+                <h2>The labor package at the toll booth</h2>
+
+                <p>Different story. I was on Highway 5 heading to Córdoba when the call came in. The woman who looked after my grandmother had quit that morning, four years on the job, no notice. I held the wheel with one hand and the phone with the other and recorded a 1:42 voice memo to Sergio:</p>
+
+                <blockquote>"Andrea resigned today. Four years on the books as a registered employee. I want a resignation letter, a settlement document, and a guide on what I owe her. Do it in Spanish, of course. I'm driving, can't type."</blockquote>
+
+                <p>Sent. Eyes back on the road.</p>
+
+                <p>By the time I rolled up to the next toll booth, three files were sitting in the chat, drafted in Spanish: a resignation letter for Andrea to sign, a settlement record, and a step-by-step guide on what I owed her. The guide cited <strong>Article 232 of Argentina's Labor Contract Law</strong> (Law No. 20.744), the article that governs compensation in lieu of notice when an employment relationship ends abruptly. Sergio had asked me five clarifying questions before drafting (was she registered formally with the tax authority, written or verbal contract, how many years, what I was worried about legally, anything still owed), gotten my answers, then web-searched current resignation templates and wrote the package against the actual statute. <strong>The cost wasn't the documents. It was that I didn't have to open a laptop or call anyone for two hours.</strong> I read them with the engine idling and the boom gate ahead. Good enough that my next call was to my accountant to confirm, not to redo.</p>
+
+                <h2>Explaining LLMs to grandma</h2>
+
+                <p>A few days later my grandmother asked me what one of those models everyone is talking about actually is. I asked Sergio for a Spanish explanation she could follow, then to read it aloud. The text used the "someone who read millions of recipes" analogy: not understanding cooking but recognizing why vinegar reacts with baking soda. He generated the audio with OpenAI's text-to-speech instead of Edge, because the Spanish prosody is noticeably more natural, saved it as an MP3, and that's what she listened to. She said it sounded like a person.</p>
+
+                <h2>What I sell</h2>
+
+                <p>Around the same time, friends started asking me to set theirs up. What I sell is the whole package: the deployment on a remote server, the connections to the services they actually use (Gmail, calendar, web search, voice synthesis), the routing and metering of the language-model tokens on their behalf, and a Telegram bot already wired up to all of it. The customer never opens a config file. By the time I hand the bot over, everything is set up. They just send messages. USD 50 a month for the base tier, 90 with the email connectors and ElevenLabs voice. The Spanish landing page at <a href="https://fedesapuppo.com/hermes" target="_blank" rel="noopener noreferrer">fedesapuppo.com/hermes</a> pitches it at accountants, lawyers, and small-business owners, because those are the people I had stories for. <strong>The product isn't the model and it isn't the agent. It's the wired-up deploy.</strong></p>
+
+                <h2>What changed in how I work</h2>
+
+                <ul>
+                    <li><strong>The interface that matters is Telegram, not a chat tab.</strong> You catch every voice memo at the wheel; you don't catch a laptop.</li>
+                    <li><strong>The unit of value is the skill file, not the conversation.</strong> After every meaningful task, ask the agent to write down what it learned.</li>
+                    <li><strong>A cloud-resident agent on a VPS beats a faster local one.</strong> Persistence is the feature.</li>
+                    <li><strong>Honesty about failure is what makes an agent trustable.</strong> A magic-feeling agent that lies about what it did is worse than a slow one that reports back.</li>
+                </ul>
+
+                <p>The drive from Alta Gracia to Córdoba is still 36 minutes. The difference is what you can ship in those 36 minutes if you've taught your phone to be useful.</p>
+
+                <hr>
+
+                <div class="post-signature">
+                    <p>I'm <strong>Fred Sapuppo</strong>, a Rails developer in Alta Gracia, Argentina. I run <a href="https://crossledger.net" target="_blank" rel="noopener noreferrer">crossledger.net</a> and sell managed Hermes deployments at <a href="https://fedesapuppo.com/hermes" target="_blank" rel="noopener noreferrer">fedesapuppo.com/hermes</a>.</p>
+                </div>
+
+                <div class="post-back-bottom">
+                    <a href="../index.html#off-the-rails">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                        More from OffTheRails
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-socials">
+                <a href="https://github.com/fedesapuppo" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://linkedin.com/in/federicosapuppo" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="mailto:fedesapuppo@hotmail.com" class="footer-social-link" aria-label="Email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <div class="footer-divider"></div>
+            <p>&copy; 2026 Federico Sapuppo. Built with passion for clean, maintainable code.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

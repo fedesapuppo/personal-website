@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/Atom">
   <channel>
-    <title>Off The Rails — Federico Sapuppo</title>
+    <title>Off The Rails: Federico Sapuppo</title>
     <link>https://fedesapuppo.com/blog/</link>
     <description>Field notes from a Ruby on Rails developer. Bug autopsies, refactor diaries, and lessons from the Rails Way.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 15 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://fedesapuppo.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Sergio rides shotgun</title>
+      <link>https://fedesapuppo.com/blog/sergio-pocket.html</link>
+      <guid>https://fedesapuppo.com/blog/sergio-pocket.html</guid>
+      <pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate>
+      <description>Filing a tax return without opening a browser, drafting a labor settlement from a voice memo at a toll booth, and turning a Hermes deploy into a product.</description>
+      <author>fedesapuppo@gmail.com (Federico Sapuppo)</author>
+    </item>
 
     <item>
       <title>From 3 AM deploys to a notifications skill: shipping web push with Noticed and AI help</title>
