@@ -1308,6 +1308,52 @@ body {
     align-items: stretch;
 }
 
+.blog-card-wrap {
+    position: relative;
+    display: grid;
+}
+
+.blog-lang-badge {
+    position: absolute;
+    top: 0.875rem;
+    right: 0.875rem;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--secondary-color);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-lang-badge:hover,
+.blog-lang-badge:focus-visible {
+    transform: translateY(-2px);
+    background: var(--primary-color);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+}
+
+.blog-lang-badge-full {
+    display: none;
+    text-transform: none;
+    letter-spacing: 0.01em;
+    font-weight: 600;
+}
+
+@media (min-width: 640px) {
+    .blog-lang-badge-full {
+        display: inline;
+    }
+}
+
 .blog-card {
     position: relative;
     display: block;
@@ -2152,6 +2198,47 @@ body.blog-post {
     position: relative;
     z-index: 1;
     max-width: 820px;
+}
+
+.post-lang-pill {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: var(--primary-color);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-lang-pill:hover,
+.post-lang-pill:focus-visible {
+    transform: translateY(-2px);
+    background: var(--secondary-color);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+.post-lang-pill-full {
+    display: none;
+    text-transform: none;
+    letter-spacing: 0.01em;
+    font-weight: 600;
+}
+
+@media (min-width: 640px) {
+    .post-lang-pill-full {
+        display: inline;
+    }
 }
 
 .post-back-link {
