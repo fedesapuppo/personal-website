@@ -5,8 +5,17 @@
     <link>https://fedesapuppo.com/blog/</link>
     <description>Field notes from a Ruby on Rails developer. Bug autopsies, refactor diaries, and lessons from the Rails Way.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 10 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://fedesapuppo.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>How two AIs made me wipe my Mac</title>
+      <link>https://fedesapuppo.com/blog/rm-rf-coresimulator.html</link>
+      <guid>https://fedesapuppo.com/blog/rm-rf-coresimulator.html</guid>
+      <pubDate>Mon, 18 May 2026 00:00:00 +0000</pubDate>
+      <description>I asked Claude for the biggest folders, got a sudo rm -rf for 48 GB of iOS simulators, double-checked it with Gemini, and lost my entire home folder. What actually saved me was backups and a scripted machine rebuilder.</description>
+      <author>fedesapuppo@gmail.com (Federico Sapuppo)</author>
+    </item>
 
     <item>
       <title>Sergio rides shotgun</title>
