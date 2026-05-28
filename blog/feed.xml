@@ -5,8 +5,17 @@
     <link>https://fedesapuppo.com/blog/</link>
     <description>Field notes from a Ruby on Rails developer. Bug autopsies, refactor diaries, and lessons from the Rails Way.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 19 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://fedesapuppo.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>How I load anonymized production data into dev with evil_seed</title>
+      <link>https://fedesapuppo.com/blog/evil-seed-bottom-up.html</link>
+      <guid>https://fedesapuppo.com/blog/evil-seed-bottom-up.html</guid>
+      <pubDate>Wed, 27 May 2026 00:00:00 +0000</pubDate>
+      <description>A teammate's overnight database restore filled the disk before he could log in. I had been refusing the production dump for months and living on seeds. Then I was asked to ship a comprehensive anonymized demo DB. Top-down with evil_seed kept ballooning; bottom-up worked, and the dump dropped to a fraction of the original.</description>
+      <author>fedesapuppo@gmail.com (Federico Sapuppo)</author>
+    </item>
 
     <item>
       <title>How two AIs made me wipe my Mac</title>
