@@ -1732,6 +1732,23 @@ body {
     white-space: nowrap;
 }
 
+.contact-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+}
+
+.contact-card-text span {
+    white-space: normal;
+}
+
+.contact-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
 /* Footer */
 .footer {
     background: var(--gradient-hero);
@@ -1877,6 +1894,8 @@ body {
 .contact-card:nth-child(2) { transition-delay: 0.1s; }
 .contact-card:nth-child(3) { transition-delay: 0.2s; }
 .contact-card:nth-child(4) { transition-delay: 0.3s; }
+.contact-card:nth-child(5) { transition-delay: 0.4s; }
+.contact-card:nth-child(6) { transition-delay: 0.5s; }
 
 .project-card:nth-child(1) { transition-delay: 0s; }
 .project-card:nth-child(2) { transition-delay: 0.1s; }
