@@ -1,0 +1,312 @@
+/* ============================================================
+   Pretor — refinement layer
+   Loaded AFTER index.edUtr7Fi.css. Keeps both identities:
+   the Roman gravitas (cream / Cinzel / oxblood) and the AI
+   framework (warm ink / mono / gold). Only elevates: warmer
+   ink, real atmosphere, editorial cards, a tighter footer.
+   ============================================================ */
+
+/* ---- 1. Palette retune ------------------------------------ */
+:root {
+  /* warm the inks so gold reads as patina, not cold UI */
+  --black: #0c0a08;
+  --panel: #15110b;
+  --panel-2: #19140d;
+  --dline: #2a241a;
+  /* lift secondary text on dark for legibility + class */
+  --dmuted: #a89e8a;
+  --marble: #f0ebdf;
+  /* richer roman accents */
+  --gold: #cda455;
+  --gold-soft: #e3ca8f;
+  --oxblood: #6e2233;
+  --oxblood-soft: #8f3b4d;
+  /* warm the stone a touch and deepen the hairline */
+  --line: #d8cfba;
+  --stone-card: #fbf8f1;
+  --shadow: 22px 40px -28px rgba(40, 24, 12, .35);
+}
+
+/* ---- 2. Global atmosphere --------------------------------- */
+/* faint film grain across the whole page — tactile, premium */
+body[data-astro-cid-5hce7sga]::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 200;
+  opacity: .035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* dark sections get depth instead of flat black */
+.section--dark {
+  position: relative;
+  background-color: var(--black);
+  background-image:
+    radial-gradient(120% 80% at 50% -10%, rgba(205, 164, 85, .07), transparent 60%),
+    radial-gradient(90% 60% at 100% 0%, rgba(110, 34, 51, .10), transparent 55%);
+}
+
+/* a hairline gold seam where light meets dark, both directions */
+.section--dark + .section--stone,
+.section--dark + .section--stone-2,
+.section--stone + .section--dark,
+.section--stone-2 + .section--dark {
+  position: relative;
+}
+
+/* ---- 3. Navigation ---------------------------------------- */
+/* kill the muddy translucent grey: a crisp, confident ink band */
+.nav[data-astro-cid-dmqpwcec] {
+  background: color-mix(in srgb, var(--black) 86%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--gold) 20%, transparent);
+  box-shadow: 0 1px 0 color-mix(in srgb, #000 40%, transparent);
+}
+.nav[data-astro-cid-dmqpwcec][data-scrolled] {
+  background: color-mix(in srgb, var(--black) 94%, transparent);
+  box-shadow: 0 14px 50px -26px #000d;
+}
+.brand[data-astro-cid-dmqpwcec] { letter-spacing: .34em; }
+.brand__tick[data-astro-cid-dmqpwcec] {
+  width: 3px;
+  background: linear-gradient(var(--gold-soft), var(--gold));
+  box-shadow: 0 0 10px color-mix(in srgb, var(--gold) 60%, transparent);
+}
+
+/* ---- 4. Hero + diptych ------------------------------------ */
+.hero[data-astro-cid-bbe6dxrz] {
+  position: relative;
+  background:
+    radial-gradient(80% 55% at 28% 12%, rgba(110, 34, 51, .06), transparent 60%),
+    var(--stone);
+}
+.eyebrow[data-astro-cid-bbe6dxrz],
+.hero__intro[data-astro-cid-bbe6dxrz] .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .8em;
+}
+.hero__intro[data-astro-cid-bbe6dxrz] .eyebrow::before {
+  content: "";
+  width: 2.2em;
+  height: 1px;
+  background: var(--oxblood);
+  opacity: .7;
+}
+.hero__title[data-astro-cid-bbe6dxrz] { letter-spacing: .015em; }
+
+/* diptych: make the two worlds feel deliberately paired */
+.hero__world--roman[data-astro-cid-bbe6dxrz] {
+  background:
+    radial-gradient(90% 70% at 0% 0%, rgba(110, 34, 51, .06), transparent 60%),
+    var(--stone-2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4);
+}
+.hero__world--ai[data-astro-cid-bbe6dxrz] {
+  background-color: var(--black);
+  background-image:
+    radial-gradient(70% 60% at 78% 22%, rgba(205, 164, 85, .14), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, .02), transparent 30%);
+}
+.hero__agents[data-astro-cid-bbe6dxrz] li { align-items: baseline; }
+.hero__agents[data-astro-cid-bbe6dxrz] span { color: var(--gold-soft); }
+.hero__seam[data-astro-cid-bbe6dxrz] {
+  background: linear-gradient(transparent, var(--gold), transparent) !important;
+  opacity: .8 !important;
+  width: 1px !important;
+  box-shadow: 0 0 14px color-mix(in srgb, var(--gold) 55%, transparent);
+}
+
+/* ---- 5. Section heads (light) ----------------------------- */
+.section--stone .eyebrow,
+.section--stone-2 .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .8em;
+}
+.section--stone .section-head .eyebrow::before,
+.section--stone-2 .section-head .eyebrow::before,
+.porque__head[data-astro-cid-byyu32ee] .eyebrow::before {
+  content: "";
+  width: 2.2em;
+  height: 1px;
+  background: currentColor;
+  opacity: .55;
+}
+
+/* ---- 6. Marco cards (light, roman numerals) --------------- */
+.marco__grid[data-astro-cid-z2ekr6xw] {
+  box-shadow: var(--shadow);
+}
+.marco__card[data-astro-cid-z2ekr6xw] {
+  position: relative;
+  transition: background .3s var(--ease), transform .3s var(--ease);
+}
+.marco__card[data-astro-cid-z2ekr6xw]:hover {
+  background: #fff;
+  transform: translateY(-3px);
+}
+.marco__n[data-astro-cid-z2ekr6xw] {
+  display: inline-block;
+  font-size: 1.7rem;
+  padding-bottom: .35rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--oxblood) 35%, transparent);
+}
+
+/* ---- 7. Capability cards (dark) — editorial index --------- */
+.cap__grid[data-astro-cid-eq4gkk3n] { counter-reset: cap; }
+.cap__card[data-astro-cid-eq4gkk3n] {
+  position: relative;
+  padding-top: clamp(1.3rem, 2.2vw, 1.7rem);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--gold) 4%, transparent), transparent 38%),
+    var(--panel);
+  overflow: hidden;
+}
+.cap__card[data-astro-cid-eq4gkk3n]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(var(--gold), transparent);
+  opacity: 0;
+  transition: opacity .3s var(--ease);
+}
+.cap__card[data-astro-cid-eq4gkk3n]:hover::after { opacity: .9; }
+.cap__card[data-astro-cid-eq4gkk3n]:hover {
+  border-color: color-mix(in srgb, var(--gold) 50%, transparent);
+}
+/* replace the lonely dot with an indexed header rule */
+.cap__dot[data-astro-cid-eq4gkk3n] {
+  counter-increment: cap;
+  width: auto;
+  height: auto;
+  margin-bottom: 1.2rem;
+  padding-bottom: .9rem;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  border-bottom: 1px solid var(--dline);
+  display: flex;
+  align-items: center;
+}
+.cap__dot[data-astro-cid-eq4gkk3n]::before {
+  content: counter(cap, decimal-leading-zero);
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: .12em;
+  color: var(--gold);
+}
+.cap__dot[data-astro-cid-eq4gkk3n]::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  margin-left: .9rem;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--gold) 40%, transparent), transparent);
+}
+.cap__body[data-astro-cid-eq4gkk3n] { color: #c4bba8; }
+
+/* ---- 8. Agents -------------------------------------------- */
+.agents__grid[data-astro-cid-mrg5s34m] { box-shadow: var(--shadow); }
+.agent--leader[data-astro-cid-mrg5s34m]::before {
+  background: radial-gradient(circle at 88% 0%, rgba(205, 164, 85, .28), transparent 58%) !important;
+}
+.agent__role[data-astro-cid-mrg5s34m] { color: var(--oxblood); }
+
+/* ---- 9. Security ------------------------------------------ */
+.sec__promises[data-astro-cid-xdski4nv] { box-shadow: var(--shadow); }
+.sec__promise[data-astro-cid-xdski4nv] p,
+.sec__layer[data-astro-cid-xdski4nv] p { color: #b6ac98; }
+/* no check marks — let a slim gold rule mark each promise instead */
+.sec__check[data-astro-cid-xdski4nv] { display: none; }
+.sec__promise[data-astro-cid-xdski4nv] {
+  border-top: 2px solid color-mix(in srgb, var(--gold) 40%, transparent);
+}
+.sec__promise[data-astro-cid-xdski4nv] h3[data-astro-cid-xdski4nv] { margin-top: .2rem; }
+
+/* ---- 10. Por qué ------------------------------------------ */
+.porque__item[data-astro-cid-byyu32ee] {
+  transition: padding-left .3s var(--ease);
+}
+.porque__item[data-astro-cid-byyu32ee]:hover { padding-left: .6rem; }
+.porque__n[data-astro-cid-byyu32ee] {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- 11. Contacto — a closing note, not a second hero ----- */
+.contacto[data-astro-cid-xjughlio] {
+  padding-block: clamp(3rem, 6vw, 4.5rem);
+}
+.contacto__inner[data-astro-cid-xjughlio] { max-width: 660px; }
+.contacto__title[data-astro-cid-xjughlio] {
+  font-size: clamp(1.7rem, 1.35rem + 1.3vw, 2.4rem);
+  max-width: 15ch;
+  margin: .7rem auto 1rem;
+}
+.contacto__lead[data-astro-cid-xjughlio] { font-size: var(--step-0); }
+.contacto__cta[data-astro-cid-xjughlio] { margin-top: 1.8rem; }
+.contacto__mail[data-astro-cid-xjughlio] { font-size: var(--step-0); }
+.contacto__maxim[data-astro-cid-xjughlio] { margin-top: 1.8rem; }
+
+/* ---- 12. Footer — one compact line ------------------------ */
+.footer[data-astro-cid-sz7xmlte] {
+  position: relative;
+  padding-block: clamp(1.6rem, 3vw, 2.2rem);
+  background: var(--panel);
+  border-top: 0;
+}
+/* a precise gold hairline divides contact from footer */
+.footer[data-astro-cid-sz7xmlte]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--gold) 55%, transparent) 25%, color-mix(in srgb, var(--gold) 55%, transparent) 75%, transparent);
+}
+.footer__inner[data-astro-cid-sz7xmlte] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .5rem 1.6rem;
+}
+.footer__brand[data-astro-cid-sz7xmlte] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .4rem 1.1rem;
+}
+.footer__word[data-astro-cid-sz7xmlte] {
+  letter-spacing: .32em;
+  font-size: 1.05rem;
+}
+.footer__tag[data-astro-cid-sz7xmlte] {
+  color: var(--dmuted);
+  font-size: var(--step--1);
+}
+.footer__maxim[data-astro-cid-sz7xmlte] { font-size: var(--step--1); }
+.footer__base[data-astro-cid-sz7xmlte] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .35rem 1.1rem;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+  justify-content: flex-end;
+}
+
+/* ---- 13. Buttons — a little more presence ----------------- */
+.btn[data-astro-cid-bbe6dxrz],
+.btn[data-astro-cid-xjughlio] { letter-spacing: .04em; }
+.btn--primary {
+  box-shadow: 0 10px 26px -14px rgba(0, 0, 0, .55);
+}
+.section--dark .btn--primary {
+  box-shadow: 0 12px 30px -14px color-mix(in srgb, var(--gold) 65%, transparent);
+}
