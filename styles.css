@@ -2561,6 +2561,49 @@ body.blog-post {
     font-size: inherit !important;
 }
 
+.post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.75rem 0 2.25rem;
+    font-size: 0.95rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.post-content thead {
+    background: var(--gradient-primary);
+}
+
+.post-content th {
+    color: #fff;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    letter-spacing: -0.01em;
+}
+
+.post-content td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+    vertical-align: top;
+}
+
+.post-content td:first-child {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.post-content tbody tr:nth-child(even) {
+    background: var(--bg-light);
+}
+
+.post-content tbody tr:last-child td {
+    border-bottom: none;
+}
+
 .post-content pre::-webkit-scrollbar {
     height: 8px;
 }

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A single assistant read a client's confidential file and answered Instagram DMs from the same memory. Here is how I rebuilt it as a team of role-scoped agents on Mastra, so no one agent ever holds all three legs of the lethal trifecta.">
+    <title>The legal assistant that couldn't be just one agent | Federico Sapuppo</title>
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The legal assistant that couldn't be just one agent">
+    <meta property="og:description" content="One super-agent for a law firm was a security risk. I rebuilt it as a team of isolated agents.">
+    <meta property="article:published_time" content="2026-07-01">
+    <meta property="article:author" content="Federico Sapuppo">
+    <meta property="og:image" content="https://fedesapuppo.com/og-image.jpg">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="1600">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://fedesapuppo.com/og-image.jpg">
+    <meta name="twitter:title" content="The legal assistant that couldn't be just one agent">
+    <meta name="twitter:description" content="One super-agent for a law firm was a security risk. I rebuilt it as a team of isolated agents.">
+
+    <link rel="alternate" hreflang="en" href="https://fedesapuppo.com/blog/pretor-team-of-agents.html">
+    <link rel="alternate" hreflang="es-AR" href="https://fedesapuppo.com/es/blog/pretor-team-of-agents.html">
+    <link rel="alternate" hreflang="x-default" href="https://fedesapuppo.com/blog/pretor-team-of-agents.html">
+
+    <link rel="alternate" type="application/rss+xml" title="Off The Rails: Federico Sapuppo" href="https://fedesapuppo.com/blog/feed.xml">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "The legal assistant that couldn't be just one agent",
+      "datePublished": "2026-07-01",
+      "author": {
+        "@type": "Person",
+        "name": "Federico Sapuppo"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Federico Sapuppo"
+      },
+      "description": "Rebuilding a law firm's AI from one super-agent into a team of isolated agents on Mastra, so no single agent holds private data, untrusted input, and a way out at once."
+    }
+    </script>
+</head>
+<body class="blog-post">
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo" aria-label="Federico Sapuppo home"><img src="../favicon.svg" alt=""></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../index.html#off-the-rails">Blog</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="../es/blog/pretor-team-of-agents.html" lang="es" hreflang="es-AR" aria-label="Leer en español">ES</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="post-hero">
+        <div class="container">
+            <a href="../es/blog/pretor-team-of-agents.html" class="post-lang-pill" lang="es" hreflang="es-AR" aria-label="Leer en español">
+                <span class="post-lang-pill-code" aria-hidden="true">ES</span>
+                <span class="post-lang-pill-full">También en español</span>
+            </a>
+            <a href="../index.html#off-the-rails" class="post-back-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to OffTheRails
+            </a>
+            <span class="post-eyebrow">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Field Notes · 9 min read
+            </span>
+            <h1 class="post-title">The legal assistant that couldn't be just one agent</h1>
+            <div class="post-meta">
+                <div class="post-meta-author">
+                    <div class="post-author-avatar">FS</div>
+                    <span>Federico Sapuppo</span>
+                </div>
+                <span class="post-meta-divider"></span>
+                <time datetime="2026-07-01">July 1, 2026</time>
+                <span class="post-meta-divider"></span>
+                <span>Alta Gracia, GMT-3</span>
+            </div>
+            <div class="post-meta-tags">
+                <span class="post-meta-tag">Mastra</span>
+                <span class="post-meta-tag">AI Agents</span>
+                <span class="post-meta-tag">Security</span>
+                <span class="post-meta-tag">Lethal Trifecta</span>
+                <span class="post-meta-tag">TypeScript</span>
+            </div>
+        </div>
+    </header>
+
+    <article class="post-body">
+        <div class="container">
+            <div class="post-content">
+                <p>Doctor was a personal assistant I built for a lawyer in <a href="https://hermes-agent.nousresearch.com" target="_blank" rel="noopener noreferrer">Hermes</a>, and he got a voice note one morning: while walking to court, the lawyer dictated the facts of a custody case. A minute later the same assistant answered a stranger's <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a> DM asking what time he could come by the office. Same assistant, same conversation, same memory. The context that had just read a confidential case file was one message away from a person he'd never met.</p>
+
+                <p>As a personal assistant it was fine. It even spoke in the lawyer's own voice: I took voice notes he had sent on <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer">WhatsApp</a> and fed them to <a href="https://elevenlabs.io" target="_blank" rel="noopener noreferrer">ElevenLabs</a> to clone it. The problem is that a law firm's full-featured assistant is not a <em>personal</em> assistant. It holds privileged client files, it reads documents and web pages we don't control, and it talks to the outside world over Instagram and email. Simon Willison has a name for those three capabilities landing in one place: the <a href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/" target="_blank" rel="noopener noreferrer">lethal trifecta</a>. Private data, untrusted input, and a way to send data out. Any agent holding all three can be turned by a single poisoned message (a crafted DM, a booby-trapped PDF) into leaking a client's file, with no bug in your code. His conclusion is the uncomfortable one: detection isn't enough, because in security, 95% caught is a failing grade.</p>
+
+                <p>You cannot prompt your way out of that. "Please don't exfiltrate private data" is a promise, not a boundary. We needed an architectural solution, one that makes private data unreachable and prompt injection pointless. We needed the boundary to be structural: <strong>an agent that simply has no tool and no memory reaching client data cannot leak it</strong>, no matter what a message tells it to do.</p>
+
+                <h2>A team, not a super-agent</h2>
+
+                <p>The turn came reading Tute Costa's <a href="https://withatwist.dev/one-telegram-contact-to-rule-my-team-of-ai-agents" target="_blank" rel="noopener noreferrer">dino-assistant</a>, a tidy personal assistant built on <a href="https://mastra.ai/" target="_blank" rel="noopener noreferrer">Mastra</a>. The supervisor pattern clicked. A supervisor delegates to sub-agents through an agents map; each sub-agent gets its own tools, model, instructions, and memory; Mastra derives a separate resource id per agent so two never share memory by accident. Isolation is the default, not something you remember to switch on. So we stopped trying to make one careful agent and built a team where no single member can betray a client, <strong>because no single member holds all three legs</strong>.</p>
+
+                <p>We renamed the assistant from doctor (a lawyer's honorific) to Pretor, the Roman magistrate who dispensed justice.</p>
+
+<pre class="language-none"><code>        Owner (the lawyer)
+              |
+        Telegram, owner-only
+              v
+   +-------------------------------------------+
+   |  PRETOR                                    |
+   |  supervisor - voice - routing              |
+   |  holds no client data; delegates by ref    |
+   +-------------------------------------------+
+      |             |             |           |
+      v             v             v           v
+ Investigator  Librarian     Scribes       Secretary
+ legal + web   every case    draft docs    calendar +
+ research      + document     per branch   meeting
+ (no data)     SOLE data      (no send)     notes
+                   ^              |
+                   +-- ask for client facts
+
+   PRETOR  ...A2A: DM text + sender id...&gt;  COMMUNICATOR
+                                            Instagram DM
+                                            separate service
+                                            (no client data)</code></pre>
+
+                <p>Six roles, each deliberately partial:</p>
+
+                <ul>
+                    <li><strong>Pretor</strong> is the supervisor and the lawyer's only contact on <a href="https://telegram.org" target="_blank" rel="noopener noreferrer">Telegram</a>. It routes and speaks; it never pulls raw client data into its own context.</li>
+                    <li><strong>Investigator</strong> does legal and web research over official Argentine sources (<a href="http://www.saij.gob.ar" target="_blank" rel="noopener noreferrer">SAIJ</a>, <a href="https://www.csjn.gov.ar" target="_blank" rel="noopener noreferrer">CSJN</a>, <a href="http://www.infoleg.gob.ar" target="_blank" rel="noopener noreferrer">Infoleg</a>). It touches untrusted pages and can fetch, but holds no client data, so a poisoned page has nothing to steal.</li>
+                    <li><strong>Librarian</strong> is the firm's memory: every case, every document, one store. It is the only agent that can read them, and it has no outward channel at all.</li>
+                    <li><strong>Scribes</strong>, one per branch (labor, civil, criminal, commercial, family, administrative), draft the documents of their branch. They see client facts only as the answer to a question they asked Librarian, and they cannot send anything. Their drafts match the official filing format down to the margins and numbering, rendered from a stored template of the real document type.</li>
+                    <li><strong>Secretary</strong> keeps the calendar, email, and meeting notes. Its outward actions, like inviting an external guest, are approval-gated.</li>
+                    <li><strong>Communicator</strong> answers Instagram. It runs as a separate service with its own webhook and no handle into client data. A poisoned DM finds nothing private.</li>
+                </ul>
+
+                <p>Written as a table, the point is that every row is missing a leg:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Agent</th>
+                            <th>Private data</th>
+                            <th>Untrusted input</th>
+                            <th>External send</th>
+                            <th>Missing leg</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Librarian</td><td>yes</td><td>yes</td><td>no</td><td>no way out</td></tr>
+                        <tr><td>Investigator</td><td>no</td><td>yes</td><td>yes</td><td>nothing private to steal</td></tr>
+                        <tr><td>Communicator</td><td>no</td><td>yes</td><td>yes</td><td>nothing private to steal</td></tr>
+                        <tr><td>Secretary</td><td>schedule only</td><td>yes</td><td>approval-gated</td><td>no case files, gated send</td></tr>
+                        <tr><td>Pretor</td><td>by reference</td><td>yes</td><td>via others</td><td>stays a router</td></tr>
+                    </tbody>
+                </table>
+
+                <p>Where the legs could still meet is Pretor, because it sees everything. Three things keep it a router and not a target: it delegates by reference instead of copying client files into its context, Communicator is out of process and receives only a DM's text and sender id, and its only real conversation is with the trusted owner. For anything outward and irreversible there is a human in the loop: the action suspends and surfaces in Telegram as one inline button. The lawyer approves, or it doesn't happen.</p>
+
+                <h2>Never invent the norm</h2>
+
+                <p>The trifecta split keeps data from leaking. A second rule keeps the assistant from lying about the law, and it matters just as much: never invent the norm. Cite an official source or say plainly you could not verify it.</p>
+
+                <p>Enforcing that starts with actually reaching the sources, which is its own fight. Argentina's official case database, SAIJ, guards its pages with an anti-bot filter that blocks our scraper outright, so the researcher can find a ruling and still not be able to read it; the fallback opens the page in a real headless browser, which gets through. One provincial court's search box makes you solve an image captcha before every query. Rather than pay a captcha-solving service, we noticed the scrambling lines were blue and the letters black, so we throw away the blue channel and let the model read what is left. The site hands out fresh captchas for free, so we just retry until it works, which is almost always.</p>
+
+                <p>Grounding the research is the firm's library. Librarian holds 811 documents, ingested as vector embeddings so an agent can search them by meaning rather than exact words, and pull the passages relevant to a case. Real legal archives are messy: about one file in ten turned out to be RTF hiding behind a <code>.doc</code> extension and needed its own extractor before it would embed at all.</p>
+
+                <p>The real guarantee, though, is that we never trust the model's citations. When the research workflow builds a report, it does not let the model write the list of sources. A verification step re-opens each cited ruling on the official site, and the sources annex is rebuilt from only the rulings that actually opened; everything the model claimed but the verifier could not open is moved to a separate "not verified, do not cite" section. A model that hallucinates a Supreme Court ruling cannot smuggle it into the citable part of the document, because it never writes that part. (Official rulings even reference laws in an internal shorthand like <code>LEY C 019101 ... 0076</code>; a small decoder turns that into <code>Ley 19.101, art. 76</code> so a citation reads like one.) <strong>Anti-hallucination lives in code, not in a prompt.</strong></p>
+
+                <h2>A meeting becomes a filing</h2>
+
+                <p>The flagship is the unglamorous, valuable thing a firm does over and over. A lawyer records a client meeting, fills in a short questionnaire, and wants back a written report and an infographic, grounded in real law. We codified it as a Mastra workflow with six steps: transcribe the audio, research the applicable law and jurisprudence, pull stored case context if the matter already exists, draft the documents, compose the report, and render a PDF. The agents run in sequence, not fan-out, on purpose (more on why in a moment).</p>
+
+                <h2>A bug we fixed upstream</h2>
+
+                <p>Somewhere in the middle of building the workflow, a sub-agent delegation started crashing the model provider with a 500. The cause was upstream in Mastra: when a delegation runs as a background task, the tool result is a placeholder string ("Background task started..."), but the code that formats it read <code>output.text</code>, which is undefined on a string, and serialized null content into the next request. One line:</p>
+
+<pre><code class="language-typescript">value: typeof output === "string" ? output : (output.text ?? "")</code></pre>
+
+                <p>We filed it, opened <a href="https://github.com/mastra-ai/mastra/pull/17791" target="_blank" rel="noopener noreferrer">a PR</a>, and patched our local install until it merged. That is one of the quieter arguments for building on an open framework: the fix went into Mastra, not into a private monkeypatch we'd carry forever.</p>
+
+                <h2>What production taught us</h2>
+
+                <p>The production lessons were louder. To search the library quickly you would normally build a search index, but ours ballooned to forty times the size of the documents it indexed and rebuilt itself on every new file, so we deleted it and let the database compare each query against every document directly. One such scan is fast, well under a second. Seventeen of them at once is not: early on the bot went silent for forty minutes mid-request because a single turn fired seventeen of those scans over two shared CPUs, starving the health check, the webhook, and the progress updates all at once. We serialized the scans so they stop piling up, added a heartbeat so a slow task still shows it is alive, and moved to dedicated CPUs. That is why the meeting workflow runs its agents one after another: fan-out is what nearly took the box down.</p>
+
+                <h2>What we'd carry to the next system</h2>
+
+                <ul>
+                    <li>Make isolation structural, not behavioral. An agent that can't reach the data can't leak it; a promise in a prompt can.</li>
+                    <li>Split any single tool that carries two trifecta legs (email is untrusted-in and send-out) into a service that holds no private data.</li>
+                    <li>Put the human at the outward, irreversible edge, and nowhere else. One approval button beats a wall of confirmations.</li>
+                    <li>Rebuild the parts that must be true (citations, deliveries) in code from real events, not from the model's prose.</li>
+                    <li>When the framework is wrong, fix it upstream.</li>
+                </ul>
+
+                <p>"Doctor" is still running as a fallback while Pretor takes over. It answered everything from one context and did it well enough that nobody noticed the shape of the risk. Pretor is more machinery for the same job, and most of that machinery exists to <strong>make one kind of mistake impossible instead of merely unlikely</strong>.</p>
+
+                <hr>
+
+                <div class="post-signature">
+                    <p>I'm <strong>Fred Sapuppo</strong>, and I built <a href="https://fedesapuppo.com/pretor/">Pretor</a>, a secure AI framework for law firms.</p>
+                </div>
+
+                <div class="post-back-bottom">
+                    <a href="../index.html#off-the-rails">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                        More from OffTheRails
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-socials">
+                <a href="https://github.com/fedesapuppo" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://linkedin.com/in/federicosapuppo" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="mailto:fedesapuppo@hotmail.com" class="footer-social-link" aria-label="Email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <div class="footer-divider"></div>
+            <p>&copy; 2026 Federico Sapuppo. Built with passion for clean, maintainable code.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>
