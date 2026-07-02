@@ -228,10 +228,6 @@ body[data-astro-cid-5hce7sga]::after {
 .sec__promise[data-astro-cid-xdski4nv] h3[data-astro-cid-xdski4nv] { margin-top: .2rem; }
 
 /* ---- 10. Por qué ------------------------------------------ */
-.porque__item[data-astro-cid-byyu32ee] {
-  transition: padding-left .3s var(--ease);
-}
-.porque__item[data-astro-cid-byyu32ee]:hover { padding-left: .6rem; }
 .porque__n[data-astro-cid-byyu32ee] {
   font-variant-numeric: tabular-nums;
 }
@@ -301,6 +297,170 @@ body[data-astro-cid-5hce7sga]::after {
   justify-content: flex-end;
 }
 
+/* ---- 14. Demo — un encargo por Telegram -------------------- */
+.demo .section-head { margin-bottom: clamp(2rem, 4vw, 3rem); }
+.demo__chat {
+  max-width: 640px;
+  margin: 0;
+  background: var(--black);
+  border: 1px solid var(--dline);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.demo__bar {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  padding: .85rem 1.2rem;
+  background: var(--panel);
+  border-bottom: 1px solid var(--dline);
+}
+.demo__avatar {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  font-family: var(--serif);
+  font-weight: 600;
+  color: var(--black);
+  background: linear-gradient(150deg, var(--gold-soft), var(--gold));
+}
+.demo__peer {
+  color: var(--marble);
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+.demo__status {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .08em;
+  color: var(--gold);
+}
+.demo__scroll {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  padding: clamp(1.1rem, 2.5vw, 1.5rem);
+  background:
+    radial-gradient(120% 90% at 85% 0%, rgba(205, 164, 85, .06), transparent 55%),
+    var(--black);
+}
+.demo__msg {
+  max-width: 88%;
+  padding: .8rem 1rem .6rem;
+  border-radius: 12px;
+  font-size: .92rem;
+  line-height: 1.55;
+}
+.demo__msg p { margin: 0; }
+.demo__msg--in {
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  background: var(--panel-2);
+  border: 1px solid var(--dline);
+  color: #d9d0bd;
+}
+.demo__msg--out {
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+  background: color-mix(in srgb, var(--oxblood) 52%, var(--black));
+  color: var(--marble);
+}
+.demo__meta {
+  display: block;
+  margin-top: .3rem;
+  text-align: right;
+  font-family: var(--mono);
+  font-size: .62rem;
+  letter-spacing: .06em;
+  color: color-mix(in srgb, var(--dmuted) 70%, transparent);
+}
+.demo__sys {
+  align-self: center;
+  margin: 0;
+  padding: .2rem .9rem;
+  border: 1px dashed color-mix(in srgb, var(--gold) 35%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--gold) 6%, transparent);
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .04em;
+  color: var(--gold);
+}
+.demo__doc {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  margin-top: .7rem;
+  padding: .55rem .8rem;
+  border: 1px solid var(--dline);
+  border-radius: 10px;
+  background: var(--panel);
+  font-family: var(--mono);
+  font-size: .78rem;
+  color: #d9d0bd;
+}
+.demo__doc-ico {
+  padding: .3em .5em;
+  border: 1px solid color-mix(in srgb, var(--gold) 45%, transparent);
+  border-radius: 6px;
+  font-size: .62rem;
+  letter-spacing: .1em;
+  color: var(--gold);
+}
+.demo__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin-top: .8rem;
+  padding-bottom: .3rem;
+}
+.demo__btn {
+  padding: .5em 1.1em;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--gold) 50%, transparent);
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--gold-soft);
+}
+.demo__btn--ok {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
+}
+.demo__note {
+  max-width: 640px;
+  margin-top: 1.2rem;
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+
+/* ---- 15. Founder — quién está detrás ----------------------- */
+.founder { padding-block: clamp(3rem, 6vw, 4.5rem); }
+.founder__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem 2rem;
+  margin-top: 1.6rem;
+}
+.founder__links a {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: .03em;
+  color: var(--oxblood);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--oxblood) 35%, transparent);
+  padding-bottom: .2em;
+  transition: border-color .25s var(--ease), color .25s var(--ease);
+}
+.founder__links a:hover {
+  color: var(--oxblood-soft);
+  border-color: var(--oxblood-soft);
+}
+
 /* ---- 13. Buttons — a little more presence ----------------- */
 .btn[data-astro-cid-bbe6dxrz],
 .btn[data-astro-cid-xjughlio] { letter-spacing: .04em; }
@@ -309,4 +469,377 @@ body[data-astro-cid-5hce7sga]::after {
 }
 .section--dark .btn--primary {
   box-shadow: 0 12px 30px -14px color-mix(in srgb, var(--gold) 65%, transparent);
+}
+.btn svg { flex: none; }
+
+/* ---- 16. Demo: editorial split on wide screens ------------- */
+@media (min-width: 980px) {
+  .demo .wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    grid-template-rows: auto 1fr;
+    column-gap: clamp(2.5rem, 5vw, 5rem);
+    align-items: start;
+  }
+  .demo .section-head { grid-column: 1; grid-row: 1; margin-bottom: 0; }
+  .demo__chat { grid-column: 2; grid-row: 1 / 3; }
+  .demo__note { grid-column: 1; grid-row: 2; margin-top: 1.6rem; }
+}
+
+/* ---- 17. Demo: staggered conversation reveal ---------------- */
+@media (prefers-reduced-motion: no-preference) {
+  .demo__chat .demo__scroll > * {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity .55s var(--ease), transform .55s var(--ease);
+  }
+  .demo__chat.is-visible .demo__scroll > * {
+    opacity: 1;
+    transform: none;
+  }
+  .demo__chat.is-visible .demo__scroll > * { transition-delay: var(--d, 0s); }
+}
+
+/* ---- 18. Demo: Telegram authenticity ------------------------ */
+.demo__msg--in,
+.demo__msg--out { position: relative; }
+.demo__msg--in::before,
+.demo__msg--out::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+.demo__msg--in::before {
+  left: -7px;
+  border-width: 0 0 10px 8px;
+  border-color: transparent transparent var(--panel-2) transparent;
+}
+.demo__msg--out::before {
+  right: -7px;
+  border-width: 0 8px 10px 0;
+  border-color: transparent transparent color-mix(in srgb, var(--oxblood) 52%, var(--black)) transparent;
+}
+.demo__date {
+  border: 0;
+  background: color-mix(in srgb, var(--marble) 8%, transparent);
+  color: var(--dmuted);
+}
+
+/* ---- 19. Founder: portrait + editorial grid ----------------- */
+.founder__photo {
+  /* margins reserve room for the even outer frame */
+  margin: 2.2rem 13px 13px 13px;
+  position: relative;
+  max-width: 300px;
+}
+.founder__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  filter: sepia(.22) saturate(.85) contrast(1.03);
+}
+.founder__photo::after {
+  content: "";
+  position: absolute;
+  inset: -13px;
+  border: 1px solid color-mix(in srgb, var(--gold) 55%, transparent);
+  border-radius: 4px;
+  pointer-events: none;
+}
+@media (min-width: 900px) {
+  .founder__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: center;
+  }
+  .founder__photo { margin: 13px; justify-self: end; }
+}
+
+/* ---- 20. Global polish: seams, selection, focus ------------- */
+.section--stone,
+.section--stone-2 { position: relative; }
+.section--stone + .section--dark::before,
+.section--stone-2 + .section--dark::before,
+.section--dark + .section--stone::before,
+.section--dark + .section--stone-2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--gold) 40%, transparent) 25%, color-mix(in srgb, var(--gold) 40%, transparent) 75%, transparent);
+  pointer-events: none;
+}
+::selection {
+  background: var(--oxblood);
+  color: var(--marble);
+}
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---- 21. CTA: one gold primary everywhere -------------------- */
+.btn--primary {
+  background: var(--gold);
+  color: #16130b;
+}
+.btn--primary:hover { background: var(--gold-soft); }
+
+/* ---- 22. Mark: Justitia emblem (nav, footer, hero) ------------ */
+.brand__mark,
+.footer__mark {
+  flex: none;
+  width: auto;
+}
+.brand__mark { height: 26px; }
+.footer__mark { height: 24px; transform: translateY(2px); }
+.hero__mark { display: none; }
+@media (min-width: 1280px) {
+  .hero__world--ai[data-astro-cid-bbe6dxrz] { position: relative; overflow: hidden; }
+  .hero__mark {
+    display: block;
+    position: absolute;
+    right: clamp(1.5rem, 4vw, 3.5rem);
+    top: 42%;
+    width: clamp(130px, 13vw, 190px);
+    height: auto;
+    opacity: .9;
+    pointer-events: none;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero__mark { animation: mark-fade 1.4s var(--ease) .3s both; }
+}
+@keyframes mark-fade { from { opacity: 0; } to { opacity: .9; } }
+
+/* ---- 23. Demo: typing indicator ------------------------------ */
+.demo__typing {
+  display: none; /* hidden for noscript + reduced motion */
+  align-self: flex-start;
+  align-items: center;
+  gap: .35rem;
+  height: 2.4rem;
+  padding: .75rem .95rem;
+  border-radius: 12px;
+  border-bottom-left-radius: 4px;
+  background: var(--panel-2);
+  border: 1px solid var(--dline);
+  overflow: hidden;
+}
+.demo__typing i {
+  width: .42rem;
+  height: .42rem;
+  border-radius: 50%;
+  background: var(--dmuted);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .demo__chat.is-visible .demo__typing {
+    display: flex;
+    animation: demo-typing 1.5s var(--ease) var(--d, 0s) both;
+  }
+  .demo__chat.is-visible .demo__typing i { animation: demo-dot .9s ease-in-out infinite; }
+  .demo__chat.is-visible .demo__typing i:nth-child(2) { animation-delay: .18s; }
+  .demo__chat.is-visible .demo__typing i:nth-child(3) { animation-delay: .36s; }
+}
+@keyframes demo-typing {
+  0%   { opacity: 0; transform: translateY(8px); height: 2.4rem; }
+  12%  { opacity: 1; transform: none; }
+  78%  { opacity: 1; height: 2.4rem; padding-block: .75rem; margin-top: 0; }
+  90%  { opacity: 0; height: 2.4rem; padding-block: .75rem; margin-top: 0; }
+  100% { opacity: 0; height: 0; padding-block: 0; margin-top: -.7rem; border-width: 0; }
+}
+@keyframes demo-dot {
+  0%, 100% { opacity: .35; transform: translateY(0); }
+  50%      { opacity: 1; transform: translateY(-2px); }
+}
+
+/* ---- 24. Proof: Cedap ---------------------------------------- */
+.proof {
+  padding-block: clamp(1.5rem, 3vw, 2.3rem);
+  border-top: 1px solid var(--line);
+}
+.proof__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .5rem 1.6rem;
+}
+.proof__label {
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .12em;
+  color: var(--oxblood);
+  flex: none;
+}
+.proof__text { font-size: var(--step-0); color: var(--muted); max-width: 58ch; }
+.proof__text a {
+  color: var(--ink);
+  border-bottom: 1px solid color-mix(in srgb, var(--oxblood) 40%, transparent);
+  transition: border-color .25s var(--ease);
+}
+.proof__text a:hover { border-color: var(--oxblood); }
+.proof__quote { font-family: var(--serif); font-size: var(--step-0); color: var(--oxblood); }
+.proof__quote span { font-family: var(--sans); font-size: var(--step--1); color: var(--muted); }
+
+/* ---- 25. Cómo empieza + FAQ ---------------------------------- */
+.empezar__list {
+  list-style: none;
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.empezar__step { background: var(--stone-card); padding: clamp(1.8rem, 3vw, 2.4rem); }
+.empezar__n {
+  font-family: var(--mono);
+  color: var(--oxblood);
+  font-size: var(--step-0);
+  display: inline-block;
+  padding-bottom: .35rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--oxblood) 35%, transparent);
+}
+.empezar__step h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: var(--step-1);
+  margin: .9rem 0 .6rem;
+  line-height: 1.2;
+}
+.empezar__step p { color: var(--muted); max-width: 42ch; }
+@media (min-width: 880px) { .empezar__list { grid-template-columns: repeat(3, 1fr); } }
+
+.faq { margin-top: clamp(2.8rem, 6vw, 4.5rem); max-width: 760px; }
+.faq .eyebrow { display: inline-flex; }
+.faq__item {
+  margin-top: .8rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--stone-card);
+}
+.faq .eyebrow + .faq__item { margin-top: 1.2rem; }
+.faq__item summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.3rem;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: var(--step-0);
+  color: var(--ink);
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__chev {
+  width: 9px;
+  height: 9px;
+  border-right: 1.5px solid var(--oxblood);
+  border-bottom: 1.5px solid var(--oxblood);
+  transform: rotate(45deg);
+  transition: transform .3s var(--ease);
+  flex: none;
+}
+.faq__item[open] .faq__chev { transform: rotate(-135deg); }
+.faq__body { padding: 0 1.3rem 1.2rem; }
+.faq__body p { color: var(--muted); font-size: var(--step-0); max-width: 60ch; }
+.faq__body a { color: var(--oxblood); border-bottom: 1px solid color-mix(in srgb, var(--oxblood) 40%, transparent); }
+
+/* ---- 26. Agent cards: trifecta access row -------------------- */
+.agent__access {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-top: 1.1rem;
+  padding-top: .9rem;
+  border-top: 1px solid var(--line);
+}
+.acc {
+  font-family: var(--mono);
+  font-size: .66rem;
+  letter-spacing: .02em;
+  padding: .22em .65em;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.acc--yes { color: #8c3a3a; background: color-mix(in srgb, #8c3a3a 10%, transparent); }
+.acc--no { color: #33684a; background: color-mix(in srgb, #33684a 10%, transparent); }
+.acc--partial { color: #7a5b18; background: color-mix(in srgb, #8a6a1f 12%, transparent); }
+.agent--leader[data-astro-cid-mrg5s34m] .agent__access { border-top-color: var(--dline); }
+.agent--leader[data-astro-cid-mrg5s34m] .acc--partial {
+  color: var(--gold-soft);
+  background: color-mix(in srgb, var(--gold) 14%, transparent);
+}
+
+/* ---- 27. Polish: founder crop, double rules ------------------ */
+.empezar + .founder { border-top: 1px solid var(--line); }
+.founder__photo img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 18%;
+}
+.marco__grid[data-astro-cid-z2ekr6xw],
+.empezar__list {
+  outline: 1px solid color-mix(in srgb, var(--gold) 30%, transparent);
+  outline-offset: 5px;
+}
+
+/* ---- 29. Contacto: Justitia emblem --------------------------- */
+.contacto__emblem {
+  margin: 0 auto clamp(1.6rem, 4vw, 2.6rem);
+  width: clamp(130px, 30vw, 190px);
+}
+.contacto__emblem img {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: .95;
+}
+
+/* ---- 28. Access chips: P/U/X tooltips ------------------------ */
+/* the cards clip overflow, so tooltips anchor to the chips row and
+   stay inside the card instead of hanging off each chip */
+.agent__access { position: relative; }
+.acc[data-tip] { cursor: help; }
+.acc[data-tip]::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 0;
+  z-index: 6;
+  width: max-content;
+  max-width: min(230px, 100%);
+  padding: .6rem .8rem;
+  border-radius: var(--radius-sm);
+  background: var(--black);
+  color: var(--marble);
+  border: 1px solid color-mix(in srgb, var(--gold) 40%, transparent);
+  font-size: .7rem;
+  line-height: 1.5;
+  letter-spacing: .01em;
+  white-space: normal;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s var(--ease), visibility .2s var(--ease);
+  pointer-events: none;
+  box-shadow: 0 12px 28px -12px rgba(0, 0, 0, .5);
+}
+.acc[data-tip]:hover::after,
+.acc[data-tip]:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
 }
