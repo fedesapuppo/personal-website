@@ -81,7 +81,7 @@
                     <circle cx="12" cy="12" r="10"></circle>
                     <polyline points="12 6 12 12 16 14"></polyline>
                 </svg>
-                Field Notes · 9 min read
+                Field Notes · 10 min read
             </span>
             <h1 class="post-title">The legal assistant that couldn't be just one agent</h1>
             <div class="post-meta">
@@ -180,27 +180,19 @@
 
                 <p>The trifecta split keeps data from leaking. A second rule keeps the assistant from lying about the law, and it matters just as much: never invent the norm. Cite an official source or say plainly you could not verify it.</p>
 
-                <p>Enforcing that starts with actually reaching the sources, which is its own fight. Argentina's official case database, SAIJ, guards its pages with an anti-bot filter that blocks our scraper outright, so the researcher can find a ruling and still not be able to read it; the fallback opens the page in a real headless browser, which gets through. One provincial court's search box makes you solve an image captcha before every query. Rather than pay a captcha-solving service, we noticed the scrambling lines were blue and the letters black, so we throw away the blue channel and let the model read what is left. The site hands out fresh captchas for free, so we just retry until it works, which is almost always.</p>
+                <p>Enforcing that starts with actually reaching the sources, which is its own fight. Argentina's official databases are not built to be read by machines: some block automated access outright, others gate every query behind a challenge meant to keep bots out. Getting to them reliably took tooling that reaches the crux of each obstacle rather than papering over it, and none of it was the trivial off-the-shelf fix. I'll keep the specifics out of this; what matters is the result, that a guarded source is still, in the end, one the research can open and cite.</p>
 
-                <p>Grounding the research is the firm's library. Librarian holds 811 documents, ingested as vector embeddings so an agent can search them by meaning rather than exact words, and pull the passages relevant to a case. Real legal archives are messy: about one file in ten turned out to be RTF hiding behind a <code>.doc</code> extension and needed its own extractor before it would embed at all.</p>
+                <p>Grounding the research is the firm's library. Librarian holds 811 documents an agent can search by meaning rather than exact words, pulling the passages relevant to a case. How that search is built, and the mess of real legal archives underneath it, is in the technical section below.</p>
 
-                <p>The real guarantee, though, is that we never trust the model's citations. When the research workflow builds a report, it does not let the model write the list of sources. A verification step re-opens each cited ruling on the official site, and the sources annex is rebuilt from only the rulings that actually opened; everything the model claimed but the verifier could not open is moved to a separate "not verified, do not cite" section. A model that hallucinates a Supreme Court ruling cannot smuggle it into the citable part of the document, because it never writes that part. (Official rulings even reference laws in an internal shorthand like <code>LEY C 019101 ... 0076</code>; a small decoder turns that into <code>Ley 19.101, art. 76</code> so a citation reads like one.) <strong>Anti-hallucination lives in code, not in a prompt.</strong></p>
+                <p>The real guarantee, though, is that we never trust the model's citations. When the research workflow builds a report, it does not let the model write the list of sources. A verification step re-opens each cited ruling on the official site, and the sources annex is rebuilt from only the rulings that actually opened; everything the model claimed but the verifier could not open is moved to a separate "not verified, do not cite" section. A model that hallucinates a Supreme Court ruling cannot smuggle it into the citable part of the document, because it never writes that part. <strong>Anti-hallucination lives in code, not in a prompt.</strong></p>
 
                 <h2>A meeting becomes a filing</h2>
 
                 <p>The flagship is the unglamorous, valuable thing a firm does over and over. A lawyer records a client meeting, fills in a short questionnaire, and wants back a written report and an infographic, grounded in real law. We codified it as a Mastra workflow with six steps: transcribe the audio, research the applicable law and jurisprudence, pull stored case context if the matter already exists, draft the documents, compose the report, and render a PDF. The agents run in sequence, not fan-out, on purpose (more on why in a moment).</p>
 
-                <h2>A bug we fixed upstream</h2>
-
-                <p>Somewhere in the middle of building the workflow, a sub-agent delegation started crashing the model provider with a 500. The cause was upstream in Mastra: when a delegation runs as a background task, the tool result is a placeholder string ("Background task started..."), but the code that formats it read <code>output.text</code>, which is undefined on a string, and serialized null content into the next request. One line:</p>
-
-<pre><code class="language-typescript">value: typeof output === "string" ? output : (output.text ?? "")</code></pre>
-
-                <p>We filed it, opened <a href="https://github.com/mastra-ai/mastra/pull/17791" target="_blank" rel="noopener noreferrer">a PR</a>, and patched our local install until it merged. That is one of the quieter arguments for building on an open framework: the fix went into Mastra, not into a private monkeypatch we'd carry forever.</p>
-
                 <h2>What production taught us</h2>
 
-                <p>The production lessons were louder. To search the library quickly you would normally build a search index, but ours ballooned to forty times the size of the documents it indexed and rebuilt itself on every new file, so we deleted it and let the database compare each query against every document directly. One such scan is fast, well under a second. Seventeen of them at once is not: early on the bot went silent for forty minutes mid-request because a single turn fired seventeen of those scans over two shared CPUs, starving the health check, the webhook, and the progress updates all at once. We serialized the scans so they stop piling up, added a heartbeat so a slow task still shows it is alive, and moved to dedicated CPUs. That is why the meeting workflow runs its agents one after another: fan-out is what nearly took the box down.</p>
+                <p>The production lessons were louder. One search over the library is cheap, well under a second; seventeen at once is not. Early on the bot went silent for forty minutes mid-request because a single turn fired seventeen concurrent library searches over two shared CPUs, starving the health check, the webhook, and the progress updates all at once. We serialized the searches so they stop piling up, added a heartbeat so a slow task still shows it is alive, and moved to dedicated CPUs. That is why the meeting workflow runs its agents one after another: fan-out is what nearly took the box down.</p>
 
                 <h2>What we'd carry to the next system</h2>
 
@@ -215,6 +207,30 @@
                 <p>"Doctor" is still running as a fallback while Pretor takes over. It answered everything from one context and did it well enough that nobody noticed the shape of the risk. Pretor is more machinery for the same job, and most of that machinery exists to <strong>make one kind of mistake impossible instead of merely unlikely</strong>.</p>
 
                 <hr>
+
+                <details class="post-details">
+                    <summary>
+                        <span>Technical details</span>
+                        <svg class="post-details-chevron" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </summary>
+                    <div class="post-details-body">
+
+                <p>A few implementation notes for anyone building something similar. The whole system is TypeScript on Mastra. The supervisor is one agent whose delegation targets live in an agents map, and calling a sub-agent is just a tool call. Mastra scopes each agent's conversation memory to its own resource id, so the isolation the security argument depends on is enforced by the framework, not by a convention we have to remember: two roles cannot share memory unless you deliberately wire them to.</p>
+
+                <p>Delegations run inline or as background tasks, and that distinction is where we hit a bug worth fixing upstream. Midway through the workflow a sub-agent delegation started crashing the model provider with a 500. The cause was in Mastra: when a delegation runs as a background task the tool result is a placeholder string ("Background task started..."), but the code that formats it read <code>output.text</code>, which is undefined on a string, and serialized null content into the next request. One line:</p>
+
+<pre><code class="language-typescript">value: typeof output === "string" ? output : (output.text ?? "")</code></pre>
+
+                <p>We filed it, opened <a href="https://github.com/mastra-ai/mastra/pull/17791" target="_blank" rel="noopener noreferrer">a PR</a>, and patched our local install until it merged. That is one of the quieter arguments for building on an open framework: the fix went into Mastra, not a private monkeypatch we'd carry forever.</p>
+
+                <p>Communicator is not an in-process agent but a separate service with its own Instagram webhook, reached over an agent-to-agent boundary. All Pretor ever hands it is a DM's text and a sender id, and all it hands back is a reply. That process boundary is doing security work: the one agent touching the open internet lives permanently outside the address space that holds client data, so there is no in-memory path from a poisoned DM to a case file.</p>
+
+                <p>The library is retrieval over vector embeddings: each of the 811 documents is embedded and searched by meaning rather than exact words. The retrieval design took three tries. An exact index came first and ballooned to forty times the size of the corpus it indexed, rebuilding on every write, so we scrapped it for a brute-force similarity scan: simple, correct, and fast on its own, well under a second. Running seventeen of those at once was another matter, the outage above. The scans are gone now, replaced by an approximate-nearest-neighbor (ANN) index that answers a query without walking the whole corpus and is compact enough this time to earn its space. Ingestion held its own trap: about a tenth of the archive was RTF hiding behind a <code>.doc</code> extension, so the extractor sniffs the actual content type before parsing rather than trusting the filename. Trust the bytes, not the extension.</p>
+
+                <p>Two more pieces make the "never invent the norm" rule hold in code. The Scribes render from a stored model of each branch's real filing type, so a draft matches the official format down to margins and numbering instead of being reinvented per document. And because official rulings reference laws in an internal shorthand like <code>LEY C 019101 ... 0076</code>, a small decoder rewrites that as <code>Ley 19.101, art. 76</code> so a citation reads like one.</p>
+
+                    </div>
+                </details>
 
                 <div class="post-signature">
                     <p>I'm <strong>Fred Sapuppo</strong>, and I built <a href="https://fedesapuppo.com/pretor/">Pretor</a>, a secure AI framework for law firms.</p>

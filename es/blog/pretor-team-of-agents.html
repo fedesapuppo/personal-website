@@ -84,7 +84,7 @@
                     <circle cx="12" cy="12" r="10"></circle>
                     <polyline points="12 6 12 12 16 14"></polyline>
                 </svg>
-                Notas de campo · Lectura de 9 min
+                Notas de campo · Lectura de 10 min
             </span>
             <h1 class="post-title">El asistente legal que no podía ser un solo agente</h1>
             <div class="post-meta">
@@ -183,27 +183,19 @@
 
                 <p>La división de la trifecta evita que se filtren los datos. Una segunda regla evita que el asistente mienta sobre la ley, y importa igual de mucho: nunca inventar la norma. Citar una fuente oficial o decir claramente que no se pudo verificar.</p>
 
-                <p>Hacer que eso se cumpla empieza por llegar de verdad a las fuentes, que es una pelea en sí misma. La base de datos oficial de jurisprudencia de Argentina, SAIJ, protege sus páginas con un filtro anti-bots que bloquea nuestro scraper de una, así que el investigador puede encontrar un fallo y aun así no poder leerlo; el fallback abre la página en un navegador headless real, que sí pasa. El buscador de un tribunal provincial te hace resolver un captcha de imagen antes de cada consulta. En lugar de pagar un servicio que resuelve captchas, notamos que las líneas que lo ensucian eran azules y las letras negras, así que descartamos el canal azul y dejamos que el modelo lea lo que queda. El sitio reparte captchas nuevos gratis, así que simplemente reintentamos hasta que funciona, que es casi siempre.</p>
+                <p>Hacer que eso se cumpla empieza por llegar de verdad a las fuentes, que es una pelea en sí misma. Las bases de datos oficiales de Argentina no están hechas para que las lea una máquina: algunas bloquean el acceso automatizado de una, otras ponen antes de cada consulta una barrera pensada para dejar a los bots afuera. Llegar a ellas de forma confiable requirió herramientas que van al quid de cada obstáculo en vez de taparlo, y ninguna fue la solución trivial de manual. Me guardo los detalles; lo que importa es el resultado, que una fuente protegida sigue siendo, al final, una que la investigación puede abrir y citar.</p>
 
-                <p>Lo que le da fundamento a la investigación es la biblioteca del estudio. Bibliotecario tiene 811 documentos, ingeridos como embeddings vectoriales para que un agente pueda buscarlos por significado en vez de por palabras exactas, y sacar los pasajes relevantes a un caso. Los archivos legales reales son un quilombo: cerca de uno de cada diez resultó ser RTF escondido detrás de una extensión <code>.doc</code> y necesitó su propio extractor antes de poder embeberse.</p>
+                <p>Lo que le da fundamento a la investigación es la biblioteca del estudio. Bibliotecario tiene 811 documentos que un agente puede buscar por significado en vez de por palabras exactas, y sacar los pasajes relevantes a un caso. Cómo está hecha esa búsqueda, y el quilombo de los archivos legales reales por debajo, está en la sección técnica más abajo.</p>
 
-                <p>La verdadera garantía, igual, es que nunca confiamos en las citas del modelo. Cuando el workflow de investigación arma un informe, no deja que el modelo escriba la lista de fuentes. Un paso de verificación vuelve a abrir cada fallo citado en el sitio oficial, y el anexo de fuentes se reconstruye solo con los fallos que efectivamente abrieron; todo lo que el modelo afirmó pero el verificador no pudo abrir se mueve a una sección aparte de "no verificado, no citar". Un modelo que alucina un fallo de la Corte Suprema no puede colarlo en la parte citable del documento, porque nunca escribe esa parte. (Los fallos oficiales incluso referencian leyes en una abreviatura interna tipo <code>LEY C 019101 ... 0076</code>; un pequeño decodificador lo convierte en <code>Ley 19.101, art. 76</code> para que una cita se lea como tal.) <strong>La anti-alucinación vive en el código, no en un prompt.</strong></p>
+                <p>La verdadera garantía, igual, es que nunca confiamos en las citas del modelo. Cuando el workflow de investigación arma un informe, no deja que el modelo escriba la lista de fuentes. Un paso de verificación vuelve a abrir cada fallo citado en el sitio oficial, y el anexo de fuentes se reconstruye solo con los fallos que efectivamente abrieron; todo lo que el modelo afirmó pero el verificador no pudo abrir se mueve a una sección aparte de "no verificado, no citar". Un modelo que alucina un fallo de la Corte Suprema no puede colarlo en la parte citable del documento, porque nunca escribe esa parte. <strong>La anti-alucinación vive en el código, no en un prompt.</strong></p>
 
                 <h2>Una reunión se vuelve una presentación</h2>
 
                 <p>Lo insignia es la cosa poco glamorosa y valiosa que un estudio hace una y otra vez. Un abogado graba una reunión con un cliente, completa un cuestionario corto, y quiere de vuelta un informe escrito y una infografía, con fundamento en ley real. Lo codificamos como un workflow de Mastra con seis pasos: transcribir el audio, investigar la ley y la jurisprudencia aplicables, traer el contexto guardado del caso si el asunto ya existe, redactar los documentos, componer el informe, y renderizar un PDF. Los agentes corren en secuencia, no en paralelo, a propósito (más sobre por qué en un momento).</p>
 
-                <h2>Un bug que arreglamos aguas arriba</h2>
-
-                <p>En algún punto en el medio de construir el workflow, una delegación a un subagente empezó a hacer crashear al proveedor del modelo con un 500. La causa estaba aguas arriba, en Mastra: cuando una delegación corre como tarea en segundo plano, el resultado de la herramienta es un string placeholder ("Background task started..."), pero el código que lo formatea leía <code>output.text</code>, que es undefined en un string, y serializaba contenido null en el request siguiente. Una línea:</p>
-
-<pre><code class="language-typescript">value: typeof output === "string" ? output : (output.text ?? "")</code></pre>
-
-                <p>Lo reportamos, abrimos <a href="https://github.com/mastra-ai/mastra/pull/17791" target="_blank" rel="noopener noreferrer">un PR</a>, y parcheamos nuestra instalación local hasta que se mergeó. Ese es uno de los argumentos más silenciosos para construir sobre un framework abierto: el arreglo fue a Mastra, no a un monkeypatch privado que arrastraríamos para siempre.</p>
-
                 <h2>Lo que nos enseñó producción</h2>
 
-                <p>Las lecciones de producción fueron más ruidosas. Para buscar en la biblioteca rápido normalmente armarías un índice de búsqueda, pero el nuestro se infló a cuarenta veces el tamaño de los documentos que indexaba y se reconstruía con cada archivo nuevo, así que lo borramos y dejamos que la base de datos compare cada consulta contra cada documento directamente. Un escaneo de esos es rápido, bastante menos de un segundo. Diecisiete a la vez, no: al principio el bot se quedó mudo cuarenta minutos en medio de un pedido porque un solo turno disparó diecisiete de esos escaneos sobre dos CPU compartidas, dejando sin recursos al health check, al webhook y a las actualizaciones de progreso, todo a la vez. Serializamos los escaneos para que dejen de amontonarse, agregamos un heartbeat para que una tarea lenta igual muestre que sigue viva, y pasamos a CPU dedicadas. Por eso el workflow de la reunión corre sus agentes uno tras otro: el paralelismo es lo que casi tira abajo la máquina.</p>
+                <p>Las lecciones de producción fueron más ruidosas. Una búsqueda sobre la biblioteca es barata, bastante menos de un segundo; diecisiete a la vez, no. Al principio el bot se quedó mudo cuarenta minutos en medio de un pedido porque un solo turno disparó diecisiete búsquedas concurrentes sobre la biblioteca en dos CPU compartidas, dejando sin recursos al health check, al webhook y a las actualizaciones de progreso, todo a la vez. Serializamos las búsquedas para que dejen de amontonarse, agregamos un heartbeat para que una tarea lenta igual muestre que sigue viva, y pasamos a CPU dedicadas. Por eso el workflow de la reunión corre sus agentes uno tras otro: el paralelismo es lo que casi tira abajo la máquina.</p>
 
                 <h2>Lo que nos llevaríamos al próximo sistema</h2>
 
@@ -219,8 +211,32 @@
 
                 <hr>
 
+                <details class="post-details">
+                    <summary>
+                        <span>Detalles técnicos</span>
+                        <svg class="post-details-chevron" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </summary>
+                    <div class="post-details-body">
+
+                <p>Algunas notas de implementación para quien esté construyendo algo parecido. Todo el sistema es TypeScript sobre Mastra. El supervisor es un solo agente cuyos destinos de delegación viven en un mapa de agentes, y llamar a un subagente es simplemente una tool call. Mastra acota la memoria de conversación de cada agente a su propio resource id, así que el aislamiento del que depende todo el argumento de seguridad lo garantiza el framework, no una convención que tengamos que recordar: dos roles no pueden compartir memoria salvo que los cablees a propósito para eso.</p>
+
+                <p>Las delegaciones corren inline o como tareas en segundo plano, y esa distinción es donde nos topamos con un bug que valió la pena arreglar aguas arriba. En medio de construir el workflow, una delegación a un subagente empezó a hacer crashear al proveedor del modelo con un 500. La causa estaba en Mastra: cuando una delegación corre como tarea en segundo plano, el resultado de la herramienta es un string placeholder ("Background task started..."), pero el código que lo formatea leía <code>output.text</code>, que es undefined en un string, y serializaba contenido null en el request siguiente. Una línea:</p>
+
+<pre><code class="language-typescript">value: typeof output === "string" ? output : (output.text ?? "")</code></pre>
+
+                <p>Lo reportamos, abrimos <a href="https://github.com/mastra-ai/mastra/pull/17791" target="_blank" rel="noopener noreferrer">un PR</a>, y parcheamos nuestra instalación local hasta que se mergeó. Ese es uno de los argumentos más silenciosos para construir sobre un framework abierto: el arreglo fue a Mastra, no a un monkeypatch privado que arrastraríamos para siempre.</p>
+
+                <p>Comunicador no es un agente en proceso sino un servicio aparte con su propio webhook de Instagram, alcanzado a través de una frontera agente-a-agente. Todo lo que Pretor le pasa es el texto de un mensaje y un id de emisor, y todo lo que devuelve es una respuesta. Esa frontera de proceso hace trabajo de seguridad: el único agente que toca la internet abierta vive permanentemente fuera del espacio de memoria que guarda los datos del cliente, así que no hay ningún camino en memoria de un mensaje envenenado a un expediente.</p>
+
+                <p>La biblioteca es recuperación sobre embeddings vectoriales: cada uno de los 811 documentos se embebe y se busca por significado en vez de por palabras exactas. El diseño de la recuperación llevó tres intentos. Primero vino un índice exacto que se infló a cuarenta veces el tamaño del corpus que indexaba, reconstruyéndose con cada escritura, así que lo descartamos por un escaneo de similitud por fuerza bruta: simple, correcto y rápido de por sí, bastante menos de un segundo. Correr diecisiete de esos a la vez fue otra cosa, la caída de más arriba. Esos escaneos ya no están: los reemplazamos por un índice de vecinos más cercanos aproximados (ANN) que responde una consulta sin recorrer todo el corpus y esta vez es lo bastante compacto como para ganarse su espacio. La ingesta tenía su propia trampa: cerca de un décimo del archivo era RTF escondido detrás de una extensión <code>.doc</code>, así que el extractor olfatea el tipo de contenido real antes de parsear en vez de confiar en el nombre del archivo. Confiá en los bytes, no en la extensión.</p>
+
+                <p>Dos piezas más hacen que la regla de "nunca inventar la norma" se sostenga en código. Los Escribientes renderizan a partir de un modelo guardado del tipo de presentación real de cada fuero, así que un borrador respeta el formato oficial hasta los márgenes y la numeración en vez de reinventarse en cada documento. Y como los fallos oficiales referencian leyes en una abreviatura interna tipo <code>LEY C 019101 ... 0076</code>, un pequeño decodificador lo reescribe como <code>Ley 19.101, art. 76</code> para que una cita se lea como tal.</p>
+
+                    </div>
+                </details>
+
                 <div class="post-signature">
-                    <p>Soy <strong>Fred Sapuppo</strong>, y construí <a href="https://fedesapuppo.com/pretor/">Pretor</a>, un framework de IA seguro para estudios jurídicos.</p>
+                    <p>Soy <strong>Fede Sapuppo</strong>, y construí <a href="https://fedesapuppo.com/pretor/">Pretor</a>, inteligencia artificial segura para tu estudio jurídico.</p>
                 </div>
 
                 <div class="post-back-bottom">

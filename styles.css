@@ -2446,6 +2446,106 @@ body.blog-post {
     border-radius: 2px;
 }
 
+/* Collapsible technical aside */
+.post-content details.post-details {
+    margin: 3.5rem 0 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--bg-light);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.post-content details.post-details > summary {
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1.2rem 1.5rem 1.2rem 1.75rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: color 0.15s ease;
+}
+
+.post-content details.post-details > summary::-webkit-details-marker {
+    display: none;
+}
+
+.post-content details.post-details > summary::marker {
+    content: '';
+}
+
+.post-content details.post-details > summary::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1.35rem;
+    bottom: 1.35rem;
+    width: 4px;
+    background: var(--gradient-primary);
+    border-radius: 0 2px 2px 0;
+}
+
+.post-content details.post-details > summary:hover {
+    color: var(--primary-color);
+}
+
+.post-content details.post-details > summary:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: -2px;
+}
+
+.post-content .post-details-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--primary-color);
+    background: var(--accent-glow);
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.post-content .post-details-chevron {
+    margin-left: auto;
+    color: var(--text-light);
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+}
+
+.post-content details.post-details[open] > summary {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.post-content details.post-details[open] > summary .post-details-chevron {
+    transform: rotate(180deg);
+}
+
+.post-content .post-details-body {
+    padding: 0.75rem 1.5rem 1.25rem;
+}
+
+.post-content .post-details-body > *:first-child {
+    margin-top: 0.75rem;
+}
+
+.post-content .post-details-body > *:last-child {
+    margin-bottom: 0;
+}
+
+.post-content .post-details-body pre[class*="language-"] {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 .post-content h3 {
     font-size: 1.375rem;
     font-weight: 600;
@@ -2718,6 +2818,21 @@ body.blog-post {
         font-size: 1.5rem;
         margin-top: 2.5rem;
         padding-left: 1rem;
+    }
+
+    .post-content details.post-details > summary {
+        font-size: 1.25rem;
+        padding: 1rem 1.1rem 1rem 1.35rem;
+        gap: 0.6rem;
+    }
+
+    .post-content .post-details-body {
+        padding: 0.5rem 1.1rem 1rem;
+    }
+
+    .post-content .post-details-body pre[class*="language-"] {
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .post-content h3 {
