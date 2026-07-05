@@ -1,21 +1,53 @@
-name: Deploy to fedesapuppo.github.io
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Serialize deploys: skip runs queued behind the latest, but let an
+# in-progress production deployment finish (avoids the "try again later" race).
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Deploy to fedesapuppo.github.io
-        uses: peaceiris/actions-gh-pages@v4
+      - uses: actions/configure-pages@v5
+
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          rsync -a --delete \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='.claude' \
+            --exclude='.cursor' \
+            --exclude='_site' \
+            --exclude='CLAUDE.md' \
+            --exclude='README.md' \
+            ./ _site/
+          echo 'fedesapuppo.com' > _site/CNAME
+
+      - uses: actions/upload-pages-artifact@v3
         with:
-          personal_token: ${{ secrets.DEPLOY_TOKEN }}
-          external_repository: fedesapuppo/fedesapuppo.github.io
-          publish_branch: main
-          publish_dir: .
-          exclude_assets: '.github,CLAUDE.md,.claude,.cursor,README.md'
-          cname: fedesapuppo.com
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
