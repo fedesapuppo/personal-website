@@ -5,9 +5,8 @@
   const force = new URLSearchParams(location.search).has("intro");
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const saveData = navigator.connection && navigator.connection.saveData;
-  const seen = sessionStorage.getItem("pretorIntroSeen");
   if (reduced || saveData) return;
-  if (!force && (seen || scrollY > 4)) return;
+  if (!force && scrollY > 4) return;
 
   const BASE = "/pretor/_astro/intro/";
   const desktop = matchMedia("(min-width: 768px)").matches;
@@ -16,7 +15,6 @@
   const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
   const lerp = (a, b, t) => a + (b - a) * t;
   const easeInOut = (t) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
-  const markSeen = () => sessionStorage.setItem("pretorIntroSeen", "1");
 
   const preload = (srcs, budget) =>
     Promise.race([
@@ -46,7 +44,6 @@
         '<div class="prologo__curtain prologo__curtain--r"></div>' +
         '<div class="prologo__lema"><h2>LEX ANTIQVA<br>MENS NOVA</h2><p>La inteligencia que dirige tu estudio jur&iacute;dico.</p></div>';
       document.body.prepend(el);
-      markSeen();
       let done = false;
       const out = () => {
         if (done) return;
@@ -73,7 +70,7 @@
   el.setAttribute("aria-hidden", "true");
   el.innerHTML =
     '<div class="prologo__stage">' +
-    '<div class="prologo__layer prologo__world"><video muted playsinline autoplay preload="auto" src="' + BASE + 'world.mp4"></video></div>' +
+    '<div class="prologo__layer prologo__world"></div>' +
     '<div class="prologo__layer prologo__dust"></div>' +
     '<div class="prologo__curtain prologo__curtain--l"></div>' +
     '<div class="prologo__curtain prologo__curtain--r"></div>' +
@@ -87,8 +84,6 @@
 
   const stage = el.querySelector(".prologo__stage");
   const world = el.querySelector(".prologo__world");
-  const worldVideo = world.querySelector("video");
-  worldVideo.addEventListener("canplay", () => worldVideo.classList.add("is-live"), { once: true });
   const curtainL = el.querySelector(".prologo__curtain--l");
   const curtainR = el.querySelector(".prologo__curtain--r");
   const lema = el.querySelector(".prologo__lema");
@@ -108,7 +103,6 @@
   const finish = (jump) => {
     if (finished) return;
     finished = true;
-    markSeen();
     cancelAnimationFrame(raf);
     if (pointerFine) removeEventListener("pointermove", onMove);
     removeEventListener("keydown", onKey);
@@ -176,7 +170,6 @@
     .then(() => {
       el.classList.add("is-ready");
       openStart = performance.now() + 150;
-      worldVideo.play().catch(() => {});
       raf = requestAnimationFrame(tick);
     })
     .catch(() => {

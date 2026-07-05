@@ -52,20 +52,6 @@ html {
   background-image: url(/pretor/_astro/intro/world.webp);
 }
 
-.prologo__world video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1.2s ease;
-}
-
-.prologo__world video.is-live {
-  opacity: 1;
-}
-
 .prologo__dust {
   background-image: url(/pretor/_astro/intro/dust.webp);
   mix-blend-mode: screen;
