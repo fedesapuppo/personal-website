@@ -1,0 +1,299 @@
+/* ============================================================
+   Pretor — prólogo cinematográfico (curtains + arch + forum)
+   Markup is injected by pretor-intro.js only when appropriate
+   (no reduced-motion, not seen this session, images preloaded).
+   ============================================================ */
+
+html {
+  scrollbar-gutter: stable;
+}
+
+.prologo {
+  position: relative;
+  height: 300vh;
+  margin-bottom: -100vh; /* hero rises under the stage during the final dissolve */
+  z-index: 150;
+  pointer-events: none;
+}
+
+.prologo.is-done {
+  pointer-events: none;
+}
+
+.prologo__stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: #0c0a08;
+  pointer-events: auto;
+  cursor: default;
+}
+
+.prologo.is-done .prologo__stage {
+  pointer-events: none;
+}
+
+.prologo__layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform, opacity;
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+
+.prologo.is-ready .prologo__layer {
+  opacity: 1;
+}
+
+.prologo__world {
+  background-image: url(/pretor/_astro/intro/world.webp);
+}
+
+.prologo__world video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.prologo__world video.is-live {
+  opacity: 1;
+}
+
+.prologo__dust {
+  background-image: url(/pretor/_astro/intro/dust.webp);
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  animation: prologoDeriva 38s ease-in-out infinite alternate;
+}
+
+.prologo.is-ready .prologo__dust {
+  opacity: .2;
+}
+
+.prologo__curtain {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50vw;
+  background-size: 100% 100%;
+  will-change: transform;
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+
+.prologo.is-ready .prologo__curtain {
+  opacity: 1;
+}
+
+.prologo__curtain--l {
+  left: 0;
+  background-image: url(/pretor/_astro/intro/curtain-l.webp);
+}
+
+.prologo__curtain--r {
+  right: 0;
+  background-image: url(/pretor/_astro/intro/curtain-r.webp);
+}
+
+/* loader: gold mark pulsing on near-black while assets decode */
+.prologo__carga {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  transition: opacity .6s ease;
+}
+
+.prologo.is-ready .prologo__carga {
+  opacity: 0;
+}
+
+.prologo__carga img {
+  width: 44px;
+  height: auto;
+  mix-blend-mode: lighten;
+  animation: prologoPulso 1.6s ease-in-out infinite;
+}
+
+.prologo__carga span {
+  font-family: "Cinzel", serif;
+  font-size: 13px;
+  letter-spacing: .34em;
+  color: #cda455;
+}
+
+/* scene 2: inside the forum */
+.prologo__lema {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 18px;
+  padding: 0 24px;
+  opacity: 0;
+  background: radial-gradient(ellipse 78% 62% at 50% 52%, rgba(12, 10, 8, .78), rgba(12, 10, 8, .32) 58%, transparent 80%);
+}
+
+.prologo__lema h2 {
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  font-size: clamp(30px, 5vw, 64px);
+  letter-spacing: .08em;
+  line-height: 1.12;
+  color: #e3ca8f;
+  text-shadow: 0 1px 6px rgba(12, 10, 8, .9), 0 2px 30px rgba(12, 10, 8, .85);
+  margin: 0;
+}
+
+.prologo__lema p {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(14px, 1.4vw, 19px);
+  letter-spacing: .02em;
+  color: rgba(240, 235, 223, .88);
+  text-shadow: 0 1px 14px rgba(12, 10, 8, .8);
+  max-width: 480px;
+  margin: 0;
+}
+
+/* scroll cue */
+.prologo__cue {
+  position: absolute;
+  bottom: 34px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: rgba(26, 26, 26, .6);
+  text-shadow: 0 1px 8px rgba(240, 235, 223, .8);
+  transition: opacity .4s ease;
+}
+
+.prologo__cue svg {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(205, 164, 85, .45);
+  border-radius: 50%;
+  padding: 8px;
+  animation: prologoBob 1.8s ease-in-out infinite;
+}
+
+/* skip */
+.prologo__saltar {
+  position: absolute;
+  right: 22px;
+  bottom: 24px;
+  appearance: none;
+  background: rgba(12, 10, 8, .4);
+  border: 1px solid rgba(205, 164, 85, .4);
+  border-radius: 999px;
+  color: rgba(227, 202, 143, .9);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: .14em;
+  padding: 9px 18px;
+  cursor: pointer;
+  transition: border-color .25s ease, color .25s ease, opacity .4s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.prologo__saltar:hover,
+.prologo__saltar:focus-visible {
+  border-color: #cda455;
+  color: #e3ca8f;
+}
+
+/* mobile variant: fixed overlay, curtains part over the hero itself */
+.prologo--movil {
+  position: fixed;
+  inset: 0;
+  height: auto;
+  margin: 0;
+  z-index: 150;
+  pointer-events: auto;
+  background: transparent;
+  transition: opacity .5s ease;
+}
+
+.prologo--movil .prologo__world {
+  position: absolute;
+  inset: 0;
+  background: #0c0a08 url(/pretor/_astro/intro/world.webp) center / cover no-repeat;
+  animation: prologoZoomM 5s ease-out forwards;
+}
+
+.prologo--movil .prologo__lema {
+  transition: opacity .8s ease;
+}
+
+.prologo--movil.is-lema .prologo__lema {
+  opacity: 1;
+}
+
+.prologo--movil .prologo__curtain {
+  width: 62vw;
+  background-size: cover;
+  opacity: 1;
+  transition: transform 1.7s cubic-bezier(.22, 1, .36, 1);
+}
+
+.prologo--movil .prologo__curtain--l {
+  background-position: right center;
+}
+
+.prologo--movil .prologo__curtain--r {
+  background-position: left center;
+}
+
+.prologo--movil.is-open .prologo__curtain--l {
+  transform: translateX(-108%);
+}
+
+.prologo--movil.is-open .prologo__curtain--r {
+  transform: translateX(108%);
+}
+
+.prologo--movil.is-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes prologoBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes prologoPulso {
+  0%, 100% { opacity: .55; }
+  50% { opacity: 1; }
+}
+
+@keyframes prologoDeriva {
+  from { transform: translate3d(-2.5%, -1.5%, 0) scale(1.08); }
+  to { transform: translate3d(2.5%, 1.5%, 0) scale(1.14); }
+}
+
+@keyframes prologoZoomM {
+  from { transform: scale(1); }
+  to { transform: scale(1.12); }
+}
