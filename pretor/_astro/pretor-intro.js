@@ -6,7 +6,13 @@
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const saveData = navigator.connection && navigator.connection.saveData;
   if (reduced || saveData) return;
-  if (!force && scrollY > 4) return;
+  // Stop the browser from restoring the old scroll position on reload, so the
+  // intro plays again on every fresh load instead of being skipped mid-page.
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  // A deep link to a section (e.g. #contacto) skips the intro; #top does not.
+  const deepLink = location.hash && location.hash !== "#top";
+  if (!force && deepLink) return;
+  if (!force) scrollTo({ top: 0, behavior: "instant" });
 
   const BASE = "/pretor/_astro/intro/";
   const desktop = matchMedia("(min-width: 768px)").matches;
@@ -152,7 +158,7 @@
     lema.style.opacity = lemaIn * lemaOut;
     lema.style.transform = `translateY(${lerp(24, 0, easeInOut(lemaIn))}px)`;
 
-    cue.style.opacity = open >= 1 ? clamp(1 - p / 0.06, 0, 1) : 0;
+    cue.style.opacity = clamp(open * 1.8, 0, 1) * clamp(1 - p / 0.14, 0, 1);
     skipBtn.style.opacity = clamp(1 - (p - 0.8) / 0.1, 0, 1) * clamp(open * 2, 0, 1);
 
     const fade = clamp(1 - (p - 0.86) / 0.13, 0, 1);

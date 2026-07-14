@@ -166,21 +166,22 @@ html {
   align-items: center;
   gap: 10px;
   font-family: "JetBrains Mono", monospace;
-  font-size: 10px;
-  letter-spacing: .26em;
+  font-size: 12px;
+  letter-spacing: .3em;
   text-transform: uppercase;
-  color: rgba(26, 26, 26, .6);
-  text-shadow: 0 1px 8px rgba(240, 235, 223, .8);
+  color: #e6cf97;
+  text-shadow: 0 1px 10px rgba(12, 10, 8, .95), 0 0 26px rgba(12, 10, 8, .7);
   transition: opacity .4s ease;
 }
 
 .prologo__cue svg {
-  width: 34px;
-  height: 34px;
-  border: 1px solid rgba(205, 164, 85, .45);
+  width: 42px;
+  height: 42px;
+  border: 1.5px solid rgba(205, 164, 85, .75);
   border-radius: 50%;
-  padding: 8px;
-  animation: prologoBob 1.8s ease-in-out infinite;
+  padding: 9px;
+  box-shadow: 0 0 20px rgba(205, 164, 85, .28), inset 0 0 12px rgba(205, 164, 85, .12);
+  animation: prologoBob 1.5s ease-in-out infinite;
 }
 
 /* skip */
@@ -266,7 +267,7 @@ html {
 
 @keyframes prologoBob {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  50% { transform: translateY(-9px); }
 }
 
 @keyframes prologoPulso {
