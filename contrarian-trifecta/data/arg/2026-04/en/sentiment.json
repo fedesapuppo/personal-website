@@ -1,0 +1,110 @@
+[
+  {
+    "ticker": "PAM",
+    "company": "Pampa Energia SA ADR",
+    "sentiment_score": 64,
+    "ai_score": 8,
+    "ai_reasoning": "Best risk-reward in the group: PEG of 0.29 signals massive earnings growth ahead, Fwd P/E of 7.6x is cheap for an energy conglomerate with Vaca Muerta exposure. Current ratio of 3.11 and cash/sh of $20.11 (23% of price) provide strong downside protection. Analyst target of $108.57 implies 24% upside. The -98.5% insider transactions are concerning but may reflect tax-related selling rather than lack of conviction.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Vaca Muerta energy buildout acceleration and LNG export infrastructure development driving multi-year earnings growth",
+    "ai_confidence": "high",
+    "trifecta_score": 59,
+    "divergence_flag": true
+  },
+  {
+    "ticker": "IRS",
+    "company": "Irsa Inversiones Y Representaciones S.A. ADR",
+    "sentiment_score": 58,
+    "ai_score": 6,
+    "ai_reasoning": "Extremely cheap at 3.5x earnings and 0.95 P/B with massive 28.7% cash yield and 31.5% ROE. However, the -56.75% insider transactions are a major red flag — insiders are aggressively selling. Real estate valuations in Argentina are volatile and heavily currency-dependent. The 87% profit margin looks inflated by revaluation gains rather than operating performance.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Argentine real estate recovery as peso stabilizes and mortgage market develops, but insider selling dampens conviction",
+    "ai_confidence": "low",
+    "trifecta_score": 58,
+    "divergence_flag": true
+  },
+  {
+    "ticker": "CEPU",
+    "company": "Central Puerto ADR",
+    "sentiment_score": 48,
+    "ai_score": 7,
+    "ai_reasoning": "Argentine regulated utility trading at 9x earnings with 32% profit margins, 15.6% ROE, and minimal debt (0.19 D/E). Price is well above 52W lows with strong uptrend (SMA200 +24%), but analyst target of $23 implies 38% upside. Tariff normalization under Milei is a structural tailwind for Argentine utilities that is still playing out.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Continued utility tariff normalization and potential MSCI upgrade for Argentine equities driving institutional flows",
+    "ai_confidence": "high",
+    "trifecta_score": 57,
+    "divergence_flag": true
+  },
+  {
+    "ticker": "TGS",
+    "company": "Transportadora de Gas del Sur ADR",
+    "sentiment_score": 27,
+    "ai_score": 5,
+    "ai_reasoning": "RSI at 71.6 signals overbought conditions after a strong run (+24.5% above SMA200). While the 50.9% cash yield and 5x current ratio are extraordinary, the stock has already priced in much of the gas transport recovery. P/E of 16.4x is the richest among non-bank names here. Wait for a pullback rather than chase momentum.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Midstream gas infrastructure expansion for Vaca Muerta production growth, but current price already reflects this",
+    "ai_confidence": "low",
+    "trifecta_score": 46,
+    "divergence_flag": true
+  },
+  {
+    "ticker": "EDN",
+    "company": "Empresa Distribuidora y Comercial Norte S.A. ADR",
+    "sentiment_score": 49,
+    "ai_score": 8,
+    "ai_reasoning": "Most compelling valuation in the group: P/S of 0.29 and P/B of 0.87 for a regulated utility with 82% cash yield. The low current margins (3% operating, 8% profit) are the opportunity — tariff adjustments are still catching up to inflation, meaning earnings have massive room to expand. Fwd P/E of 10.66 vs trailing 7.08 suggests a transition year, but the trajectory is clearly positive.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Regulated tariff increases closing the gap to cost-reflective levels, directly expanding margins from current compressed levels",
+    "ai_confidence": "high",
+    "trifecta_score": 46,
+    "divergence_flag": true
+  },
+  {
+    "ticker": "CRESY",
+    "company": "Cresud ADR",
+    "sentiment_score": 38,
+    "ai_score": 7,
+    "ai_reasoning": "Trading below book value (P/B 0.95) at 4.3x earnings with a staggering 60.9% cash yield. Agricultural conglomerate benefits from peso normalization and strong commodity backdrop. The 1.86 D/E is elevated but manageable given the asset-heavy nature of the business. Analyst target of $14.93 implies 19% near-term upside with substantial margin of safety from asset values.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Agricultural land revaluation as Argentina normalizes currency controls and foreign investment returns to the sector",
+    "ai_confidence": "medium",
+    "trifecta_score": 45,
+    "divergence_flag": true
+  },
+  {
+    "ticker": "BMA",
+    "company": "Banco Macro S.A. ADR",
+    "sentiment_score": 54,
+    "ai_score": 8,
+    "ai_reasoning": "The Fwd P/E of 7.13 vs trailing 21.14 implies earnings are expected to nearly triple — PEG of 0.11 is the lowest in the group. Argentine banks are in the early innings of a credit expansion cycle as inflation drops and lending normalizes. The stock is 28.6% below its 52W high and SMA50 is negative, creating a contrarian entry point. Low D/E of 0.29 for a bank signals conservative positioning.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Credit cycle inflection as Argentine inflation normalizes, driving massive NIM expansion and loan growth from a very low base",
+    "ai_confidence": "high",
+    "trifecta_score": 42,
+    "divergence_flag": false
+  },
+  {
+    "ticker": "GGAL",
+    "company": "Grupo Financiero Galicia ADR",
+    "sentiment_score": 64,
+    "ai_score": 9,
+    "ai_reasoning": "Strongest contrarian signal: PEG of 0.05 is extraordinarily low, meaning the market is dramatically underpricing earnings growth. Fwd P/E of 5.77 vs trailing 40.41 implies a 7x earnings expansion. The stock is 31.7% below its 52W high and trading below its SMA200, creating the deepest pullback among Argentine ADRs. Highest institutional ownership (23.9%) and short float (4.5%) set up a potential squeeze as earnings inflect. Argentina's largest private bank is the purest play on credit normalization.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Earnings inflection from credit cycle normalization — as Argentina's largest private bank, GGAL captures disproportionate upside from deposit growth, lending expansion, and fee income recovery",
+    "ai_confidence": "high",
+    "trifecta_score": 35,
+    "divergence_flag": true
+  },
+  {
+    "ticker": "LOMA",
+    "company": "Loma Negra Compania Industrial Argentina Sociedad Anonima ADR",
+    "sentiment_score": 32,
+    "ai_score": 4,
+    "ai_reasoning": "Trailing P/E of 67x with anemic 2.5% ROE and 3% profit margins — this is the weakest fundamental profile in the group. Construction materials should benefit from infrastructure spending, but current profitability does not support the valuation. Fwd P/E of 23x and PEG of 0.52 suggest improvement ahead, but the stock needs to prove earnings recovery before warranting conviction.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Argentine construction activity recovery and infrastructure spending under Milei administration, but execution risk remains high",
+    "ai_confidence": "low",
+    "trifecta_score": 32,
+    "divergence_flag": false
+  }
+]

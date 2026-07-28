@@ -1,0 +1,110 @@
+[
+  {
+    "ticker": "IRS",
+    "company": "Irsa Inversiones Y Representaciones S.A. ADR",
+    "sentiment_score": 48,
+    "ai_confidence": "low",
+    "ai_reasoning": "Fundamentos excepcionales con P/E de 3.29, ROE de 31.47% y margen de ganancia de 86.92% sugieren que el mercado está subvaluando severamente a esta empresa inmobiliaria argentina. El ratio P/B de 0.9 indica que cotiza por debajo de su valor libro a pesar de una sólida posición de caja y bajos niveles de deuda.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Estabilización económica argentina o beneficios de la devaluación cambiaria sobre los activos inmobiliarios",
+    "short_float": 0.22,
+    "insider_transactions": 0.0,
+    "analyst_target_price": 21.33
+  },
+  {
+    "ticker": "CEPU",
+    "company": "Central Puerto ADR",
+    "sentiment_score": 48,
+    "ai_confidence": "low",
+    "ai_reasoning": "A pesar de sólidos fundamentos (27% de margen de ganancia, 13% de ROE, bajo D/E de 0.26, PEG de 0.4), la tenencia institucional es extremadamente baja en 4%, lo que sugiere valor potencialmente pasado por alto. El 45% de upside hasta el precio objetivo de $23 de los analistas, combinado con una sólida generación de caja y métricas de valuación razonables, indica que el mercado podría estar subvaluando a esta empresa de servicios públicos argentina.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Mejora en el sentimiento de los inversores hacia activos argentinos o re-rating del sector de servicios públicos a medida que las tasas de interés se estabilicen",
+    "short_float": null,
+    "insider_transactions": null,
+    "analyst_target_price": 23.0
+  },
+  {
+    "ticker": "EDN",
+    "company": "Empresa Distribuidora y Comercial Norte S.A. ADR",
+    "sentiment_score": 48,
+    "ai_confidence": "high",
+    "ai_reasoning": "EDN cotiza a valuaciones extremadamente atractivas (P/E 6.69, P/B 0.83) con sólidos fundamentos que incluyen un ROE de 13.92% y una posición de caja masiva ($15.96/acción vs. precio de $27.92). La caída del 70% desde máximos parece excesiva para una empresa de servicios públicos regulada con márgenes sólidos y baja deuda, lo que sugiere una sobrerreacción del mercado a las preocupaciones económicas argentinas.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "La estabilización del peso argentino o ajustes tarifarios en servicios públicos podrían destrabar valor significativo dada la sustancial posición de caja y la baja tenencia institucional",
+    "short_float": 1.27,
+    "insider_transactions": null,
+    "analyst_target_price": 37.0
+  },
+  {
+    "ticker": "CRESY",
+    "company": "Cresud ADR",
+    "sentiment_score": 43,
+    "ai_confidence": "high",
+    "ai_reasoning": "CRESY cotiza a valuaciones extremadamente atractivas (P/E 4.0, P/B 0.88) con métricas de rentabilidad excepcionales (ROE 27%, margen de ganancia 24%) y una posición de caja masiva (65% de cash yield), lo que sugiere que el mercado está incorporando un pesimismo excesivo sobre los activos argentinos. La combinación de métricas de deep value con un sólido desempeño operativo indica un posible error de valuación a pesar de los riesgos legítimos de mercados emergentes.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "La estabilización económica argentina o la reversión de la devaluación cambiaria podrían destrabar valor significativo dado el balance con fuerte posición de caja",
+    "short_float": 1.69,
+    "insider_transactions": 0.0,
+    "analyst_target_price": 14.93
+  },
+  {
+    "ticker": "LOMA",
+    "company": "Loma Negra Compania Industrial Argentina Sociedad Anonima ADR",
+    "sentiment_score": 53,
+    "ai_confidence": "low",
+    "ai_reasoning": "La acción muestra características clásicas de trampa de valor con un P/E elevado de 33.75, pero un forward P/E de 12.22 y un PEG de 0.45 que sugieren una aceleración de ganancias por delante. Esta cementera argentina cotiza a múltiplos razonables con un crecimiento proyectado de EPS de 27.2% y un precio objetivo de analistas 41% por encima del precio actual, lo que indica que el pesimismo del mercado podría ser excesivo.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Estabilización económica argentina y recuperación del gasto en infraestructura impulsando la demanda de cemento",
+    "short_float": 2.41,
+    "insider_transactions": 0.0,
+    "analyst_target_price": 15.0
+  },
+  {
+    "ticker": "BMA",
+    "company": "Banco Macro S.A. ADR",
+    "sentiment_score": 48,
+    "ai_confidence": "high",
+    "ai_reasoning": "La venta masiva parece en gran medida emocional dada la marcada desconexión entre los fundamentos y la acción del precio: un PEG de 0.13 con un crecimiento esperado de EPS del 53.68% sugiere una subvaluación significativa. El precio objetivo de $124.12 de los analistas frente al precio actual de $74.72, combinado con la baja tenencia institucional del 11.41%, indica potencial de reversión a la media una vez que los temores sobre la banca argentina cedan.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Estabilización de la política económica o la moneda argentina, lo que llevaría a una expansión de múltiplos para un banco regional subvaluado con sólidos márgenes operativos",
+    "short_float": 0.52,
+    "insider_transactions": 0.0,
+    "analyst_target_price": 124.12
+  },
+  {
+    "ticker": "GGAL",
+    "company": "Grupo Financiero Galicia ADR",
+    "sentiment_score": 53,
+    "ai_confidence": "low",
+    "ai_reasoning": "La marcada desconexión entre el precio actual ($45.43) y el precio objetivo de los analistas ($69.97) sugiere condiciones de sobreventa, mientras que la dramática compresión del P/E de 40.86 al forward de 9.21 indica que el mercado está incorporando un pesimismo excesivo. A pesar de las preocupantes proyecciones negativas de crecimiento de EPS, el bajo ratio P/S de 0.6 y el razonable P/B de 1.36 sugieren que el banco argentino cotiza por debajo de su valor intrínseco.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "La estabilización económica argentina o la disminución de los temores por la devaluación cambiaria podrían desencadenar una expansión de múltiplos",
+    "short_float": 5.0,
+    "insider_transactions": 0.0,
+    "analyst_target_price": 69.97
+  },
+  {
+    "ticker": "BBAR",
+    "company": "BBVA Argentina ADR",
+    "sentiment_score": 48,
+    "ai_confidence": "low",
+    "ai_reasoning": "La acción muestra características clásicas de trampa de valor con un PEG de 0.12 y un forward P/E de 8.95, pero cotiza con un descuento masivo respecto al precio objetivo de $20.01 de los analistas. A pesar de los vientos en contra del sector bancario argentino, el crecimiento proyectado de EPS del 72.9% y los niveles razonables de deuda sugieren que el pesimismo del mercado podría ser excesivo.",
+    "ai_classification": "structural",
+    "ai_catalyst": "Estabilización económica argentina o reforma de la política cambiaria que reduzca la prima de riesgo soberano",
+    "short_float": 0.77,
+    "insider_transactions": 0.0,
+    "analyst_target_price": 20.01
+  },
+  {
+    "ticker": "BIOX",
+    "company": "Bioceres Crop Solutions Corp",
+    "sentiment_score": 48,
+    "ai_confidence": "low",
+    "ai_reasoning": "A pesar de una acción de precio devastadora (-90% desde máximos), los fundamentos muestran una empresa de insumos agrícolas profundamente sobrevendida que cotiza a 0.1x ventas y 0.13x valor libro con 50% de cash yield. Los márgenes negativos y el ROE reflejan vientos cíclicos en contra del sector agrícola más que un deterioro permanente, mientras que el 26.7% de tenencia de insiders y el precio objetivo de $2.00 de los analistas sugieren una subvaluación significativa.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Recuperación de los precios de commodities agrícolas o reestructuración exitosa de costos dada la sustancial posición de caja de la empresa en relación con su capitalización bursátil",
+    "short_float": 1.88,
+    "insider_transactions": 0.0,
+    "analyst_target_price": 2.0
+  }
+]

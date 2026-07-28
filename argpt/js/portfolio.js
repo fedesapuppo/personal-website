@@ -1,0 +1,114 @@
+const Portfolio = {
+  calculate(holdings, prices, mep, ccl) {
+    if (!holdings.length) {
+      return { holdings: [], total_value_usd: 0, total_value_ars: 0, total_pnl_usd: 0, total_pnl_ars: 0, daily_change_pct: 0, has_estimated_fx: false };
+    }
+
+    const computed = holdings.map((h, index) => this._computeHolding(h, index, prices, mep, ccl));
+    const totalUsd = computed.reduce((s, c) => s + c.value_usd, 0);
+    const totalArs = computed.reduce((s, c) => s + c.value_ars, 0);
+
+    const results = computed.map(c => ({
+      ...c,
+      weight_pct: totalUsd > 0 ? (c.value_usd / totalUsd) * 100 : 0
+    }));
+
+    const totalPnlUsd = computed.reduce((s, c) => s + (c.pnl_usd || 0), 0);
+    const totalPnlArs = computed.reduce((s, c) => s + c.pnl_ars, 0);
+    const dailyChange = totalUsd > 0
+      ? computed.reduce((s, c) => s + (c.daily_change_pct || 0) * c.value_usd, 0) / totalUsd
+      : 0;
+
+    const hasEstimatedFx = holdings.some(h =>
+      (h.type === 'cedear' || h.type === 'arg_stock') && !h.entry_fx_rate
+    );
+
+    return {
+      holdings: results,
+      total_value_usd: totalUsd,
+      total_value_ars: totalArs,
+      total_pnl_usd: totalPnlUsd,
+      total_pnl_ars: totalPnlArs,
+      daily_change_pct: dailyChange,
+      has_estimated_fx: hasEstimatedFx
+    };
+  },
+
+  _computeHolding(h, index, prices, mep, ccl) {
+    const priceKey = `${h.ticker}:${h.type}`;
+    const priceData = prices[priceKey];
+    if (!priceData) return this._emptyHolding(h, index);
+
+    const last = priceData.last;
+    const isArs = h.type === 'cedear' || h.type === 'arg_stock';
+
+    if (isArs && (!mep || !ccl)) return this._emptyHolding(h, index);
+
+    const priceUsd = isArs ? last / mep.mark : last;
+    const priceArs = isArs ? last : (ccl ? last * ccl.mark : 0);
+    const valueUsd = h.shares * priceUsd;
+    const valueArs = h.shares * priceArs;
+
+    const freeLot = h.avg_price <= 0.01;
+
+    const pnlArs = freeLot ? 0 : isArs
+      ? (last - h.avg_price) * h.shares
+      : (ccl ? (last - h.avg_price) * h.shares * ccl.mark : 0);
+    const pnlPct = freeLot ? null : ((last - h.avg_price) / h.avg_price) * 100;
+
+    // When entry_fx_rate is unknown for an ARS-quoted holding, fall back to the
+    // current MEP — currency drag becomes 0 and USD return equals capital return.
+    // The fx-warning banner flags these as estimates.
+    const effectiveEntryFx = isArs ? (h.entry_fx_rate || mep.mark) : null;
+
+    const costBasisUsd = freeLot ? null : isArs
+      ? h.avg_price / effectiveEntryFx
+      : h.avg_price;
+
+    let pnlUsd = null;
+    if (costBasisUsd != null) {
+      pnlUsd = (priceUsd - costBasisUsd) * h.shares;
+    }
+
+    const capitalReturn = pnlPct;
+    let currencyReturn = null;
+    let totalReturnUsd = null;
+
+    if (freeLot) {
+      // no return calc for free shares
+    } else if (!isArs) {
+      currencyReturn = 0;
+      totalReturnUsd = capitalReturn;
+    } else {
+      currencyReturn = (effectiveEntryFx / mep.mark - 1) * 100;
+      totalReturnUsd = ((1 + capitalReturn / 100) * (1 + currencyReturn / 100) - 1) * 100;
+    }
+
+    return {
+      index, ticker: h.ticker, type: h.type, broker: h.broker, shares: h.shares,
+      avg_price: h.avg_price, cost_basis_usd: costBasisUsd, current_price: last,
+      current_price_usd: priceUsd, current_price_ars: priceArs,
+      entry_fx_rate: h.entry_fx_rate,
+      daily_change_pct: priceData.change || 0,
+      pnl_ars: pnlArs, pnl_usd: pnlUsd, pnl_pct: pnlPct,
+      capital_return_pct: capitalReturn,
+      currency_return_pct: currencyReturn,
+      total_return_usd_pct: totalReturnUsd,
+      value_usd: valueUsd, value_ars: valueArs,
+      weight_pct: 0
+    };
+  },
+
+  _emptyHolding(h, index) {
+    return {
+      index, ticker: h.ticker, type: h.type, broker: h.broker, shares: h.shares,
+      avg_price: h.avg_price, cost_basis_usd: null, current_price: null,
+      current_price_usd: null, current_price_ars: null,
+      daily_change_pct: 0, pnl_ars: 0, pnl_usd: null, pnl_pct: null,
+      capital_return_pct: null, currency_return_pct: null,
+      total_return_usd_pct: null, value_usd: 0, value_ars: 0, weight_pct: 0
+    };
+  }
+};
+
+export default Portfolio;

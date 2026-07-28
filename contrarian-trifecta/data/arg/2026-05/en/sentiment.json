@@ -1,0 +1,92 @@
+[
+  {
+    "ticker": "PAM",
+    "company": "Pampa Energia SA ADR",
+    "sentiment_score": 74,
+    "ai_score": 9,
+    "ai_reasoning": "PEG of 0.25 with 26.4% expected EPS growth, trading at only 6.5x forward earnings. Cash/sh of $20.11 represents 25% of share price, current ratio of 3.11 is fortress-level. Analyst target of $111 implies 40% upside. Near-total insider selling (-99.81%) is concerning but may reflect Argentine tax or regulatory reasons rather than bearishness.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Energy infrastructure buildout in Argentina and Vaca Muerta monetization driving earnings inflection",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "IRS",
+    "company": "Irsa Inversiones Y Representaciones SA ADR",
+    "sentiment_score": 58,
+    "ai_score": 6,
+    "ai_reasoning": "Stunning P/E of 2.92 and P/B of 0.8 with 31.47% ROE look compelling, but insider selling of -56.75% is a major red flag. RSI at 28 is deeply oversold and the 86.92% profit margin likely reflects one-time revaluation gains rather than recurring income. Real estate in Argentina carries significant currency and regulatory risk.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Argentine real estate recovery and peso-denominated asset revaluation as inflation normalizes",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "TGS",
+    "company": "Transportadora de Gas del Sur ADR",
+    "sentiment_score": 54,
+    "ai_score": 8,
+    "ai_reasoning": "Exceptional balance sheet with 61% cash yield, 5.0 current ratio, and strong 43% operating margins. Trading at 13.67x trailing but only 10.66x forward with 9.4% EPS growth expected. Low beta (0.61) and massive cash cushion ($17.92/sh vs $29.27 price) make this a compelling contrarian buy during broad Argentine ADR weakness.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Vaca Muerta gas pipeline expansion driving volume growth and energy export revenues",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "CEPU",
+    "company": "Central Puerto ADR",
+    "sentiment_score": 48,
+    "ai_score": 7,
+    "ai_reasoning": "Regulated utility trading at 7.67x earnings with 15.65% ROE, low debt (0.19 D/E), and strong margins. RSI at 33 suggests oversold conditions. 11% cash yield and analyst target 71% above current price indicate irrational fear around Argentine macro rather than company-specific issues.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Argentine utility tariff normalization under Milei reforms and continued peso stabilization",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "CRESY",
+    "company": "Cresud ADR",
+    "sentiment_score": 63,
+    "ai_score": 7,
+    "ai_reasoning": "Trading at 3.71x earnings with 0.82 P/B and a massive 70.44% cash yield. Insider buying of +84.56% is a strong bullish signal from management. Higher leverage (1.86 D/E) is the main risk, but 27.16% ROE shows the business generates strong returns on capital despite the debt load.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Insider buying signals confidence; Argentine agricultural land revaluation as macro stabilizes",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "EDN",
+    "company": "Empresa Distribuidora y Comercial Norte SA ADR",
+    "sentiment_score": 48,
+    "ai_score": 7,
+    "ai_reasoning": "P/S of 0.23 and P/B of 0.68 with cash/sh exceeding the stock price (104% cash yield) suggest deep value. However, thin margins (3% operating, 8% profit) reflect regulated tariff compression. RSI at 33 and 37.66% off highs indicate heavy selling. The value is real but margin recovery depends on regulatory action.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Continued utility tariff increases under Milei administration restoring margins to sustainable levels",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "BMA",
+    "company": "Banco Macro SA ADR",
+    "sentiment_score": 54,
+    "ai_score": 8,
+    "ai_reasoning": "Forward P/E of 6.28 and PEG of 0.10 with 65.94% expected EPS growth represent extreme undervaluation if growth materializes. The 34% drawdown from highs and RSI at 33.58 reflect broad emerging market bank fear. Low debt (0.29 D/E) and analyst target 69% above current price. Trailing ROE is depressed at 6% but forward estimates imply massive normalization.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Argentine banking sector credit growth as economy stabilizes and real interest rates normalize",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "GGAL",
+    "company": "Grupo Financiero Galicia ADR",
+    "sentiment_score": 64,
+    "ai_score": 8,
+    "ai_reasoning": "PEG of 0.04 is extraordinarily low, with 124% expected EPS growth and forward P/E of only 4.91. RSI at 29.57 is the most oversold in this group. 38% off highs with 5.21% short float suggests heavy speculative selling. Current trailing metrics are weak (3.18% ROE) but the forward earnings trajectory implies massive normalization in Argentine banking profitability.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Argentine financial system re-intermediation as deposits grow and credit penetration increases from historically low levels",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "LOMA",
+    "company": "Loma Negra Compania Industrial Argentina Sociedad Anonima ADR",
+    "sentiment_score": 37,
+    "ai_score": 5,
+    "ai_reasoning": "Trailing P/E of 66x with only 2.48% ROE and 3% profit margin shows a business currently earning very little. The bull case rests entirely on forward estimates (16x forward, 72.6% EPS growth) driven by Argentine construction recovery. Minimal cash yield (1.79%) provides no downside cushion. This is a pure macro bet.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Argentine construction and infrastructure spending recovery driving cement demand",
+    "ai_confidence": "low"
+  }
+]

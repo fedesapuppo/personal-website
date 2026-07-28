@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contrato — Hermes Agent</title>
+  <link rel="canonical" href="https://fedesapuppo.com/hermes/contrato.html">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a0f'/%3E%3Ctext x='3' y='24' font-family='Georgia,serif' font-size='22' font-weight='bold' fill='white'%3EH%3C/text%3E%3Ctext x='16' y='24' font-family='Georgia,serif' font-size='22' font-weight='bold' fill='%23c8a2f8'%3EA%3C/text%3E%3C/svg%3E">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            surface: { 50: '#0a0a0f', 100: '#12121a', 200: '#1a1a26', 300: '#242436' },
+            accent: { DEFAULT: '#c8a2f8', dim: '#9b6dd7', bright: '#e4d0ff' },
+            warm: { DEFAULT: '#f5c16c', dim: '#d4a04a' },
+            ice: '#e8edf4',
+          },
+          fontFamily: {
+            display: ['"Instrument Serif"', 'Georgia', 'serif'],
+            body: ['"DM Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #0a0a0f; }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+    .nav-blur {
+      backdrop-filter: blur(16px) saturate(1.4);
+      -webkit-backdrop-filter: blur(16px) saturate(1.4);
+    }
+    @media print {
+      @page { margin: 18mm 16mm; }
+      html, body { background: #ffffff !important; color: #111111 !important; }
+      body::before { display: none !important; }
+      nav, footer, .no-print { display: none !important; }
+      main { padding-top: 0 !important; padding-bottom: 0 !important; max-width: none !important; }
+      h1, h2, h3, strong, .text-white { color: #111111 !important; }
+      .text-accent { color: #5b3aa1 !important; }
+      .text-ice\/80, .text-ice\/70, .text-ice\/60, .text-ice\/50, .text-ice\/30 { color: #333333 !important; }
+      a { color: inherit !important; text-decoration: none !important; }
+      section, .border-t, .border-white\/10, .border-white\/5 { border-color: #cccccc !important; }
+      h2, h3 { page-break-after: avoid; }
+      section, li { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body class="font-body text-ice antialiased">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 inset-x-0 z-50 nav-blur bg-surface-50/70 border-b border-white/5">
+    <div class="max-w-4xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="index.html" class="font-display text-2xl tracking-tight text-white">Hermes <span class="text-accent">Agent</span></a>
+      <a href="index.html" class="text-sm text-ice/60 hover:text-accent transition-colors">&larr; Volver</a>
+    </div>
+  </nav>
+
+  <!-- Contract content -->
+  <main class="max-w-3xl mx-auto px-6 pt-28 pb-20">
+
+    <h1 class="font-display text-4xl lg:text-5xl text-white mb-10">Contrato de Prestación<br>de Servicios</h1>
+
+    <!-- Download -->
+    <div class="no-print mb-14 p-5 sm:p-6 rounded-2xl border border-accent/20 bg-accent/5">
+      <p class="text-ice/70 text-sm leading-relaxed mb-4">
+        Descargá una copia editable, completá tus datos y firmá (digital o escaneada). Enviámela de vuelta a
+        <a href="mailto:fedesapuppo@hotmail.com" class="text-accent hover:text-accent-bright underline underline-offset-2">fedesapuppo@hotmail.com</a>.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="downloads/Contrato-Hermes-Agent.pdf" download
+           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent text-surface-50 font-semibold text-sm hover:bg-accent-bright transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M5 20h14"/>
+          </svg>
+          Descargar PDF
+        </a>
+        <a href="downloads/Contrato-Hermes-Agent.docx" download
+           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-accent/40 text-accent font-semibold text-sm hover:bg-accent/10 hover:border-accent/70 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M5 20h14"/>
+          </svg>
+          Descargar DOCX
+        </a>
+      </div>
+    </div>
+
+    <!-- Section 1 -->
+    <section class="mb-10">
+      <h2 class="text-accent font-semibold text-lg mb-4">1. Partes</h2>
+      <ul class="space-y-2 text-ice/60 leading-relaxed">
+        <li><span class="text-white font-medium">Prestador:</span> Federico Sapuppo, con domicilio en la Alta Gracia, Provincia de Córdoba, República Argentina.</li>
+        <li><span class="text-white font-medium">Cliente:</span> ______________________________, con domicilio en ______________________________.</li>
+      </ul>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="mb-10">
+      <h2 class="text-accent font-semibold text-lg mb-4">2. Descripción del servicio</h2>
+      <p class="text-ice/60 leading-relaxed mb-4">El Prestador provee al Cliente una instancia gestionada del software open-source <em class="text-ice/80">hermes-agent</em>, desplegada en la plataforma Fly.io. El servicio incluye:</p>
+      <ul class="space-y-2 text-ice/60 leading-relaxed list-disc list-inside">
+        <li>Una aplicación dedicada en Fly.io con volumen de almacenamiento aislado (single-tenant, sin estado compartido con otros clientes).</li>
+        <li>Un bot de Telegram configurado para el Cliente: texto, memos de voz, reportes programados.</li>
+        <li>Conectores opcionales según el plan contratado: Gmail / Google Calendar, Outlook / Microsoft 365, búsqueda web, síntesis de voz, generación de imágenes.</li>
+        <li>Memoria entre sesiones (el agente aprende las preferencias del Cliente con el tiempo).</li>
+        <li>Un prompt de sistema personalizado al nombre, tono, zona horaria y caso de uso del Cliente.</li>
+      </ul>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="mb-10">
+      <h2 class="text-accent font-semibold text-lg mb-4">3. Precio</h2>
+
+      <h3 class="text-white font-medium mb-3">3.1 Cargo de instalación (único)</h3>
+      <p class="text-ice/60 leading-relaxed mb-6">Según la cotización aceptada por el Cliente antes del inicio del servicio. El cargo cubre: provisión de la app en Fly.io, configuración del bot de Telegram, claves de API, personalización del prompt de sistema, y garantía de 30 días (corrección sin cargo de cualquier defecto en lo configurado por el Prestador).</p>
+
+      <h3 class="text-white font-medium mb-3">3.2 Suscripción mensual</h3>
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="border-b border-white/10">
+              <th class="text-left py-3 pr-4 text-white font-semibold">Plan</th>
+              <th class="text-left py-3 pr-4 text-white font-semibold">Precio (USD/mes)</th>
+              <th class="text-left py-3 text-white font-semibold">Incluye</th>
+            </tr>
+          </thead>
+          <tbody class="text-ice/60">
+            <tr class="border-b border-white/5">
+              <td class="py-3 pr-4 text-white">Base</td>
+              <td class="py-3 pr-4">50</td>
+              <td class="py-3">Hosting en Fly.io, monitoreo de infraestructura, USD 10 de uso de IA, Telegram, búsqueda web, memoria entre sesiones, síntesis de voz Edge TTS, chequeo semanal de salud, 30 min/mes de soporte</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 text-white">Pro</td>
+              <td class="py-3 pr-4">90</td>
+              <td class="py-3">Todo lo del plan Base + conector de email activo, USD 25 de uso de IA incluido, síntesis de voz ElevenLabs hasta 1 hora/mes, 1 hora/mes de soporte</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-white font-medium mb-3">3.3 Uso incluido y facturación de excedentes</h3>
+      <p class="text-ice/60 leading-relaxed">El uso de IA incluido en cada plan se detalla en la tabla anterior. El consumo que exceda el monto incluido se factura al cierre del mes con un recargo de 1.5x sobre el costo real (el recargo cubre la administración y monitoreo de facturación). Otros excedentes (minutos de TTS, plan pago de búsqueda web, tiempo de soporte adicional) se facturan según la tarifa vigente comunicada al Cliente.</p>
+    </section>
+
+    <!-- Section 4 -->
+    <section class="mb-10">
+      <h2 class="text-accent font-semibold text-lg mb-4">4. Titularidad de cuentas</h2>
+      <ul class="space-y-2 text-ice/60 leading-relaxed">
+        <li><span class="text-white font-medium">Cuentas del Prestador:</span> Fly.io, OpenRouter, Firecrawl, Honcho, Groq, Hugging Face. El Prestador es titular y responsable de estas cuentas. Los costos se trasladan al Cliente a través de la suscripción mensual.</li>
+        <li><span class="text-white font-medium">Cuentas del Cliente:</span> Gmail / Google Workspace, Microsoft 365, Telegram (usuario). Los tokens OAuth residen en el volumen dedicado del Cliente; el Prestador no accede a las contraseñas del Cliente.</li>
+      </ul>
+    </section>
+
+    <!-- Section 5 -->
+    <section class="mb-10">
+      <h2 class="text-accent font-semibold text-lg mb-4">5. Nivel de servicio (SLA)</h2>
+      <p class="text-ice/60 leading-relaxed">El Prestador ofrece un servicio de <strong class="text-white">mejor esfuerzo</strong>. No se garantiza una disponibilidad del 99.9% ni se ofrecen créditos por tiempo de inactividad. El Prestador realizará chequeos semanales de salud y atenderá incidentes reportados dentro del horario de soporte acordado.</p>
+    </section>
+
+    <!-- Section 6 -->
+    <section class="mb-10">
+      <h2 class="text-accent font-semibold text-lg mb-4">6. Datos y privacidad</h2>
+      <ul class="space-y-2 text-ice/60 leading-relaxed">
+        <li><span class="text-white font-medium">Aislamiento:</span> Cada cliente opera en una aplicación y volumen dedicados en Fly.io. No existe estado compartido entre clientes.</li>
+        <li><span class="text-white font-medium">Propiedad de datos:</span> El Cliente es dueño de todos los datos generados en su instancia (sesiones, memorias, configuraciones).</li>
+        <li><span class="text-white font-medium">Baja del servicio:</span> Al finalizar el contrato, el Prestador exportará un backup comprimido de los datos del Cliente y lo entregará por medio seguro. Luego, la aplicación y el volumen serán destruidos.</li>
+      </ul>
+    </section>
+
+    <!-- Section 7 -->
+    <section class="mb-10">
+      <h2 class="text-accent font-semibold text-lg mb-4">7. Limitaciones y exclusiones</h2>
+      <p class="text-ice/60 leading-relaxed mb-3">El servicio <strong class="text-white">no incluye</strong>:</p>
+      <ul class="space-y-2 text-ice/60 leading-relaxed list-disc list-inside">
+        <li>Cuentas multiusuario en una misma instancia. Cada usuario requiere su propio despliegue.</li>
+        <li>Cumplimiento de HIPAA, SOC2, PCI u otras certificaciones de seguridad.</li>
+        <li>Llamadas telefónicas o agentes de voz en tiempo real.</li>
+        <li>Selección de modelo de IA por solicitud individual. El Cliente recibe un modelo por defecto configurable.</li>
+        <li>Garantías de residencia de datos más allá de la región de Fly.io elegida en la instalación.</li>
+        <li>Migración de datos en formatos distintos al backup estándar.</li>
+        <li>Ingesta de datos regulados (CRM, ERP, datos médicos o financieros sensibles).</li>
+      </ul>
+    </section>
+
+    <!-- Section 8 -->
+    <section class="mb-10">
+      <h2 class="text-accent font-semibold text-lg mb-4">8. Limitación de responsabilidad</h2>
+      <ul class="space-y-2 text-ice/60 leading-relaxed list-disc list-inside">
+        <li>El Prestador <strong class="text-white">no es responsable</strong> por el contenido generado por el modelo de lenguaje. Las respuestas del agente son generadas por modelos de terceros y pueden contener errores.</li>
+        <li>El Prestador <strong class="text-white">no es responsable</strong> por interrupciones causadas por caídas de servicios de terceros (OpenRouter, Fly.io, Groq, Firecrawl, proveedores de email del Cliente).</li>
+        <li>El Prestador <strong class="text-white">no es responsable</strong> por la deprecación o cambio de comportamiento de modelos de IA por parte de sus proveedores.</li>
+        <li>La responsabilidad total del Prestador bajo este contrato se limita al monto total pagado por el Cliente en los últimos 3 meses de servicio.</li>
+      </ul>
+    </section>
+
+    <!-- Section 9 -->
+    <section class="mb-10">
+      <h2 class="text-accent font-semibold text-lg mb-4">9. Plazo y cancelación</h2>
+      <ul class="space-y-2 text-ice/60 leading-relaxed list-disc list-inside">
+        <li>El servicio se contrata <strong class="text-white">mes a mes</strong> después del pago del cargo de instalación y el primer mes.</li>
+        <li>Cualquiera de las partes puede cancelar con <strong class="text-white">30 días de aviso</strong> por escrito (email es suficiente).</li>
+        <li>Al cancelar, se aplica el procedimiento de baja descrito en la sección 6.</li>
+      </ul>
+    </section>
+
+    <!-- Section 10 -->
+    <section class="mb-16">
+      <h2 class="text-accent font-semibold text-lg mb-4">10. Ley aplicable y jurisdicción</h2>
+      <p class="text-ice/60 leading-relaxed">Este contrato se rige por las leyes de la <strong class="text-white">República Argentina</strong>. Cualquier controversia será sometida a los tribunales ordinarios de la Ciudad de Córdoba.</p>
+    </section>
+
+    <!-- Signatures -->
+    <div class="border-t border-white/10 pt-10">
+      <div class="grid sm:grid-cols-2 gap-10">
+        <div>
+          <p class="text-white font-semibold mb-4">Prestador</p>
+          <div class="space-y-3 text-ice/50 text-sm">
+            <p>Firma: ______________________________</p>
+            <p>Nombre: Federico Sapuppo</p>
+            <p>Fecha: ______________________________</p>
+          </div>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-4">Cliente</p>
+          <div class="space-y-3 text-ice/50 text-sm">
+            <p>Firma: ______________________________</p>
+            <p>Nombre: ______________________________</p>
+            <p>Fecha: ______________________________</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-8">
+    <div class="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ice/30">
+      <p>Powered by <a href="https://github.com/NousResearch/hermes-agent" class="text-ice/50 hover:text-accent transition-colors underline underline-offset-2">hermes-agent</a> (open source)</p>
+      <a href="mailto:fedesapuppo@hotmail.com" class="hover:text-accent transition-colors">Contacto</a>
+    </div>
+  </footer>
+
+</body>
+</html>

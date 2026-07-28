@@ -1,0 +1,92 @@
+[
+  {
+    "ticker": "TGS",
+    "company": "Transportadora de Gas del Sur ADR",
+    "sentiment_score": 54,
+    "ai_confidence": "high",
+    "ai_reasoning": "TGS combines a 13.5 P/E, 44% operating margin, a fortress 5.11 current ratio, and an extraordinary 62.6% cash yield, signaling a balance sheet far stronger than the price suggests. The decline is macro-driven fear, not a broken model, with Vaca Muerta gas transport volumes structurally expanding and a $40+ analyst target. The wide gap between cash/share ($18.79) and the selloff makes this a high-conviction contrarian case.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Vaca Muerta gas pipeline expansion and rising export volumes lifting transport revenue"
+  },
+  {
+    "ticker": "CEPU",
+    "company": "Central Puerto ADR",
+    "sentiment_score": 48,
+    "ai_confidence": "high",
+    "ai_reasoning": "Central Puerto trades at a 6.65 P/E with 17% ROE, 37% margins, and low 0.28 debt while sitting 21% off its 52W high. The selloff reflects broad Argentine country-risk discounting rather than deterioration in the regulated power business, and analyst targets imply ~65% upside. Stable beta (0.95) and a healthy cash yield support a contrarian thesis tied to ongoing energy-tariff normalization.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Continued electricity tariff normalization and subsidy reform under Milei improving regulated utility margins"
+  },
+  {
+    "ticker": "PAM",
+    "company": "Pampa Energia SA ADR",
+    "sentiment_score": 54,
+    "ai_confidence": "high",
+    "ai_reasoning": "Pampa Energia shows a 6.5 forward P/E, 0.24 PEG, 27% projected EPS growth, and $20/share cash against an $83 price, a deeply mispriced diversified energy conglomerate. The pullback is country-risk noise rather than operational weakness, with strong Vaca Muerta oil and gas exposure and a $114 target. Robust current ratio (3.11) and reasonable leverage reinforce conviction.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Vaca Muerta upstream ramp and power generation expansion driving the 27% forward EPS growth"
+  },
+  {
+    "ticker": "CRESY",
+    "company": "Cresud ADR",
+    "sentiment_score": 58,
+    "ai_confidence": "low",
+    "ai_reasoning": "Cresud is cheap at 5.0 P/E and 0.74 P/B with a 66% cash yield and bullish 309% insider buying, but elevated 1.49 debt/equity and thin 3.2% ROA temper the case. Its agricultural and IRSA-linked holdings are exposed to commodity and currency swings, leaving the picture mixed between value and leverage risk. Upside to the $15 target is modest versus peers.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Strong insider accumulation plus farmland and crop value recovery if the peso stabilizes"
+  },
+  {
+    "ticker": "IRS",
+    "company": "Irsa Inversiones Y Representaciones SA ADR",
+    "sentiment_score": 48,
+    "ai_confidence": "high",
+    "ai_reasoning": "IRSA trades at a 4.4 P/E and 0.88 P/B with 65% profit margin and a strong RSI (57) showing momentum already turning up. As a leveraged proxy on Argentine real estate recovery, it benefits directly from disinflation and credit reopening. The -54% insider transaction figure is a mild caution flag, but valuation and asset backing dominate.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Argentine real estate and mortgage credit revival as inflation falls and capital controls ease"
+  },
+  {
+    "ticker": "EDN",
+    "company": "Empresa Distribuidora y Comercial Norte SA ADR",
+    "sentiment_score": 48,
+    "ai_confidence": "low",
+    "ai_reasoning": "Edenor trades at 6.1 P/E and 0.74 P/B with a striking 95% cash yield, but a thin 3% operating margin and high 1.45 beta reveal fragility in this regulated distributor. The selloff is partly justified by tariff-lag and regulatory uncertainty, though reform tailwinds and a $37 target offer real upside. The risk/reward is balanced rather than compelling.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Distribution tariff (RTI) review approvals restoring margins under deregulation"
+  },
+  {
+    "ticker": "BMA",
+    "company": "Banco Macro SA ADR",
+    "sentiment_score": 48,
+    "ai_confidence": "high",
+    "ai_reasoning": "Banco Macro carries a 7.3 forward P/E and a 0.11 PEG against 67% projected EPS growth, with the trailing 18.9 P/E and depressed 6.8% ROE reflecting inflation-distorted comparables now normalizing. The 19% decline is macro fear over a well-capitalized bank poised to benefit from credit expansion. A $122 target implies ~46% upside.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Real credit growth resumption as disinflation restores bank lending profitability"
+  },
+  {
+    "ticker": "BBAR",
+    "company": "BBVA Argentina ADR",
+    "sentiment_score": 43,
+    "ai_confidence": "high",
+    "ai_reasoning": "BBVA Argentina shows an 8.8 forward P/E, 0.15 PEG, and 61% expected EPS growth, with the depressed trailing ROE (6.2%) a function of inflation accounting rather than weak franchise quality. The pullback is country-risk sentiment on a sound, liquid bank well positioned for credit normalization. Upside to the $20.84 target is more modest than peers, tempering the score.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Banking credit recovery and earnings normalization as inflation declines"
+  },
+  {
+    "ticker": "LOMA",
+    "company": "Loma Negra Compania Industrial Argentina Sociedad Anonima ADR",
+    "sentiment_score": 43,
+    "ai_confidence": "low",
+    "ai_reasoning": "Loma Negra's optical 47 P/E reflects a cyclical earnings trough, but the 13.2 forward P/E, 0.17 PEG, and 76% projected EPS growth point to a cement-demand rebound. Construction recovery depends heavily on a sustained macro turn, making this a higher-risk cyclical bet. Thin current ROE (3.2%) and limited target upside keep conviction moderate.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Infrastructure and construction revival lifting cement volumes off the cycle low"
+  },
+  {
+    "ticker": "GGAL",
+    "company": "Grupo Financiero Galicia ADR",
+    "sentiment_score": 53,
+    "ai_confidence": "high",
+    "ai_reasoning": "Grupo Galicia's distorted 86.8 trailing P/E collapses to a 6.1 forward P/E with a 0.05 PEG and ~118% projected EPS growth, the clearest case of inflation-accounting noise masking franchise strength. The 24% decline is macro-driven on Argentina's largest private financial group, well positioned for a credit upcycle. A $70 target implies ~49% upside, though elevated short float (4.95%) warrants some caution.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Explosive forward earnings recovery as credit expands and inflation accounting normalizes"
+  }
+]

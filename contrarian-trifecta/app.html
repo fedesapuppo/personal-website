@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>Three-Pillar Analytical Station | Contrarian Trifecta</title>
+  <meta name="description" content="Find undervalued stocks using the Contrarian Trifecta strategy — low P/E, high dividend yield, and insider buying.">
+  <meta property="og:title" content="Contrarian Trifecta Screener">
+  <meta property="og:description" content="Find undervalued stocks using the Contrarian Trifecta strategy — low P/E, high dividend yield, and insider buying.">
+  <meta property="og:image" content="https://fedesapuppo.com/contrarian-trifecta/logo.png">
+  <meta property="og:url" content="https://fedesapuppo.com/contrarian-trifecta/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://fedesapuppo.com/contrarian-trifecta/logo.png">
+  <link rel="canonical" href="https://fedesapuppo.com/contrarian-trifecta/app.html">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="toolbar">
+    <div class="toolbar__brand">
+      <h1 class="toolbar__title">Three-Pillar Analytical Station for Stock Analysis</h1>
+      <span class="toolbar__subtitle">Contrarian Trifecta</span>
+      <select id="sector-filter" class="select-input" aria-label="Filter by sector">
+        <option value="">All Sectors</option>
+      </select>
+    </div>
+    <div class="toolbar__controls">
+      <select id="month-selector" class="select-input" aria-label="Select month"></select>
+      <select id="lang-selector" class="select-input" aria-label="Language">
+        <option value="en">EN</option>
+        <option value="es">ES</option>
+      </select>
+      <select id="market-selector" class="select-input" aria-label="Select market">
+        <option value="us">US Market</option>
+        <option value="arg">Argentina</option>
+      </select>
+      <input type="search" id="global-search" class="search-input" placeholder="Search ticker or company..." aria-label="Search stocks">
+      <button id="legend-toggle" class="btn btn--icon" aria-label="Show scoring legend" title="Scoring legend &amp; reference">
+        <span aria-hidden="true">?</span>
+      </button>
+      <button id="theme-toggle" class="btn btn--icon btn--theme" aria-label="Toggle theme" title="Toggle dark/light theme">
+        <span id="theme-label">LIGHT</span>
+      </button>
+    </div>
+  </header>
+
+  <div id="legend-panel" class="legend-panel" hidden>
+    <div class="legend-panel__inner">
+      <button class="legend-panel__close" aria-label="Close legend" id="legend-close">&times;</button>
+      <h2 class="legend-panel__title">Scoring System Reference</h2>
+
+      <div class="legend-grid">
+        <div class="legend-section">
+          <h3>Score Ranges</h3>
+          <div class="legend-item">
+            <span class="score--high">70 - 100</span>
+            <span class="legend-desc">Strong / Bullish signal</span>
+          </div>
+          <div class="legend-item">
+            <span class="score--mid">50 - 69</span>
+            <span class="legend-desc">Moderate / Neutral signal</span>
+          </div>
+          <div class="legend-item">
+            <span class="score--low">0 - 49</span>
+            <span class="legend-desc">Weak / Bearish signal</span>
+          </div>
+        </div>
+
+        <div class="legend-section">
+          <h3>Rating Labels</h3>
+          <div class="legend-item">
+            <span class="rating rating--high-conviction">High Conviction</span>
+            <span class="legend-desc">Trifecta score 80+</span>
+          </div>
+          <div class="legend-item">
+            <span class="rating rating--moderate">Moderate</span>
+            <span class="legend-desc">Trifecta score 65 - 79</span>
+          </div>
+          <div class="legend-item">
+            <span class="rating rating--watch">Watch List</span>
+            <span class="legend-desc">Trifecta score 50 - 64</span>
+          </div>
+          <div class="legend-item">
+            <span class="rating rating--low-conviction">Low Conviction</span>
+            <span class="legend-desc">Trifecta score 30 - 49</span>
+          </div>
+          <div class="legend-item">
+            <span class="rating rating--fear-justified">Fear Justified</span>
+            <span class="legend-desc">Trifecta score below 30</span>
+          </div>
+        </div>
+
+        <div class="legend-section">
+          <h3>Trifecta Pillars</h3>
+          <div class="legend-item">
+            <strong>Fundamental (50%)</strong>
+            <span class="legend-desc">Sector-relative value &amp; quality metrics</span>
+          </div>
+          <div class="legend-item">
+            <strong>Sentiment (35%)</strong>
+            <span class="legend-desc">AI-analyzed fear vs. fundamentals mismatch</span>
+          </div>
+          <div class="legend-item">
+            <strong>Technical (15%)</strong>
+            <span class="legend-desc">Price action floor signals &amp; oversold conditions</span>
+          </div>
+        </div>
+
+        <div class="legend-section">
+          <h3>Badges &amp; Tags</h3>
+          <div class="legend-item">
+            <span class="badge badge--divergence">Divergence</span>
+            <span class="legend-desc">Two pillar scores differ by 30+ points (potential value trap)</span>
+          </div>
+          <div class="legend-item">
+            <span class="badge badge--earnings">Pre-Earnings</span>
+            <span class="legend-desc">Earnings report upcoming, higher uncertainty</span>
+          </div>
+          <div class="legend-item">
+            <span class="badge badge--emotional">Emotional</span>
+            <span class="legend-desc">AI classifies selloff as irrational / sentiment-driven</span>
+          </div>
+          <div class="legend-item">
+            <span class="badge badge--cyclical">Cyclical</span>
+            <span class="legend-desc">AI classifies selloff as tied to economic cycles</span>
+          </div>
+          <div class="legend-item">
+            <span class="badge badge--structural">Structural</span>
+            <span class="legend-desc">AI classifies selloff as driven by business model concerns</span>
+          </div>
+          <div class="legend-item">
+            <span class="badge badge--high">High Confidence</span>
+            <span class="legend-desc">AI has high confidence in its analysis</span>
+          </div>
+          <div class="legend-item">
+            <span class="badge badge--low">Low Confidence</span>
+            <span class="legend-desc">AI has low confidence, use caution</span>
+          </div>
+        </div>
+
+        <div class="legend-section">
+          <h3>Technical Indicators</h3>
+          <div class="legend-item">
+            <span class="rsi--oversold">RSI below 30</span>
+            <span class="legend-desc">Oversold territory (potential buying signal)</span>
+          </div>
+          <div class="legend-item">
+            <span class="rsi--neutral">RSI 30 - 70</span>
+            <span class="legend-desc">Neutral range</span>
+          </div>
+          <div class="legend-item">
+            <span class="rsi--overbought">RSI above 70</span>
+            <span class="legend-desc">Overbought territory (caution)</span>
+          </div>
+        </div>
+
+        <div class="legend-section">
+          <h3>Fundamental Arrows</h3>
+          <div class="legend-item">
+            <span class="arrow--better">Better than sector</span>
+            <span class="legend-desc">Green up-arrow: metric beats sector median</span>
+          </div>
+          <div class="legend-item">
+            <span class="arrow--worse">Worse than sector</span>
+            <span class="legend-desc">Red down-arrow: metric trails sector median</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="tabs" role="tablist" aria-label="Dashboard sections">
+    <button class="tabs__tab" role="tab" aria-selected="true" aria-controls="panel-trifecta" id="tab-trifecta" data-tab="trifecta">Trifecta Picks</button>
+    <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="panel-technical" id="tab-technical" data-tab="technical">Technical View</button>
+    <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="panel-fundamentals" id="tab-fundamentals" data-tab="fundamentals">Fundamentals</button>
+    <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="panel-sentiment" id="tab-sentiment" data-tab="sentiment">Sentiment Lab</button>
+    <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="panel-backtest" id="tab-backtest" data-tab="backtest">Backtest</button>
+  </nav>
+
+  <main class="content">
+    <section id="panel-trifecta" class="tab-panel" role="tabpanel" aria-labelledby="tab-trifecta"></section>
+    <section id="panel-technical" class="tab-panel" role="tabpanel" aria-labelledby="tab-technical" hidden></section>
+    <section id="panel-fundamentals" class="tab-panel" role="tabpanel" aria-labelledby="tab-fundamentals" hidden></section>
+    <section id="panel-sentiment" class="tab-panel" role="tabpanel" aria-labelledby="tab-sentiment" hidden></section>
+    <section id="panel-backtest" class="tab-panel" role="tabpanel" aria-labelledby="tab-backtest" hidden></section>
+  </main>
+
+  <section id="cta-section" class="cta-section">
+    <p class="cta-section__tagline">A screener spots opportunities. An advisor helps you act on them.</p>
+  </section>
+
+  <footer class="footer">
+    <p id="footer-disclaimer">This tool is for informational and educational purposes. It does not constitute financial advice or investment recommendations. Consult a professional before making decisions.</p>
+    <p id="footer-attribution">Design &amp; development: Federico Sapuppo | Contact: <a href="mailto:fedesapuppo@hotmail.com" id="footer-email">fedesapuppo@hotmail.com</a></p>
+  </footer>
+
+  <script>
+    function showErr(msg){document.body.innerHTML='<pre style="color:red;padding:20px">'+msg+'</pre>';}
+    window.onerror=function(m,s,l,c,e){showErr(m+'\n'+s+':'+l+':'+c+'\n'+(e&&e.stack||''));};
+    window.addEventListener('unhandledrejection',function(e){showErr('Unhandled rejection:\n'+(e.reason&&e.reason.stack||e.reason));});
+  </script>
+  <script type="module" src="js/main.js?v=1780933801"></script>
+  <script>
+    setTimeout(function(){
+      if(![...document.querySelectorAll('.tab-panel')].some(function(p){ return p.innerHTML.trim().length > 0; })){
+        var el=document.createElement('pre');
+        el.style.cssText='color:orange;padding:20px;position:fixed;bottom:0;left:0;right:0;background:#333;z-index:9999';
+        el.textContent='Warning: Dashboard did not render after 3s. Check browser console (F12) for module errors.';
+        document.body.appendChild(el);
+      }
+    },3000);
+  </script>
+</body>
+</html>

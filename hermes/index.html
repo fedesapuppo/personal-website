@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0a0f">
+  <title>Hermes Agent — Tu Asistente Digital, Siempre en tu Bolsillo</title>
+  <meta name="description" content="Bot de Telegram que vive en tu bolsillo: dictale un memo de voz y te arma reclamos, declaraciones juradas y briefings matutinos. Pensado para contadores, abogados y comerciantes.">
+
+  <!-- Canonical / Open Graph / Twitter (WhatsApp lee og:*) -->
+  <!-- IMPORTANTE: si tu dominio no es github.io, cambiá og:url y og:image por tu URL real -->
+  <link rel="canonical" href="https://fedesapuppo.com/hermes/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hermes Agent">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:url" content="https://fedesapuppo.com/hermes/">
+  <meta property="og:title" content="Hermes Agent — Tu Asistente Digital, Siempre en tu Bolsillo">
+  <meta property="og:description" content="Escribile o mandale audios por Telegram. Redacta documentos, navega la web, llena formularios, genera podcast y maneja tu calendario.">
+  <meta property="og:image" content="https://fedesapuppo.com/hermes/assets/hermes-og.jpg">
+  <meta property="og:image:secure_url" content="https://fedesapuppo.com/hermes/assets/hermes-og.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Hermes Agent — asistente cyberpunk con caduceo de neón">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hermes Agent — Tu Asistente Digital">
+  <meta name="twitter:description" content="Escribile o mandale audios por Telegram. Redacta documentos, navega la web, llena formularios, genera podcast y maneja tu calendario.">
+  <meta name="twitter:image" content="https://fedesapuppo.com/hermes/assets/hermes-og.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23ff2d8e'/%3E%3Cstop offset='100%25' stop-color='%2300f0ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='6' fill='%230a0a0f'/%3E%3Crect x='1' y='1' width='30' height='30' rx='5' fill='none' stroke='url(%23g)' stroke-width='.8' opacity='.5'/%3E%3Ctext x='2' y='24' font-family='monospace' font-size='22' font-weight='bold' fill='%2300f0ff'%3EH%3C/text%3E%3Ctext x='15' y='24' font-family='Arial Black,sans-serif' font-size='22' font-weight='900' fill='%23ff2d8e'%3EA%3C/text%3E%3Cline x1='2' y1='27' x2='30' y2='27' stroke='url(%23g)' stroke-width='1' opacity='.4'/%3E%3C/svg%3E">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Orbitron:wght@500;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            surface: { 50: '#06060c', 100: '#0c0c18', 200: '#16162a', 300: '#1f1f3a' },
+            accent: { DEFAULT: '#c8a2f8', dim: '#9b6dd7', bright: '#e4d0ff' },
+            neon: { pink: '#ff2d8e', magenta: '#ff00d4', cyan: '#00f0ff', blue: '#5cc8ff' },
+            warm: { DEFAULT: '#f5c16c', dim: '#d4a04a' },
+            ice: '#e8edf4',
+          },
+          fontFamily: {
+            display: ['"Instrument Serif"', 'Georgia', 'serif'],
+            body: ['"DM Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"Orbitron"', 'ui-monospace', 'monospace'],
+          },
+          boxShadow: {
+            'neon-pink': '0 0 20px rgba(255,45,142,0.45), 0 0 40px rgba(255,45,142,0.25)',
+            'neon-cyan': '0 0 20px rgba(0,240,255,0.45), 0 0 40px rgba(0,240,255,0.2)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #06060c; }
+
+    /* Grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+    /* Subtle scanlines on top of everything */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      pointer-events: none;
+      background-image: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.025) 0,
+        rgba(255,255,255,0.025) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      mix-blend-mode: overlay;
+    }
+
+    /* Cyber grid (used as section bg) */
+    .cyber-grid {
+      background-image:
+        linear-gradient(rgba(255,45,142,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,240,255,0.06) 1px, transparent 1px);
+      background-size: 48px 48px, 48px 48px;
+      background-position: -1px -1px, -1px -1px;
+      mask-image: radial-gradient(ellipse 90% 70% at 50% 40%, #000 30%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 40%, #000 30%, transparent 75%);
+    }
+
+    /* Hero gradient mesh — neon pink + cyan */
+    .hero-glow {
+      background:
+        radial-gradient(ellipse 70% 55% at 18% 28%, rgba(255,45,142,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 55% 65% at 85% 65%, rgba(0,240,255,0.14) 0%, transparent 70%),
+        radial-gradient(ellipse 80% 40% at 50% 0%, rgba(155,109,215,0.10) 0%, transparent 60%),
+        radial-gradient(ellipse 100% 80% at 50% 110%, rgba(255,0,212,0.10) 0%, transparent 60%);
+    }
+
+    /* Neon text glow */
+    .neon-pink {
+      color: #ff5aa6;
+      text-shadow:
+        0 0 6px rgba(255,45,142,0.7),
+        0 0 18px rgba(255,45,142,0.45),
+        0 0 36px rgba(255,0,212,0.3);
+    }
+    .neon-cyan {
+      color: #6df3ff;
+      text-shadow:
+        0 0 6px rgba(0,240,255,0.7),
+        0 0 18px rgba(0,240,255,0.45),
+        0 0 36px rgba(92,200,255,0.25);
+    }
+
+    /* Glitch flicker for the brand */
+    @keyframes flicker {
+      0%, 92%, 100% { opacity: 1; }
+      93% { opacity: 0.55; }
+      94% { opacity: 1; }
+      96% { opacity: 0.85; }
+    }
+    .flicker { animation: flicker 5s infinite; }
+
+    /* Fade-in on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s cubic-bezier(.16,1,.3,1), transform 0.7s cubic-bezier(.16,1,.3,1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Card hover lift */
+    .card-lift {
+      transition: transform 0.35s cubic-bezier(.16,1,.3,1), box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+    .card-lift:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,45,142,0.4);
+      box-shadow: 0 20px 60px -12px rgba(255,45,142,0.25), 0 0 0 1px rgba(0,240,255,0.15) inset;
+    }
+
+    /* Cyber border (1px gradient ring) */
+    .cyber-border {
+      position: relative;
+      isolation: isolate;
+    }
+    .cyber-border::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255,45,142,0.55), rgba(0,240,255,0.35) 50%, rgba(155,109,215,0.4));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+              mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Pricing card glow border */
+    .price-glow {
+      position: relative;
+    }
+    .price-glow::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(255,45,142,0.55), rgba(0,240,255,0.35), rgba(200,162,248,0.25));
+      z-index: -1;
+      filter: blur(0.5px);
+    }
+    .price-glow::after {
+      content: '';
+      position: absolute;
+      inset: -12px;
+      border-radius: inherit;
+      background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255,45,142,0.18), transparent 70%);
+      z-index: -2;
+      filter: blur(20px);
+    }
+
+    /* Step connector line */
+    .step-line {
+      background: linear-gradient(180deg, rgba(255,45,142,0.55) 0%, rgba(0,240,255,0.25) 50%, rgba(255,45,142,0.05) 100%);
+      box-shadow: 0 0 12px rgba(255,45,142,0.35);
+    }
+
+    /* Neon buttons */
+    .btn-neon-pink {
+      background: linear-gradient(135deg, #ff2d8e, #ff00d4);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 8px 28px -8px rgba(255,45,142,0.65), 0 0 24px rgba(255,45,142,0.45);
+      transition: transform 0.2s ease, box-shadow 0.25s ease, filter 0.2s ease;
+    }
+    .btn-neon-pink:hover { transform: translateY(-1px); filter: brightness(1.08); box-shadow: 0 0 0 1px rgba(255,255,255,0.12) inset, 0 12px 36px -8px rgba(255,45,142,0.85), 0 0 36px rgba(255,45,142,0.6); }
+    .btn-neon-cyan {
+      background: linear-gradient(135deg, #0f2a36, #082530);
+      border: 1px solid rgba(0,240,255,0.45);
+      box-shadow: 0 0 0 1px rgba(0,240,255,0.12) inset, 0 0 20px rgba(0,240,255,0.25);
+      transition: transform 0.2s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .btn-neon-cyan:hover { transform: translateY(-1px); border-color: rgba(0,240,255,0.8); box-shadow: 0 0 0 1px rgba(0,240,255,0.25) inset, 0 0 28px rgba(0,240,255,0.5); }
+
+    /* FAQ accordion */
+    .faq-answer {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.35s cubic-bezier(.16,1,.3,1);
+    }
+    .faq-answer.open {
+      grid-template-rows: 1fr;
+    }
+    .faq-answer > div {
+      overflow: hidden;
+    }
+
+    /* Nav blur */
+    .nav-blur {
+      backdrop-filter: blur(16px) saturate(1.4);
+      -webkit-backdrop-filter: blur(16px) saturate(1.4);
+    }
+
+    /* Stagger children */
+    .stagger > *:nth-child(1) { transition-delay: 0s; }
+    .stagger > *:nth-child(2) { transition-delay: 0.08s; }
+    .stagger > *:nth-child(3) { transition-delay: 0.16s; }
+    .stagger > *:nth-child(4) { transition-delay: 0.24s; }
+
+    /* Hero portrait — cyberpunk image frame */
+    .hero-portrait {
+      position: relative;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .hero-portrait img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-portrait::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background:
+        linear-gradient(180deg, transparent 50%, rgba(6,6,12,0.85) 100%),
+        radial-gradient(ellipse 70% 50% at 50% 100%, rgba(255,45,142,0.25), transparent 70%);
+      pointer-events: none;
+    }
+    .hero-portrait .scan {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: repeating-linear-gradient(
+        to bottom,
+        rgba(0,240,255,0.05) 0,
+        rgba(0,240,255,0.05) 1px,
+        transparent 1px,
+        transparent 4px
+      );
+      mix-blend-mode: screen;
+      opacity: 0.5;
+    }
+    .hero-portrait::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255,45,142,0.7), rgba(0,240,255,0.55) 50%, rgba(255,0,212,0.5));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+              mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Mobile-first niceties */
+    html, body { -webkit-text-size-adjust: 100%; }
+    @media (max-width: 640px) {
+      .hero-glow { background-position: 50% 0; }
+    }
+  </style>
+</head>
+<body class="font-body text-ice antialiased overflow-x-hidden">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 inset-x-0 z-50 nav-blur bg-surface-50/75 border-b border-neon-pink/15">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-5 sm:px-6 py-4">
+      <a href="#" class="font-display text-2xl tracking-tight text-white flicker">Hermes <span class="neon-pink italic">Agent</span></a>
+      <div class="hidden md:flex items-center gap-8 text-sm text-ice/60 font-medium">
+        <a href="#funciones" class="hover:text-neon-pink transition-colors">Funciones</a>
+        <a href="#precios" class="hover:text-neon-pink transition-colors">Precios</a>
+        <a href="contrato.html" class="hover:text-neon-pink transition-colors">Contrato</a>
+        <a href="https://wa.me/543547468121?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Hermes%20Agent" class="ml-2 inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-neon-pink/10 text-neon-pink border border-neon-pink/30 hover:bg-neon-pink/20 hover:shadow-neon-pink transition-all"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.553 4.12 1.52 5.857L.057 23.534a.5.5 0 00.61.61l5.677-1.463A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.586l-.386-.232-3.364.867.884-3.364-.232-.386A9.94 9.94 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Empezar</a>
+      </div>
+      <button id="mobile-toggle" class="md:hidden text-ice/60 hover:text-white transition-colors">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-neon-pink/15 bg-surface-100/95 nav-blur">
+      <div class="flex flex-col gap-1 px-6 py-4 text-sm">
+        <a href="#funciones" class="py-2 text-ice/70 hover:text-neon-pink transition-colors">Funciones</a>
+        <a href="#precios" class="py-2 text-ice/70 hover:text-neon-pink transition-colors">Precios</a>
+        <a href="contrato.html" class="py-2 text-ice/70 hover:text-neon-pink transition-colors">Contrato</a>
+        <a href="https://wa.me/543547468121?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Hermes%20Agent" class="mt-2 inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full bg-neon-pink/10 text-neon-pink border border-neon-pink/30"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.553 4.12 1.52 5.857L.057 23.534a.5.5 0 00.61.61l5.677-1.463A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.586l-.386-.232-3.364.867.884-3.364-.232-.386A9.94 9.94 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Empezar</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-glow relative min-h-screen flex items-center pt-24 sm:pt-28 pb-16 overflow-hidden">
+    <div class="absolute inset-0 cyber-grid opacity-60 pointer-events-none"></div>
+    <div class="relative max-w-6xl mx-auto px-5 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center w-full">
+      <div class="reveal order-2 lg:order-1">
+        <p class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neon-pink/10 border border-neon-pink/30 text-neon-pink text-[11px] sm:text-xs font-mono font-semibold tracking-[0.18em] uppercase mb-6 sm:mb-8 shadow-neon-pink">
+          <span class="w-1.5 h-1.5 rounded-full bg-neon-pink animate-pulse"></span>
+          Bot de Telegram gestionado
+        </p>
+        <h1 class="font-display text-[2.5rem] sm:text-6xl lg:text-7xl leading-[1.04] text-white mb-5 sm:mb-6">
+          Tu Asistente Digital,<br>
+          <span class="neon-pink italic">Siempre en<br>tu Bolsillo</span>
+        </h1>
+        <p class="text-base sm:text-lg text-ice/60 max-w-lg leading-relaxed mb-5">
+          Mandale un audio y te arma un reclamo administrativo. Mandale un mensaje y hace tu declaración jurada y la presenta ante el ARCA. Creá una tarea y te despierta todos los días con un audio que resume las noticias que te importan, y tu agenda del día.
+        </p>
+        <p class="text-sm text-ice/40 max-w-lg leading-relaxed mb-8 sm:mb-10">
+          Ideal para contadores, abogados y comerciantes que quieren un asistente que trabaje las 24 horas sin pedir vacaciones.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3">
+          <a href="https://wa.me/543547468121?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Hermes%20Agent" class="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 rounded-full bg-[#25D366] text-white font-semibold text-sm tracking-wide hover:bg-[#20bd5a] transition-all" style="box-shadow: 0 8px 28px -8px rgba(37,211,102,0.55), 0 0 24px rgba(37,211,102,0.35);">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.553 4.12 1.52 5.857L.057 23.534a.5.5 0 00.61.61l5.677-1.463A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.586l-.386-.232-3.364.867.884-3.364-.232-.386A9.94 9.94 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            WhatsApp
+          </a>
+          <a href="https://t.me/Sapippix" class="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 rounded-full btn-neon-cyan text-neon-cyan font-semibold text-sm tracking-wide">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+            Telegram
+          </a>
+          <a href="mailto:fedesapuppo@hotmail.com?subject=Quiero%20saber%20m%C3%A1s%20sobre%20Hermes%20Agent" class="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 rounded-full border border-white/10 text-ice/70 text-sm font-medium hover:border-neon-pink/40 hover:text-neon-pink transition-all">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+            Email
+          </a>
+        </div>
+      </div>
+
+      <!-- Visual: cyberpunk portrait + chat mockup. Visible on ALL sizes (mobile-first). -->
+      <div class="reveal order-1 lg:order-2 relative" style="transition-delay:0.15s">
+        <div class="relative mx-auto max-w-md sm:max-w-lg lg:max-w-none">
+          <!-- Ambient neon halo -->
+          <div class="absolute -inset-6 sm:-inset-10 bg-gradient-to-br from-neon-pink/20 via-transparent to-neon-cyan/15 rounded-full blur-3xl pointer-events-none"></div>
+
+          <!-- Cyberpunk Hermes portrait -->
+          <div class="hero-portrait aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] w-full">
+            <!-- TODO: copiar el archivo a /assets/hermes-cyberpunk.jpg -->
+            <img
+              src="assets/hermes-cyberpunk.jpg"
+              alt="Hermes en versión cyberpunk con caduceo de neón en una ciudad lluviosa"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+              onerror="this.parentElement.classList.add('img-missing'); this.style.display='none';"
+            >
+            <div class="scan"></div>
+            <!-- Fallback gradient if image is missing -->
+            <div class="absolute inset-0 -z-10 bg-gradient-to-br from-[#1a0a2a] via-[#0a0a1f] to-[#0a1a2a]"></div>
+            <!-- Caption ribbon -->
+            <div class="absolute left-3 right-3 sm:left-5 sm:right-5 bottom-3 sm:bottom-5 z-10 flex items-center justify-between gap-3">
+              <span class="font-mono text-[10px] sm:text-xs tracking-[0.25em] uppercase text-neon-cyan/90">// HERMES.SYS</span>
+              <span class="font-mono text-[10px] sm:text-xs tracking-[0.25em] uppercase text-neon-pink/90">v2.4 · ONLINE</span>
+            </div>
+          </div>
+
+          <!-- Floating chat mockup overlapping the portrait (peek on mobile, full on desktop) -->
+          <div class="relative -mt-10 sm:-mt-12 mx-auto w-[88%] sm:w-[78%] lg:absolute lg:-bottom-10 lg:-right-6 lg:mt-0 lg:w-72">
+            <div class="cyber-border bg-surface-200/95 backdrop-blur rounded-2xl p-4 sm:p-5 shadow-2xl shadow-black/60">
+              <div class="flex items-center gap-3 mb-4 pb-3 border-b border-white/5">
+                <div class="w-9 h-9 rounded-full bg-gradient-to-br from-neon-pink to-neon-magenta flex items-center justify-center text-white font-display text-base shadow-neon-pink">H</div>
+                <div>
+                  <p class="text-white text-sm font-semibold leading-tight">Hermes Agent</p>
+                  <p class="text-[11px] text-neon-cyan/80 font-mono tracking-wider">en línea</p>
+                </div>
+                <div class="ml-auto flex gap-1">
+                  <span class="w-2 h-2 rounded-full bg-neon-pink/80 animate-pulse"></span>
+                  <span class="w-2 h-2 rounded-full bg-neon-cyan/70 animate-pulse" style="animation-delay:0.4s"></span>
+                </div>
+              </div>
+              <div class="space-y-2.5">
+                <div class="flex justify-end">
+                  <div class="bg-neon-pink/15 text-white text-[13px] sm:text-sm px-3.5 py-2 rounded-2xl rounded-br-md max-w-[85%] border border-neon-pink/25">
+                    🎤 <span class="text-ice/50 italic text-[11px] sm:text-xs">Memo de voz — 0:47</span>
+                  </div>
+                </div>
+                <div class="flex justify-start">
+                  <div class="bg-surface-300 text-ice/85 text-[13px] sm:text-sm px-3.5 py-2 rounded-2xl rounded-bl-md max-w-[88%] leading-snug">
+                    Listo. Te armé el reclamo citando la Ley 19.549 y la Resolución 1523. Te lo mando como PDF.
+                  </div>
+                </div>
+                <div class="flex justify-end">
+                  <div class="bg-neon-pink/15 text-white text-[13px] sm:text-sm px-3.5 py-2 rounded-2xl rounded-br-md border border-neon-pink/25">
+                    Y presenta la DDJJ de abril ante el SIFERE
+                  </div>
+                </div>
+                <div class="flex justify-start">
+                  <div class="bg-surface-300 text-ice/85 text-[13px] sm:text-sm px-3.5 py-2 rounded-2xl rounded-bl-md max-w-[88%] leading-snug">
+                    Ok, te aviso en unos minutos cuando esté presentada 👍
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4 flex items-center gap-2 bg-surface-50/70 rounded-full px-3.5 py-2 border border-neon-cyan/15">
+                <span class="text-ice/25 text-xs sm:text-sm flex-1">Escribí un mensaje...</span>
+                <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-neon-cyan/20 flex items-center justify-center">
+                  <svg class="w-3.5 h-3.5 text-neon-cyan" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="funciones" class="relative py-20 sm:py-24 lg:py-32 overflow-hidden">
+    <div class="absolute inset-0 cyber-grid opacity-30 pointer-events-none"></div>
+    <div class="relative max-w-6xl mx-auto px-5 sm:px-6">
+      <div class="reveal text-center mb-12 sm:mb-16">
+        <p class="text-neon-cyan text-[11px] sm:text-xs font-mono font-semibold tracking-[0.25em] uppercase mb-4">// Qué puede hacer por vos</p>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-white">Un empleado que nunca<br><span class="neon-pink italic">se toma el día</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4 sm:gap-5 stagger">
+        <!-- Card 1 -->
+        <div class="reveal card-lift bg-surface-100/80 border border-neon-pink/15 rounded-2xl p-6 sm:p-8">
+          <div class="w-12 h-12 rounded-xl bg-neon-pink/10 border border-neon-pink/25 flex items-center justify-center mb-5 shadow-neon-pink">
+            <svg class="w-6 h-6 text-neon-pink" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"/></svg>
+          </div>
+          <h3 class="text-white text-lg font-semibold mb-2">Vive en Telegram</h3>
+          <p class="text-ice/55 leading-relaxed">Mandale un texto o un audio desde el celular, como si hablaras con un colega. Sin apps nuevas, sin pantallas complicadas. Le dictás lo que necesitás y listo.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="reveal card-lift bg-surface-100/80 border border-neon-cyan/15 rounded-2xl p-6 sm:p-8">
+          <div class="w-12 h-12 rounded-xl bg-neon-cyan/10 border border-neon-cyan/25 flex items-center justify-center mb-5 shadow-neon-cyan">
+            <svg class="w-6 h-6 text-neon-cyan" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+          </div>
+          <h3 class="text-white text-lg font-semibold mb-2">Redacta documentos con criterio</h3>
+          <p class="text-ice/55 leading-relaxed">Dale leyes, reglamentos y antecedentes, y te redacta un reclamo administrativo, una nota formal o una carta documento. Conoce la normativa que le cargues y la aplica.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="reveal card-lift bg-surface-100/80 border border-neon-pink/15 rounded-2xl p-6 sm:p-8">
+          <div class="w-12 h-12 rounded-xl bg-neon-pink/10 border border-neon-pink/25 flex items-center justify-center mb-5 shadow-neon-pink">
+            <svg class="w-6 h-6 text-neon-pink" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z"/></svg>
+          </div>
+          <h3 class="text-white text-lg font-semibold mb-2">Podcast a tu medida</h3>
+          <p class="text-ice/55 leading-relaxed">Todas las mañanas te llega un audio con lo que vos elegís: política argentina, geopolítica, mercados globales, avances de IA, tu agenda del día. Lo escuchás camino al trabajo.</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="reveal card-lift bg-surface-100/80 border border-neon-cyan/15 rounded-2xl p-6 sm:p-8">
+          <div class="w-12 h-12 rounded-xl bg-neon-cyan/10 border border-neon-cyan/25 flex items-center justify-center mb-5 shadow-neon-cyan">
+            <svg class="w-6 h-6 text-neon-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18V5"/><path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"/><path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"/><path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"/><path d="M18 18a4 4 0 0 0 2-7.464"/><path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"/><path d="M6 18a4 4 0 0 1-2-7.464"/><path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"/></svg>
+          </div>
+          <h3 class="text-white text-lg font-semibold mb-2">Aprende de vos</h3>
+          <p class="text-ice/55 leading-relaxed">Recuerda tus clientes, tus preferencias, tu forma de hablar. Le decís una vez cómo querés las cosas y no te lo vuelve a preguntar. Cuanto más lo usás, mejor te entiende.</p>
+        </div>
+      </div>
+
+      <!-- Use cases strip -->
+      <div class="reveal mt-12 sm:mt-16 cyber-border bg-surface-200/60 rounded-2xl p-6 sm:p-8 lg:p-10">
+        <h3 class="text-white text-base sm:text-lg font-semibold mb-6 text-center font-mono tracking-[0.18em] uppercase">// Casos de uso reales</h3>
+        <div class="grid sm:grid-cols-3 gap-6 text-sm">
+          <div>
+            <p class="text-neon-pink font-semibold mb-2">Contadores</p>
+            <p class="text-ice/50 leading-relaxed">Declaración jurada multiconvenio (SIFERE) todos los meses. Le pasás los datos por Telegram y te devuelve el formulario listo para presentar.</p>
+          </div>
+          <div>
+            <p class="text-neon-cyan font-semibold mb-2">Abogados</p>
+            <p class="text-ice/50 leading-relaxed">Cargale las leyes y reglamentos que aplican a tu caso. Dictale los hechos por audio y te arma el reclamo administrativo citando la normativa correcta.</p>
+          </div>
+          <div>
+            <p class="text-neon-pink font-semibold mb-2">Comerciantes</p>
+            <p class="text-ice/50 leading-relaxed">Resumen diario de emails de proveedores, seguimiento de pedidos, recordatorios de vencimientos. Todo desde Telegram.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="py-20 sm:py-24 lg:py-32 bg-surface-100/50 relative overflow-hidden">
+    <div class="absolute inset-0 cyber-grid opacity-25 pointer-events-none"></div>
+    <div class="relative max-w-4xl mx-auto px-5 sm:px-6">
+      <div class="reveal text-center mb-14 sm:mb-20">
+        <p class="text-neon-cyan text-[11px] sm:text-xs font-mono font-semibold tracking-[0.25em] uppercase mb-4">// Proceso</p>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-white">Cómo <span class="neon-pink italic">funciona</span></h2>
+      </div>
+      <div class="relative">
+        <!-- Vertical connector -->
+        <div class="absolute left-6 sm:left-8 top-2 bottom-2 w-0.5 step-line"></div>
+        <div class="space-y-10 sm:space-y-14">
+          <!-- Step 1 -->
+          <div class="reveal relative flex items-start gap-5 sm:gap-8 lg:gap-12">
+            <div class="relative z-10 flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-surface-200 border border-neon-pink/40 flex items-center justify-center shadow-neon-pink">
+              <span class="font-display text-xl sm:text-2xl neon-pink">1</span>
+            </div>
+            <div class="pt-1.5 sm:pt-2">
+              <h3 class="text-white text-lg sm:text-xl font-semibold mb-1.5 sm:mb-2">Llamada de descubrimiento</h3>
+              <p class="text-ice/55 leading-relaxed text-sm sm:text-base">30 minutos para entender tus necesidades: qué email usás, cómo preferís comunicarte, qué tareas te comen el día.</p>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="reveal relative flex items-start gap-5 sm:gap-8 lg:gap-12">
+            <div class="relative z-10 flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-surface-200 border border-neon-cyan/40 flex items-center justify-center shadow-neon-cyan">
+              <span class="font-display text-xl sm:text-2xl neon-cyan">2</span>
+            </div>
+            <div class="pt-1.5 sm:pt-2">
+              <h3 class="text-white text-lg sm:text-xl font-semibold mb-1.5 sm:mb-2">Setup</h3>
+              <p class="text-ice/55 leading-relaxed text-sm sm:text-base">Configuramos tu instancia dedicada, conectamos tus cuentas de email y calendario, y personalizamos la identidad del agente.</p>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="reveal relative flex items-start gap-5 sm:gap-8 lg:gap-12">
+            <div class="relative z-10 flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-surface-200 border border-neon-pink/40 flex items-center justify-center shadow-neon-pink">
+              <span class="font-display text-xl sm:text-2xl neon-pink">3</span>
+            </div>
+            <div class="pt-1.5 sm:pt-2">
+              <h3 class="text-white text-lg sm:text-xl font-semibold mb-1.5 sm:mb-2">Estás en línea</h3>
+              <p class="text-ice/55 leading-relaxed text-sm sm:text-base">Abrís Telegram y tu asistente ya está ahí. Desde el primer día tenés briefings matutinos, resúmenes de email y un bot que aprende de vos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="precios" class="py-20 sm:py-24 lg:py-32 relative overflow-hidden">
+    <div class="absolute inset-0 hero-glow opacity-40 pointer-events-none"></div>
+    <div class="relative max-w-5xl mx-auto px-5 sm:px-6">
+      <div class="reveal text-center mb-12 sm:mb-16">
+        <p class="text-neon-cyan text-[11px] sm:text-xs font-mono font-semibold tracking-[0.25em] uppercase mb-4">// Precios</p>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-white">Simple y <span class="neon-pink italic">transparente</span></h2>
+        <p class="text-ice/55 mt-4 text-base sm:text-lg">Instalación: <span class="text-white font-semibold">USD 500</span> &mdash; después, elegí tu plan mensual.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-5 sm:gap-6 max-w-3xl mx-auto">
+        <!-- Base -->
+        <div class="reveal card-lift bg-surface-100/80 border border-neon-cyan/15 rounded-2xl p-6 sm:p-8">
+          <p class="text-[11px] font-mono font-semibold text-ice/45 uppercase tracking-[0.22em] mb-1">// Plan</p>
+          <h3 class="text-white text-2xl font-semibold mb-6">Base</h3>
+          <div class="flex items-baseline gap-1 mb-7 sm:mb-8">
+            <span class="font-display text-5xl text-white">$50</span>
+            <span class="text-ice/45 text-sm">USD/mes</span>
+          </div>
+          <ul class="space-y-3 text-sm text-ice/60 mb-7 sm:mb-8">
+            <li class="flex gap-3"><span class="text-neon-cyan mt-0.5">&#10003;</span> Telegram: texto y audios</li>
+            <li class="flex gap-3"><span class="text-neon-cyan mt-0.5">&#10003;</span> USD 10 de uso de IA incluido</li>
+            <li class="flex gap-3"><span class="text-neon-cyan mt-0.5">&#10003;</span> Busca información en la web</li>
+            <li class="flex gap-3"><span class="text-neon-cyan mt-0.5">&#10003;</span> Recuerda todo entre conversaciones</li>
+            <li class="flex gap-3"><span class="text-neon-cyan mt-0.5">&#10003;</span> Respuestas en texto</li>
+            <li class="flex gap-3"><span class="text-neon-cyan mt-0.5">&#10003;</span> 30 min/mes de soporte</li>
+          </ul>
+          <div class="flex flex-col sm:flex-row gap-2">
+            <a href="https://wa.me/543547468121?text=Hola%2C%20quiero%20contratar%20el%20Plan%20Base" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full border border-neon-cyan/25 text-neon-cyan/90 text-sm font-medium hover:border-neon-cyan/60 hover:shadow-neon-cyan transition-all">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.553 4.12 1.52 5.857L.057 23.534a.5.5 0 00.61.61l5.677-1.463A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.586l-.386-.232-3.364.867.884-3.364-.232-.386A9.94 9.94 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> WhatsApp
+            </a>
+            <a href="mailto:fedesapuppo@hotmail.com?subject=Quiero%20contratar%20Hermes%20Agent%20%E2%80%94%20Plan%20Base" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full border border-white/10 text-ice/70 text-sm font-medium hover:border-neon-pink/40 hover:text-neon-pink transition-all">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg> Email
+            </a>
+          </div>
+        </div>
+        <!-- Pro -->
+        <div class="reveal price-glow bg-surface-100/90 rounded-2xl p-6 sm:p-8" style="transition-delay:0.1s">
+          <div class="flex items-center gap-3 mb-1">
+            <p class="text-[11px] font-mono font-semibold neon-pink uppercase tracking-[0.22em]">// Plan</p>
+            <span class="text-[10px] font-semibold tracking-wider uppercase bg-neon-pink/20 text-neon-pink border border-neon-pink/40 px-2.5 py-0.5 rounded-full shadow-neon-pink">Popular</span>
+          </div>
+          <h3 class="text-white text-2xl font-semibold mb-6">Pro</h3>
+          <div class="flex items-baseline gap-1 mb-7 sm:mb-8">
+            <span class="font-display text-5xl text-white">$90</span>
+            <span class="text-ice/45 text-sm">USD/mes</span>
+          </div>
+          <ul class="space-y-3 text-sm text-ice/60 mb-7 sm:mb-8">
+            <li class="flex gap-3"><span class="text-neon-pink mt-0.5">&#10003;</span> Todo lo del plan Base</li>
+            <li class="flex gap-3"><span class="text-neon-pink mt-0.5">&#10003;</span> Lee y resume tu email (Gmail u Outlook)</li>
+            <li class="flex gap-3"><span class="text-neon-pink mt-0.5">&#10003;</span> USD 25 de uso de IA incluido</li>
+            <li class="flex gap-3"><span class="text-neon-pink mt-0.5">&#10003;</span> Elegís la voz del asistente</li>
+            <li class="flex gap-3"><span class="text-neon-pink mt-0.5">&#10003;</span> 1 hora/mes de soporte</li>
+            <li class="flex gap-3"><span class="text-neon-pink mt-0.5">&#10003;</span> Briefing matutino con audio premium</li>
+          </ul>
+          <div class="flex flex-col sm:flex-row gap-2">
+            <a href="https://wa.me/543547468121?text=Hola%2C%20quiero%20contratar%20el%20Plan%20Pro" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-[#25D366] text-white text-sm font-semibold hover:bg-[#20bd5a] transition-all" style="box-shadow: 0 6px 24px -8px rgba(37,211,102,0.55);">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.553 4.12 1.52 5.857L.057 23.534a.5.5 0 00.61.61l5.677-1.463A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.586l-.386-.232-3.364.867.884-3.364-.232-.386A9.94 9.94 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> WhatsApp
+            </a>
+            <a href="mailto:fedesapuppo@hotmail.com?subject=Quiero%20contratar%20Hermes%20Agent%20%E2%80%94%20Plan%20Pro" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full btn-neon-pink text-white text-sm font-semibold">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg> Email
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 sm:py-24 lg:py-32 bg-surface-100/50 relative overflow-hidden">
+    <div class="absolute inset-0 cyber-grid opacity-25 pointer-events-none"></div>
+    <div class="relative max-w-3xl mx-auto px-5 sm:px-6">
+      <div class="reveal text-center mb-12 sm:mb-16">
+        <p class="text-neon-cyan text-[11px] sm:text-xs font-mono font-semibold tracking-[0.25em] uppercase mb-4">// FAQ</p>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-white">Preguntas <span class="neon-pink italic">frecuentes</span></h2>
+      </div>
+      <div class="reveal space-y-3">
+        <div class="border border-neon-pink/15 hover:border-neon-pink/30 rounded-xl overflow-hidden bg-surface-100/50 transition-colors">
+          <button onclick="toggleFaq(this)" class="w-full flex items-start sm:items-center justify-between gap-3 px-5 sm:px-6 py-4 sm:py-5 text-left text-white text-sm font-medium hover:bg-white/[0.03] transition-colors">
+            <span>¿Pueden usar el agente varias personas de mi equipo?</span>
+            <svg class="w-4 h-4 text-neon-pink/60 transition-transform faq-icon flex-shrink-0 mt-0.5 sm:mt-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div><p class="px-5 sm:px-6 pb-5 text-sm text-ice/55 leading-relaxed">Cada instancia es personal: un usuario, un bot. Si tu equipo necesita acceso, ofrecemos despliegues individuales con descuento por grupo.</p></div>
+          </div>
+        </div>
+        <div class="border border-neon-pink/15 hover:border-neon-pink/30 rounded-xl overflow-hidden bg-surface-100/50 transition-colors">
+          <button onclick="toggleFaq(this)" class="w-full flex items-start sm:items-center justify-between gap-3 px-5 sm:px-6 py-4 sm:py-5 text-left text-white text-sm font-medium hover:bg-white/[0.03] transition-colors">
+            <span>¿Cumplen con HIPAA, SOC2 u otras certificaciones?</span>
+            <svg class="w-4 h-4 text-neon-pink/60 transition-transform faq-icon flex-shrink-0 mt-0.5 sm:mt-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div><p class="px-5 sm:px-6 pb-5 text-sm text-ice/55 leading-relaxed">No ofrecemos certificaciones de cumplimiento. La arquitectura es single-tenant y tus datos están aislados, pero no es apta para datos médicos o financieros regulados.</p></div>
+          </div>
+        </div>
+        <div class="border border-neon-pink/15 hover:border-neon-pink/30 rounded-xl overflow-hidden bg-surface-100/50 transition-colors">
+          <button onclick="toggleFaq(this)" class="w-full flex items-start sm:items-center justify-between gap-3 px-5 sm:px-6 py-4 sm:py-5 text-left text-white text-sm font-medium hover:bg-white/[0.03] transition-colors">
+            <span>¿Puede hacer llamadas telefónicas?</span>
+            <svg class="w-4 h-4 text-neon-pink/60 transition-transform faq-icon flex-shrink-0 mt-0.5 sm:mt-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div><p class="px-5 sm:px-6 pb-5 text-sm text-ice/55 leading-relaxed">No. La interacción es por texto y voz dentro de Telegram. Los agentes de llamadas telefónicas son un producto distinto con costos diferentes.</p></div>
+          </div>
+        </div>
+        <div class="border border-neon-pink/15 hover:border-neon-pink/30 rounded-xl overflow-hidden bg-surface-100/50 transition-colors">
+          <button onclick="toggleFaq(this)" class="w-full flex items-start sm:items-center justify-between gap-3 px-5 sm:px-6 py-4 sm:py-5 text-left text-white text-sm font-medium hover:bg-white/[0.03] transition-colors">
+            <span>¿Puedo elegir qué modelo de IA usa?</span>
+            <svg class="w-4 h-4 text-neon-pink/60 transition-transform faq-icon flex-shrink-0 mt-0.5 sm:mt-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div><p class="px-5 sm:px-6 pb-5 text-sm text-ice/55 leading-relaxed">Cada instancia viene con un modelo por defecto optimizado para costo y calidad. Podés cambiar el modelo por sesión desde Telegram, pero el consumo corre por tu cuota incluida.</p></div>
+          </div>
+        </div>
+        <div class="border border-neon-pink/15 hover:border-neon-pink/30 rounded-xl overflow-hidden bg-surface-100/50 transition-colors">
+          <button onclick="toggleFaq(this)" class="w-full flex items-start sm:items-center justify-between gap-3 px-5 sm:px-6 py-4 sm:py-5 text-left text-white text-sm font-medium hover:bg-white/[0.03] transition-colors">
+            <span>¿En qué región se almacenan mis datos?</span>
+            <svg class="w-4 h-4 text-neon-pink/60 transition-transform faq-icon flex-shrink-0 mt-0.5 sm:mt-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div><p class="px-5 sm:px-6 pb-5 text-sm text-ice/55 leading-relaxed">Tus datos se almacenan en un servidor en São Paulo, Brasil. No ofrecemos garantías de residencia de datos más allá de esa ubicación.</p></div>
+          </div>
+        </div>
+        <div class="border border-neon-pink/15 hover:border-neon-pink/30 rounded-xl overflow-hidden bg-surface-100/50 transition-colors">
+          <button onclick="toggleFaq(this)" class="w-full flex items-start sm:items-center justify-between gap-3 px-5 sm:px-6 py-4 sm:py-5 text-left text-white text-sm font-medium hover:bg-white/[0.03] transition-colors">
+            <span>¿Qué pasa con mis datos si cancelo?</span>
+            <svg class="w-4 h-4 text-neon-pink/60 transition-transform faq-icon flex-shrink-0 mt-0.5 sm:mt-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div><p class="px-5 sm:px-6 pb-5 text-sm text-ice/55 leading-relaxed">Exportamos un backup comprimido con todas tus sesiones, memorias y configuraciones. Después, la app y el volumen se destruyen. Tus datos son tuyos.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 sm:py-24 lg:py-32 relative overflow-hidden">
+    <div class="absolute inset-0 hero-glow opacity-80"></div>
+    <div class="absolute inset-0 cyber-grid opacity-30 pointer-events-none"></div>
+    <div class="relative max-w-3xl mx-auto px-5 sm:px-6 text-center reveal">
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-6xl text-white mb-5 sm:mb-6 leading-[1.05]">
+        ¿Listo para tener tu<br><span class="neon-pink italic">asistente digital</span>?
+      </h2>
+      <p class="text-ice/55 text-base sm:text-lg mb-8 sm:mb-10 max-w-lg mx-auto">Escribinos y en menos de una semana tenés tu agente configurado y funcionando en Telegram.</p>
+      <div class="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 sm:gap-4">
+        <a href="https://wa.me/543547468121?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Hermes%20Agent" class="inline-flex items-center justify-center gap-2.5 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full bg-[#25D366] text-white font-semibold tracking-wide hover:bg-[#20bd5a] transition-all text-base sm:text-lg" style="box-shadow: 0 10px 32px -8px rgba(37,211,102,0.55), 0 0 28px rgba(37,211,102,0.35);">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.553 4.12 1.52 5.857L.057 23.534a.5.5 0 00.61.61l5.677-1.463A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.586l-.386-.232-3.364.867.884-3.364-.232-.386A9.94 9.94 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          WhatsApp
+        </a>
+        <a href="mailto:fedesapuppo@hotmail.com?subject=Quiero%20saber%20m%C3%A1s%20sobre%20Hermes%20Agent" class="inline-flex items-center justify-center gap-2.5 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full btn-neon-pink text-white font-semibold tracking-wide text-base sm:text-lg">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+          Email
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-neon-pink/15 py-8">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 flex flex-col items-center gap-6">
+      <a href="https://fedesapuppo.com/es/blog/sergio-pocket.html" target="_blank" rel="noopener" class="group inline-flex items-center gap-3 px-5 sm:px-6 py-3 rounded-full border border-neon-pink/40 bg-neon-pink/5 text-ice hover:bg-neon-pink/15 hover:border-neon-pink/70 hover:shadow-neon-pink transition-all text-sm sm:text-base">
+        <span class="font-mono uppercase tracking-widest text-[10px] sm:text-xs text-neon-pink">Cómo empezó esto</span>
+        <span class="h-4 w-px bg-neon-pink/40"></span>
+        <span class="font-display italic neon-pink">Sergio va de Copiloto</span>
+        <svg class="w-4 h-4 text-neon-pink transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6l6 6m0 0l-6 6m6-6H4.5"/></svg>
+      </a>
+    <div class="w-full flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ice/40">
+      <p class="font-mono tracking-wider">Powered by <a href="https://github.com/NousResearch/hermes-agent" class="text-ice/60 hover:text-neon-pink transition-colors underline underline-offset-2">hermes-agent</a> (open source)</p>
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+        <a href="contrato.html" class="hover:text-neon-pink transition-colors">Contrato</a>
+        <a href="https://wa.me/543547468121" class="inline-flex items-center gap-1 hover:text-[#25D366] transition-colors"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.553 4.12 1.52 5.857L.057 23.534a.5.5 0 00.61.61l5.677-1.463A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.586l-.386-.232-3.364.867.884-3.364-.232-.386A9.94 9.94 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> WhatsApp</a>
+        <a href="mailto:fedesapuppo@hotmail.com" class="inline-flex items-center gap-1 hover:text-neon-pink transition-colors"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg> Email</a>
+      </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // FAQ toggle
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector('.faq-icon');
+      const isOpen = answer.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-answer.open').forEach(a => { a.classList.remove('open'); a.closest('div').querySelector('.faq-icon').style.transform = ''; });
+      if (!isOpen) { answer.classList.add('open'); icon.style.transform = 'rotate(180deg)'; }
+    }
+
+    // Mobile menu
+    document.getElementById('mobile-toggle').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+    document.querySelectorAll('#mobile-menu a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('mobile-menu').classList.add('hidden'));
+    });
+  </script>
+</body>
+</html>

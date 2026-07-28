@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://fedesapuppo.com/</loc>
+    <lastmod>2026-07-11</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://fedesapuppo.com/blog/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedesapuppo.com/blog/pretor-team-of-agents.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fedesapuppo.com/blog/pretor-team-of-agents.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fedesapuppo.com/es/blog/pretor-team-of-agents.html"/>
+  </url>
+  <url>
+    <loc>https://fedesapuppo.com/blog/sergio-pocket.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fedesapuppo.com/blog/sergio-pocket.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fedesapuppo.com/es/blog/sergio-pocket.html"/>
+  </url>
+  <url>
+    <loc>https://fedesapuppo.com/blog/evil-seed-bottom-up.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fedesapuppo.com/blog/noticed-push-journey.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fedesapuppo.com/blog/omarchy-t2-journey.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fedesapuppo.com/blog/rm-rf-coresimulator.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://fedesapuppo.com/es/blog/pretor-team-of-agents.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fedesapuppo.com/blog/pretor-team-of-agents.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fedesapuppo.com/es/blog/pretor-team-of-agents.html"/>
+  </url>
+  <url>
+    <loc>https://fedesapuppo.com/es/blog/sergio-pocket.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fedesapuppo.com/blog/sergio-pocket.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fedesapuppo.com/es/blog/sergio-pocket.html"/>
+  </url>
+
+  <url>
+    <loc>https://fedesapuppo.com/hermes/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fedesapuppo.com/hermes/contrato.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://fedesapuppo.com/argpt/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fedesapuppo.com/contrarian-trifecta/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://fedesapuppo.com/propiedades/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fedesapuppo.com/propiedades/casa-alta-gracia.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fedesapuppo.com/propiedades/terreno-guemes.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <priority>0.5</priority>
+  </url>
+</urlset>

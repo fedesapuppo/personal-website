@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>Contrarian Trifecta Screener</title>
+  <meta name="description" content="Find undervalued stocks using the Contrarian Trifecta strategy — low P/E, high dividend yield, and insider buying.">
+  <meta property="og:title" content="Contrarian Trifecta Screener">
+  <meta property="og:description" content="Find undervalued stocks using the Contrarian Trifecta strategy — low P/E, high dividend yield, and insider buying.">
+  <meta property="og:image" content="https://fedesapuppo.com/contrarian-trifecta/logo.png">
+  <meta property="og:url" content="https://fedesapuppo.com/contrarian-trifecta/">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://fedesapuppo.com/contrarian-trifecta/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://fedesapuppo.com/contrarian-trifecta/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f2efe9;
+      --bg-surface: #eae7e0;
+      --text: #2c2a26;
+      --text-muted: #6b6860;
+      --border: #d4d0c8;
+      --accent: #9e7c1a;
+      --accent-light: rgba(158, 124, 26, 0.12);
+      --accent-dark: #7a5f14;
+      --font-serif: 'DM Serif Display', Georgia, serif;
+      --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'SF Mono', 'JetBrains Mono', 'Cascadia Code', Menlo, Consolas, monospace;
+      --max-width: 960px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0d0f11;
+      --bg-surface: #141618;
+      --text: #d8d4cf;
+      --text-muted: #706b63;
+      --border: #2a2725;
+      --accent: #c9a84c;
+      --accent-light: rgba(201, 168, 76, 0.12);
+      --accent-dark: #e0bd5a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px 24px 0;
+    }
+    .header__brand {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+    }
+    .header__nav a {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 8px 16px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+    .header__nav a:hover,
+    .header__nav button:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* ── Sections ── */
+    section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding-top: 80px;
+      padding-bottom: 64px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero__sub {
+      font-size: 19px;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 40px;
+      line-height: 1.65;
+    }
+    .btn-cta {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--bg);
+      background: var(--accent);
+      padding: 14px 32px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-cta:hover { background: var(--accent-dark); }
+
+    /* ── Pillars ── */
+    .pillars { padding-top: 64px; padding-bottom: 64px; }
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(24px, 3.5vw, 36px);
+      margin-bottom: 16px;
+    }
+    .section-intro {
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      font-size: 17px;
+    }
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .pillar-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 28px 24px;
+    }
+    .pillar-card__weight {
+      font-family: var(--font-mono);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .pillar-card__name {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    .pillar-card p {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Contrarian vs Momentum ── */
+    .comparison { padding-top: 64px; padding-bottom: 64px; }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-top: 40px;
+    }
+    .comparison-col {
+      padding: 32px 28px;
+    }
+    .comparison-col:first-child {
+      background: var(--bg-surface);
+      border-right: 1px solid var(--border);
+    }
+    .comparison-col h3 {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .comparison-col .badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 3px;
+      margin-bottom: 16px;
+    }
+    .badge--primary {
+      background: var(--accent-light);
+      color: var(--accent);
+    }
+    .badge--secondary {
+      background: rgba(107, 104, 96, 0.12);
+      color: var(--text-muted);
+    }
+    .comparison-col ul {
+      list-style: none;
+      padding: 0;
+    }
+    .comparison-col li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .comparison-col li:last-child { border-bottom: none; }
+    .comparison-note {
+      margin-top: 24px;
+      font-size: 15px;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    /* ── Personalized ── */
+    .personalized { padding-top: 64px; padding-bottom: 64px; }
+    .persona-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .persona-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 28px 24px;
+    }
+    .persona-card__icon {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    .persona-card h3 {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .persona-card p {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Compounding ── */
+    .compounding { padding-top: 64px; padding-bottom: 64px; }
+    .compounding__editorial {
+      margin-bottom: 40px;
+    }
+    .compounding__editorial p {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      font-size: 17px;
+    }
+
+    /* Calculator */
+    .calculator {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px;
+    }
+    .calc-controls {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 32px;
+      margin-bottom: 24px;
+    }
+    .calc-field label {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .calc-field label .val {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .calc-field input[type="range"] {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      outline: none;
+    }
+    .calc-field input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+    }
+    .calc-field input[type="range"]::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      border: none;
+    }
+    .freq-toggle {
+      display: flex;
+      gap: 0;
+      margin-bottom: 24px;
+    }
+    .freq-btn {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      padding: 8px 16px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .freq-btn:first-child { border-radius: 4px 0 0 4px; }
+    .freq-btn:last-child { border-radius: 0 4px 4px 0; }
+    .freq-btn + .freq-btn { border-left: none; }
+    .freq-btn.active {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+    }
+    .freq-btn.active + .freq-btn { border-left-color: var(--accent); }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .stat-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 16px;
+      text-align: center;
+    }
+    .stat-box__label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .stat-box__value {
+      font-family: var(--font-mono);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .stat-box--accent .stat-box__value { color: var(--accent); }
+    .chart-wrap {
+      height: 260px;
+      position: relative;
+    }
+
+    /* ── Equities note ── */
+    /* ── Who We Are ── */
+    .who-we-are {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+    .who-we-are__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-top: 32px;
+    }
+    .who-we-are__card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px;
+    }
+    .who-we-are__card h3 {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    .who-we-are__card p {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .who-we-are__stat {
+      font-family: var(--font-mono);
+      font-size: 36px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .equities-note {
+      margin-top: 32px;
+      padding: 24px 28px;
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+    }
+    .equities-note h4 {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .equities-note p {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Final CTA ── */
+    .final-cta {
+      padding-top: 64px;
+      padding-bottom: 80px;
+      text-align: center;
+    }
+    .final-cta h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(24px, 3.5vw, 36px);
+      margin-bottom: 16px;
+    }
+    .final-cta p {
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 32px;
+      font-size: 17px;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      border-top: 1px solid var(--border);
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px;
+      text-align: center;
+    }
+    .footer p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .footer p + p { margin-top: 8px; }
+    .footer a { color: var(--accent); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+
+    .cta-banner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid var(--border);
+    }
+    .cta-banner__tagline {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .pillar-grid, .persona-grid, .stats-grid, .who-we-are__grid { grid-template-columns: 1fr; }
+      .calc-controls { grid-template-columns: 1fr; }
+      .comparison-grid { grid-template-columns: 1fr; }
+      .comparison-col:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+      .hero { padding-top: 48px; padding-bottom: 40px; }
+      section { padding-top: 40px; padding-bottom: 40px; }
+      .header { padding: 16px 16px 0; gap: 12px; }
+      .header__brand { font-size: 11px; min-width: 0; }
+      .header__brand img { height: 36px !important; margin-right: 8px !important; }
+      .header__nav button { padding: 6px 10px; font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header__brand"><img src="logo.png" alt="Contrarian Trifecta" style="height:56px;vertical-align:middle;margin-right:12px">Contrarian Trifecta</div>
+    <nav class="header__nav" style="display:flex;gap:8px">
+      <button id="lang-toggle" style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-muted);padding:8px 16px;border:1px solid var(--border);border-radius:4px;background:transparent;cursor:pointer;transition:all 0.2s">ES</button>
+      <button id="theme-toggle" style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-muted);padding:8px 16px;border:1px solid var(--border);border-radius:4px;background:transparent;cursor:pointer;transition:all 0.2s">DARK</button>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>The market rewards <em>patience</em>,<br>not prediction</h1>
+    <p class="hero__sub">
+      A three-pillar scoring system that identifies quality businesses trading below intrinsic value.
+      We find quality businesses unfairly punished by the market. You decide what to own.
+    </p>
+    <a href="app.html" class="btn-cta">Enter the Screener</a>
+  </section>
+
+  <!-- Three Pillars -->
+  <section class="pillars">
+    <p class="section-label">How We Score</p>
+    <h2 class="section-title">Three pillars, one conviction score</h2>
+    <p class="section-intro">
+      Every stock is evaluated across fundamentals, market sentiment, and technical positioning.
+      The weights reflect a simple belief: what a business <em>is</em> matters more than what the crowd <em>feels</em> about it.
+    </p>
+    <div class="pillar-grid">
+      <div class="pillar-card">
+        <div class="pillar-card__weight">50%</div>
+        <div class="pillar-card__name">Fundamental</div>
+        <p>Sector-relative valuation, earnings quality, balance sheet strength, and cash generation. We compare each stock against its own sector medians, not the broad market.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-card__weight">35%</div>
+        <div class="pillar-card__name">Sentiment</div>
+        <p>Analyst ratings, institutional activity, and AI-driven narrative analysis. When sentiment is irrationally negative on a strong business, the opportunity is real.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-card__weight">15%</div>
+        <div class="pillar-card__name">Technical</div>
+        <p>Price relative to moving averages, RSI, and volume patterns. We look for floor signals&mdash;evidence that selling pressure is exhausting itself, not momentum breakouts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contrarian vs Momentum -->
+  <section class="comparison">
+    <p class="section-label">Philosophy</p>
+    <h2 class="section-title">Contrarian vs. momentum</h2>
+    <p class="section-intro">
+      Both approaches work. We lead with contrarian analysis because it aligns with long-term compounding,
+      but we surface momentum signals where they add context.
+    </p>
+    <div class="comparison-grid">
+      <div class="comparison-col">
+        <h3>Contrarian</h3>
+        <span class="badge badge--primary">Our core thesis</span>
+        <ul>
+          <li>Buy when fear is unjustified by fundamentals</li>
+          <li>Hold quality businesses through volatility</li>
+          <li>Wider margin of safety at entry</li>
+          <li>Rewards patience over speed</li>
+          <li>Lower turnover, lower transaction costs</li>
+        </ul>
+      </div>
+      <div class="comparison-col">
+        <h3>Momentum</h3>
+        <span class="badge badge--secondary">Also available</span>
+        <ul>
+          <li>Ride existing trends and market strength</li>
+          <li>Works well in strong bull markets</li>
+          <li>Faster payoff when timing is right</li>
+          <li>Higher turnover, tighter stop-losses needed</li>
+          <li>Risk of buying at peaks in crowded trades</li>
+        </ul>
+      </div>
+    </div>
+    <p class="comparison-note">
+      Most screeners chase what is hot. We find what is undervalued.
+      The distinction matters most in corrections, when momentum portfolios give back gains and contrarian positions begin to recover.
+    </p>
+  </section>
+
+  <!-- Personalized -->
+  <section class="personalized">
+    <p class="section-label">Tailored to You</p>
+    <h2 class="section-title">Data is only half the equation</h2>
+    <p class="section-intro">
+      A screener surfaces opportunities, but the right ones depend on who you are.
+      Your constraints, goals, and temperament determine which signals matter — and that requires a conversation, not just a dashboard.
+    </p>
+    <div class="persona-grid">
+      <div class="persona-card">
+        <div class="persona-card__icon" aria-hidden="true">&#9878;</div>
+        <h3>Risk tolerance</h3>
+        <p>A conservative investor and an aggressive one looking at the same stock need different answers. Calibrating scores to your profile is where advisory begins.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-card__icon" aria-hidden="true">&#9719;</div>
+        <h3>Time horizon</h3>
+        <p>A five-year horizon can stomach drawdowns that would ruin a six-month thesis. Knowing which applies to you changes everything.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-card__icon" aria-hidden="true">&#8858;</div>
+        <h3>Investment objective</h3>
+        <p>Growth, income, or capital preservation — each goal reshapes which opportunities matter. A retiree seeking dividends and a young investor chasing compounding need entirely different picks from the same data.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who We Are -->
+  <section class="who-we-are">
+    <p class="section-label">Who We Are</p>
+    <h2 class="section-title">Stock picking advisory, powered by AI</h2>
+    <p class="section-intro">
+      We have been advising on equity selection since 2020. When AI became available, we automated the
+      fundamental, technical, and sentiment analysis we used to do manually &mdash; and made it better.
+    </p>
+    <div class="who-we-are__grid">
+      <div class="who-we-are__card">
+        <div class="who-we-are__stat">50 &rarr; 800+</div>
+        <h3>From manual to scalable</h3>
+        <p>
+          Before, serious analysis meant covering around 50 stocks. Now we apply the same rigor
+          across 800+ companies, surfacing opportunities in smaller names that used to be overlooked.
+        </p>
+      </div>
+      <div class="who-we-are__card">
+        <div class="who-we-are__stat">3 pillars</div>
+        <h3>Same method, sharper execution</h3>
+        <p>
+          The three-pillar framework &mdash; fundamentals, sentiment, technicals &mdash; is the same one we built
+          by hand. Software and AI run it faster, more consistently, and without the blind spots that
+          come with human fatigue.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compounding -->
+  <section class="compounding">
+    <p class="section-label">The Math</p>
+    <h2 class="section-title">The power of compounding</h2>
+    <div class="compounding__editorial">
+      <p>
+        Einstein may not have called compound interest the eighth wonder of the world,
+        but the math is unambiguous. A patient investor contributing steadily to quality equities
+        will, over decades, accumulate wealth that dwarfs what timing the market could deliver.
+      </p>
+      <p>
+        The calculator below is not a projection. It is arithmetic.
+        Adjust the inputs to match your situation and see what consistency produces.
+      </p>
+    </div>
+
+    <div class="calculator">
+      <div class="calc-controls">
+        <div class="calc-field">
+          <label>Initial investment <span class="val" id="lbl-init">$10,000</span></label>
+          <input type="range" id="sl-init" min="1000" max="50000" step="1000" value="10000">
+        </div>
+        <div class="calc-field">
+          <label>Annual return <span class="val" id="lbl-rate">13.0%</span></label>
+          <input type="range" id="sl-rate" min="1" max="20" step="0.5" value="13">
+        </div>
+        <div class="calc-field">
+          <label>Time period <span class="val" id="lbl-years">30 years</span></label>
+          <input type="range" id="sl-years" min="10" max="50" step="1" value="30">
+        </div>
+        <div class="calc-field">
+          <label>Monthly contribution <span class="val" id="lbl-monthly">$200</span></label>
+          <input type="range" id="sl-monthly" min="0" max="2000" step="50" value="200">
+        </div>
+      </div>
+
+      <div class="freq-toggle" role="group" aria-label="Compounding frequency">
+        <button class="freq-btn active" data-freq="12">Monthly</button>
+        <button class="freq-btn" data-freq="4">Quarterly</button>
+        <button class="freq-btn" data-freq="1">Annually</button>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-box__label">Total Invested</div>
+          <div class="stat-box__value" id="stat-invested">$58,000</div>
+        </div>
+        <div class="stat-box stat-box--accent">
+          <div class="stat-box__label">Interest Earned</div>
+          <div class="stat-box__value" id="stat-interest">$46,435</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box__label">Final Balance</div>
+          <div class="stat-box__value" id="stat-balance">$104,435</div>
+        </div>
+      </div>
+
+      <div class="chart-wrap">
+        <canvas id="growth-chart"></canvas>
+      </div>
+    </div>
+
+    <div class="equities-note">
+      <h4>Why we chose equities</h4>
+      <p>
+        We understand every asset class, but after deep study we chose to focus on stock picking
+        advisory since 2020 because it delivers the highest reward for investors willing to be patient.
+        Since 1926, US large-cap equities have returned roughly 10% annualized before inflation,
+        compared to approximately 5% for bonds. The volatility is real, but over any rolling
+        20-year period, stocks have never lost money. Time is on the side of the patient shareholder.
+      </p>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <h2>See what the crowd is missing</h2>
+    <p>
+      The screener runs monthly, scoring every stock in the universe across all three pillars.
+      No sign-up. No paywall. Just the data.
+    </p>
+    <a href="app.html" class="btn-cta">Enter the Screener</a>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <p class="cta-banner__tagline">A screener spots opportunities. An advisor helps you act on them.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p id="landing-disclaimer">
+      This tool is for informational and educational purposes. It does not constitute financial advice or investment recommendations. Consult a professional before making decisions.
+    </p>
+    <p id="landing-attribution">Design &amp; development: Federico Sapuppo | Contact: <a href="mailto:fedesapuppo@hotmail.com">fedesapuppo@hotmail.com</a></p>
+  </footer>
+
+  <script>
+    const fmt = n => n >= 1e6
+      ? '$' + (n / 1e6).toFixed(2) + 'M'
+      : '$' + n.toLocaleString('en-US', { maximumFractionDigits: 0 });
+
+    let freq = 12;
+    let chart;
+
+    function calcGrowth() {
+      const principal = +document.getElementById('sl-init').value;
+      const rate = +document.getElementById('sl-rate').value / 100;
+      const years = +document.getElementById('sl-years').value;
+      const monthly = +document.getElementById('sl-monthly').value;
+
+      const labels = ['Now'];
+      const invested = [principal];
+      const balances = [principal];
+
+      for (let y = 1; y <= years; y++) {
+        labels.push('Yr ' + y);
+        invested.push(principal + monthly * 12 * y);
+
+        const r = rate / freq;
+        const n = freq * y;
+        const bal = principal * Math.pow(1 + r, n)
+            + monthly * (12 / freq) * (Math.pow(1 + r, n) - 1) / r;
+        balances.push(bal);
+      }
+      return { labels, invested, balances };
+    }
+
+    function updateStats(data) {
+      const last = data.balances.length - 1;
+      const totalInvested = data.invested[last];
+      const finalBal = data.balances[last];
+      const interest = finalBal - totalInvested;
+
+      document.getElementById('stat-invested').textContent = fmt(totalInvested);
+      document.getElementById('stat-interest').textContent = fmt(interest);
+      document.getElementById('stat-balance').textContent = fmt(finalBal);
+    }
+
+    function render() {
+      const data = calcGrowth();
+      updateStats(data);
+
+      const cfg = {
+        type: 'line',
+        data: {
+          labels: data.labels,
+          datasets: [
+            {
+              label: 'Total balance',
+              data: data.balances,
+              borderColor: '#9e7c1a',
+              backgroundColor: 'rgba(158, 124, 26, 0.10)',
+              fill: true,
+              tension: 0.35,
+              pointRadius: 0,
+              borderWidth: 2
+            },
+            {
+              label: 'Amount invested',
+              data: data.invested,
+              borderColor: '#b4b2a9',
+              backgroundColor: 'rgba(180, 178, 169, 0.06)',
+              fill: true,
+              tension: 0,
+              pointRadius: 0,
+              borderWidth: 1.5,
+              borderDash: [5, 4]
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { intersect: false, mode: 'index' },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: '#fff',
+              titleColor: '#2c2a26',
+              bodyColor: '#6b6860',
+              borderColor: '#d4d0c8',
+              borderWidth: 1,
+              padding: 12,
+              callbacks: {
+                label: ctx => ctx.dataset.label + ': ' + fmt(ctx.parsed.y)
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { display: false },
+              ticks: {
+                font: { family: "'SF Mono', monospace", size: 10 },
+                color: '#6b6860'
+              }
+            },
+            y: {
+              grid: { color: 'rgba(212, 208, 200, 0.4)' },
+              ticks: {
+                font: { family: "'SF Mono', monospace", size: 10 },
+                color: '#6b6860',
+                callback: v => v >= 1e6 ? (v / 1e6).toFixed(1) + 'M' : v >= 1e3 ? (v / 1e3).toFixed(0) + 'k' : v
+              }
+            }
+          }
+        }
+      };
+
+      if (chart) {
+        chart.data = cfg.data;
+        chart.update();
+      } else {
+        chart = new Chart(document.getElementById('growth-chart'), cfg);
+      }
+    }
+
+    // Slider listeners
+    ['sl-init', 'sl-rate', 'sl-years', 'sl-monthly'].forEach(id => {
+      document.getElementById(id).addEventListener('input', () => {
+        document.getElementById('lbl-init').textContent = '$' + (+document.getElementById('sl-init').value).toLocaleString();
+        document.getElementById('lbl-rate').textContent = (+document.getElementById('sl-rate').value).toFixed(1) + '%';
+        document.getElementById('lbl-years').textContent = document.getElementById('sl-years').value + ' years';
+        document.getElementById('lbl-monthly').textContent = '$' + (+document.getElementById('sl-monthly').value).toLocaleString();
+        render();
+      });
+    });
+
+    // Frequency toggle
+    document.querySelectorAll('.freq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelector('.freq-btn.active').classList.remove('active');
+        btn.classList.add('active');
+        freq = +btn.dataset.freq;
+        render();
+      });
+    });
+
+    // Initial render
+    render();
+
+    // ── i18n ──
+    const LANG_KEY = 'trifecta-lang';
+    const landingText = {
+      en: {
+        'hero.title': 'The market rewards <em>patience</em>,<br>not speculation',
+        'hero.sub': 'A three-pillar scoring system that identifies quality businesses trading below intrinsic value. We find quality businesses unfairly punished by the market. You decide what to own.',
+        'hero.cta': 'Enter the Screener',
+        'pillars.label': 'How We Score',
+        'pillars.title': 'Three pillars, one conviction score',
+        'pillars.intro': 'Every stock is evaluated across fundamentals, market sentiment, and technical positioning. The weights reflect a simple belief: what a business <em>is</em> matters more than what the crowd <em>feels</em> about it.',
+        'pillar.fund.name': 'Fundamental',
+        'pillar.fund.desc': 'Sector-relative valuation, earnings quality, balance sheet strength, and cash generation. We compare each stock against its own sector medians, not the broad market.',
+        'pillar.sent.name': 'Sentiment',
+        'pillar.sent.desc': 'Analyst ratings, institutional activity, and AI-driven narrative analysis. When sentiment is irrationally negative on a strong business, the opportunity is real.',
+        'pillar.tech.name': 'Technical',
+        'pillar.tech.desc': 'Price relative to moving averages, RSI, and volume patterns. We look for floor signals\u2014evidence that selling pressure is exhausting itself, not momentum breakouts.',
+        'comp.label': 'Philosophy',
+        'comp.title': 'Contrarian vs. momentum',
+        'comp.intro': 'Both approaches work. We lead with contrarian analysis because it aligns with long-term compounding, but we surface momentum signals where they add context.',
+        'comp.contrarian': 'Contrarian',
+        'comp.contrarianBadge': 'Our core thesis',
+        'comp.c1': 'Buy when fear is unjustified by fundamentals',
+        'comp.c2': 'Hold quality businesses through volatility',
+        'comp.c3': 'Wider margin of safety at entry',
+        'comp.c4': 'Rewards patience over speed',
+        'comp.c5': 'Lower turnover, lower transaction costs',
+        'comp.momentum': 'Momentum',
+        'comp.momentumBadge': 'Also available',
+        'comp.m1': 'Ride existing trends and market strength',
+        'comp.m2': 'Works well in strong bull markets',
+        'comp.m3': 'Faster payoff when timing is right',
+        'comp.m4': 'Higher turnover, tighter stop-losses needed',
+        'comp.m5': 'Risk of buying at peaks in crowded trades',
+        'comp.note': 'Most screeners chase what is hot. We find what is undervalued. The distinction matters most in corrections, when momentum portfolios give back gains and contrarian positions begin to recover.',
+        'persona.label': 'Tailored to You',
+        'persona.title': 'Data is only half the equation',
+        'persona.intro': 'A screener surfaces opportunities, but the right ones depend on who you are. Your constraints, goals, and temperament determine which signals matter — and that requires a conversation, not just a dashboard.',
+        'persona.risk': 'Risk tolerance',
+        'persona.riskDesc': 'A conservative investor and an aggressive one looking at the same stock need different answers. Calibrating scores to your profile is where advisory begins.',
+        'persona.time': 'Time horizon',
+        'persona.timeDesc': 'A five-year horizon can stomach drawdowns that would ruin a six-month thesis. Knowing which applies to you changes everything.',
+        'persona.vol': 'Investment objective',
+        'persona.volDesc': 'Growth, income, or capital preservation — each goal reshapes which opportunities matter. A retiree seeking dividends and a young investor chasing compounding need entirely different picks from the same data.',
+        'compound.label': 'The Math',
+        'compound.title': 'The power of compounding',
+        'compound.p1': 'Einstein may not have called compound interest the eighth wonder of the world, but the math is unambiguous. A patient investor contributing steadily to quality equities will, over decades, accumulate wealth that dwarfs what timing the market could deliver.',
+        'compound.p2': 'The calculator below is not a projection. It is arithmetic. Adjust the inputs to match your situation and see what consistency produces.',
+        'calc.init': 'Initial investment',
+        'calc.rate': 'Annual return',
+        'calc.years': 'Time period',
+        'calc.monthly': 'Monthly contribution',
+        'calc.freq.monthly': 'Monthly',
+        'calc.freq.quarterly': 'Quarterly',
+        'calc.freq.annually': 'Annually',
+        'calc.invested': 'Total Invested',
+        'calc.interest': 'Interest Earned',
+        'calc.balance': 'Final Balance',
+        'who.label': 'Who We Are',
+        'who.title': 'Stock picking advisory, powered by AI',
+        'who.intro': 'We have been advising on equity selection since 2020. When AI became available, we automated the fundamental, technical, and sentiment analysis we used to do manually \u2014 and made it better.',
+        'who.stat1': '50 \u2192 800+',
+        'who.h1': 'From manual to scalable',
+        'who.p1': 'Before, serious analysis meant covering around 50 stocks. Now we apply the same rigor across 800+ companies, surfacing opportunities in smaller names that used to be overlooked.',
+        'who.stat2': '3 pillars',
+        'who.h2': 'Same method, sharper execution',
+        'who.p2': 'The three-pillar framework \u2014 fundamentals, sentiment, technicals \u2014 is the same one we built by hand. Software and AI run it faster, more consistently, and without the blind spots that come with human fatigue.',
+        'equities.title': 'Why we chose equities',
+        'equities.desc': 'We understand every asset class, but after deep study we chose to focus on stock picking advisory since 2020 because it delivers the highest reward for investors willing to be patient. Since 1926, US large-cap equities have returned roughly 10% annualized before inflation, compared to approximately 5% for bonds. The volatility is real, but over any rolling 20-year period, stocks have never lost money. Time is on the side of the patient shareholder.',
+        'final.title': 'See what the crowd is missing',
+        'final.desc': 'The screener runs monthly, scoring every stock in the universe across all three pillars. No sign-up. No paywall. Just the data.',
+        'final.cta': 'Enter the Screener',
+        'footer': 'This tool is for informational and educational purposes. It does not constitute financial advice or investment recommendations. Consult a professional before making decisions.',
+        'footer.attribution': 'Design & development: Federico Sapuppo',
+        'footer.contact': 'fedesapuppo@hotmail.com',
+        'cta.tagline': 'A screener spots opportunities. An advisor helps you act on them.',
+        'years': 'years'
+      },
+      es: {
+        'hero.title': 'El mercado recompensa la <em>paciencia</em>,<br>no la especulación',
+        'hero.sub': 'Un sistema de puntuación de tres pilares que identifica empresas de calidad cotizando por debajo de su valor intrínseco. Te mostramos empresas de calidad castigadas injustamente por el mercado. Vos decidís qué comprar.',
+        'hero.cta': 'Entrar al Screener',
+        'pillars.label': 'Cómo Puntuamos',
+        'pillars.title': 'Tres pilares, una puntuación con convicción',
+        'pillars.intro': 'Cada acción es evaluada en fundamentales, sentimiento del mercado y posicionamiento técnico. Los pesos reflejan una creencia simple: lo que un negocio <em>es</em> importa más que lo que la multitud <em>siente</em> sobre él.',
+        'pillar.fund.name': 'Fundamental',
+        'pillar.fund.desc': 'Valuación relativa al sector, calidad de ganancias, solidez del balance y generación de efectivo. Comparamos cada acción contra las medianas de su propio sector, no el mercado general.',
+        'pillar.sent.name': 'Sentimiento',
+        'pillar.sent.desc': 'Calificaciones de analistas, actividad institucional y análisis narrativo impulsado por IA. Cuando el sentimiento es irracionalmente negativo en un negocio sólido, la oportunidad es real.',
+        'pillar.tech.name': 'Técnico',
+        'pillar.tech.desc': 'Precio relativo a medias móviles, RSI y patrones de volumen. Buscamos señales de piso\u2014evidencia de que la presión de venta se está agotando, no rupturas de impulso.',
+        'comp.label': 'Filosofía',
+        'comp.title': 'Contrarian vs. momentum',
+        'comp.intro': 'Ambos enfoques funcionan. Lideramos con análisis contrarian porque se alinea con la capitalización a largo plazo, pero mostramos señales de momentum donde agregan contexto.',
+        'comp.contrarian': 'Contrarian',
+        'comp.contrarianBadge': 'Nuestra tesis central',
+        'comp.c1': 'Comprar cuando el miedo no se justifica por los fundamentales',
+        'comp.c2': 'Mantener negocios de calidad a través de la volatilidad',
+        'comp.c3': 'Mayor margen de seguridad en la entrada',
+        'comp.c4': 'Recompensa la paciencia sobre la velocidad',
+        'comp.c5': 'Menor rotación, menores costos de transacción',
+        'comp.momentum': 'Momentum',
+        'comp.momentumBadge': 'También disponible',
+        'comp.m1': 'Aprovechar tendencias existentes y fuerza del mercado',
+        'comp.m2': 'Funciona bien en mercados alcistas fuertes',
+        'comp.m3': 'Retorno más rápido cuando el timing es correcto',
+        'comp.m4': 'Mayor rotación, stop-losses más ajustados necesarios',
+        'comp.m5': 'Riesgo de comprar en máximos en operaciones concurridas',
+        'comp.note': 'La mayoría de los screeners persiguen lo que está de moda. Nosotros encontramos lo que está subvaluado. La distinción importa más en correcciones, cuando los portafolios de momentum devuelven ganancias y las posiciones contrarian comienzan a recuperarse.',
+        'persona.label': 'Adaptado a vos',
+        'persona.title': 'Los datos son sólo la mitad de la ecuación',
+        'persona.intro': 'Un screener muestra oportunidades, pero las correctas dependen de quién sos. Tus restricciones, objetivos y temperamento determinan qué señales importan — y eso requiere una conversación, no sólo un dashboard.',
+        'persona.risk': 'Tolerancia al riesgo',
+        'persona.riskDesc': 'Un inversor conservador y uno agresivo mirando la misma acción necesitan respuestas diferentes. Calibrar los puntajes a tu perfil es donde comienza la asesoría.',
+        'persona.time': 'Horizonte temporal',
+        'persona.timeDesc': 'Un horizonte de cinco años puede soportar caídas que arruinarían una tesis de seis meses. Saber cuál aplica a tu caso lo cambia todo.',
+        'persona.vol': 'Objetivo de inversión',
+        'persona.volDesc': 'Crecimiento, renta o preservación de capital — cada objetivo redefine qué oportunidades importan. Un jubilado buscando dividendos y un joven buscando capitalización necesitan selecciones completamente distintas a partir de los mismos datos.',
+        'compound.label': 'Las Matemáticas',
+        'compound.title': 'El poder del interés compuesto',
+        'compound.p1': 'Einstein quizás no llamó al interés compuesto la octava maravilla del mundo, pero las matemáticas son inequívocas. Un inversor paciente que contribuye constantemente a acciones de calidad acumulará, a lo largo de décadas, una riqueza que empequeñece lo que cronometrar el mercado podría entregar.',
+        'compound.p2': 'La calculadora a continuación no es una proyección. Es aritmética. Ajustá las entradas para que coincidan con tu situación y mirá lo que la consistencia produce.',
+        'calc.init': 'Inversión inicial',
+        'calc.rate': 'Retorno anual',
+        'calc.years': 'Periodo de tiempo',
+        'calc.monthly': 'Contribucion mensual',
+        'calc.freq.monthly': 'Mensual',
+        'calc.freq.quarterly': 'Trimestral',
+        'calc.freq.annually': 'Anual',
+        'calc.invested': 'Total Invertido',
+        'calc.interest': 'Interés Ganado',
+        'calc.balance': 'Balance Final',
+        'who.label': 'Quiénes Somos',
+        'who.title': 'Asesoría en selección de acciones, potenciada por IA',
+        'who.intro': 'Asesoramos en selección de acciones desde 2020. Cuando la IA estuvo disponible, automatizamos el análisis fundamental, técnico y de sentimiento que hacíamos manualmente \u2014 y lo mejoramos.',
+        'who.stat1': '50 \u2192 800+',
+        'who.h1': 'De manual a escalable',
+        'who.p1': 'Antes, un análisis serio significaba cubrir unas 50 acciones. Ahora aplicamos el mismo rigor a más de 800 empresas, encontrando oportunidades en compañías más chicas que antes pasaban desapercibidas.',
+        'who.stat2': '3 pilares',
+        'who.h2': 'Mismo método, ejecución más precisa',
+        'who.p2': 'El framework de tres pilares \u2014 fundamentales, sentimiento, técnicos \u2014 es el mismo que construimos a mano. El software y la IA lo ejecutan más rápido, con más consistencia y sin los puntos ciegos del cansancio humano.',
+        'equities.title': 'Por qué elegimos acciones',
+        'equities.desc': 'Entendemos todas las clases de activos, pero después de un estudio profundo elegimos enfocarnos en asesoría de selección de acciones desde 2020 porque entrega el mayor retorno para inversores dispuestos a ser pacientes. Desde 1926, las acciones de gran capitalización de EE.UU. han retornado aproximadamente un 10% anualizado antes de inflación, comparado con un 5% para bonos. La volatilidad es real, pero en cualquier período de 20 años, las acciones nunca han perdido dinero. El tiempo está del lado del accionista paciente.',
+        'final.title': 'Mirá lo que la multitud se está perdiendo',
+        'final.desc': 'El screener se ejecuta mensualmente, puntuando cada acción del universo en los tres pilares. Sin registro. Sin muro de pago. Sólo los datos.',
+        'final.cta': 'Entrar al Screener',
+        'footer': 'Esta herramienta es informativa y educativa. No constituye asesoramiento financiero ni recomendaci\u00f3n de inversi\u00f3n. Consult\u00e1 a un profesional antes de tomar decisiones.',
+        'footer.attribution': 'Dise\u00f1o y desarrollo: Federico Sapuppo',
+        'footer.contact': 'fedesapuppo@hotmail.com',
+        'cta.tagline': 'Un screener identifica oportunidades. Un asesor te ayuda a actuar sobre ellas.',
+        'years': 'a\u00f1os'
+      }
+    };
+
+    let currentLang = sessionStorage.getItem(LANG_KEY) || 'en';
+
+    function applyLang() {
+      const tx = landingText[currentLang];
+      const langBtn = document.getElementById('lang-toggle');
+      langBtn.textContent = currentLang === 'en' ? 'ES' : 'EN';
+
+      // Hero
+      document.querySelector('.hero h1').innerHTML = tx['hero.title'];
+      document.querySelector('.hero__sub').textContent = tx['hero.sub'];
+      document.querySelector('.hero .btn-cta').textContent = tx['hero.cta'];
+
+      // Pillars
+      const pillarsSection = document.querySelector('.pillars');
+      pillarsSection.querySelector('.section-label').textContent = tx['pillars.label'];
+      pillarsSection.querySelector('.section-title').textContent = tx['pillars.title'];
+      pillarsSection.querySelector('.section-intro').innerHTML = tx['pillars.intro'];
+      const cards = pillarsSection.querySelectorAll('.pillar-card');
+      const pillarKeys = ['fund', 'sent', 'tech'];
+      cards.forEach((card, i) => {
+        card.querySelector('.pillar-card__name').textContent = tx[`pillar.${pillarKeys[i]}.name`];
+        card.querySelector('p').textContent = tx[`pillar.${pillarKeys[i]}.desc`];
+      });
+
+      // Comparison
+      const compSection = document.querySelector('.comparison');
+      compSection.querySelector('.section-label').textContent = tx['comp.label'];
+      compSection.querySelector('.section-title').textContent = tx['comp.title'];
+      compSection.querySelector('.section-intro').textContent = tx['comp.intro'];
+      const cols = compSection.querySelectorAll('.comparison-col');
+      cols[0].querySelector('h3').textContent = tx['comp.contrarian'];
+      cols[0].querySelector('.badge').textContent = tx['comp.contrarianBadge'];
+      const cItems = cols[0].querySelectorAll('li');
+      ['c1','c2','c3','c4','c5'].forEach((k,i) => { cItems[i].textContent = tx[`comp.${k}`]; });
+      cols[1].querySelector('h3').textContent = tx['comp.momentum'];
+      cols[1].querySelector('.badge').textContent = tx['comp.momentumBadge'];
+      const mItems = cols[1].querySelectorAll('li');
+      ['m1','m2','m3','m4','m5'].forEach((k,i) => { mItems[i].textContent = tx[`comp.${k}`]; });
+      compSection.querySelector('.comparison-note').textContent = tx['comp.note'];
+
+      // Personalized
+      const personaSection = document.querySelector('.personalized');
+      personaSection.querySelector('.section-label').textContent = tx['persona.label'];
+      personaSection.querySelector('.section-title').textContent = tx['persona.title'];
+      personaSection.querySelector('.section-intro').textContent = tx['persona.intro'];
+      const pCards = personaSection.querySelectorAll('.persona-card');
+      const pKeys = ['risk', 'time', 'vol'];
+      pCards.forEach((card, i) => {
+        card.querySelector('h3').textContent = tx[`persona.${pKeys[i]}`];
+        card.querySelector('p').textContent = tx[`persona.${pKeys[i]}Desc`];
+      });
+
+      // Who We Are
+      const whoSection = document.querySelector('.who-we-are');
+      whoSection.querySelector('.section-label').textContent = tx['who.label'];
+      whoSection.querySelector('.section-title').textContent = tx['who.title'];
+      whoSection.querySelector('.section-intro').textContent = tx['who.intro'];
+      const whoCards = whoSection.querySelectorAll('.who-we-are__card');
+      whoCards[0].querySelector('.who-we-are__stat').textContent = tx['who.stat1'];
+      whoCards[0].querySelector('h3').textContent = tx['who.h1'];
+      whoCards[0].querySelector('p').textContent = tx['who.p1'];
+      whoCards[1].querySelector('.who-we-are__stat').textContent = tx['who.stat2'];
+      whoCards[1].querySelector('h3').textContent = tx['who.h2'];
+      whoCards[1].querySelector('p').textContent = tx['who.p2'];
+
+      // Compounding
+      const compoundSection = document.querySelector('.compounding');
+      compoundSection.querySelector('.section-label').textContent = tx['compound.label'];
+      compoundSection.querySelector('.section-title').textContent = tx['compound.title'];
+      const editorialPs = compoundSection.querySelectorAll('.compounding__editorial p');
+      editorialPs[0].textContent = tx['compound.p1'];
+      editorialPs[1].textContent = tx['compound.p2'];
+
+      // Calculator labels
+      const calcLabels = document.querySelectorAll('.calc-field label');
+      const calcKeys = ['calc.init', 'calc.rate', 'calc.years', 'calc.monthly'];
+      calcLabels.forEach((lbl, i) => {
+        const valSpan = lbl.querySelector('.val');
+        const valText = valSpan.textContent;
+        lbl.childNodes[0].textContent = tx[calcKeys[i]] + ' ';
+      });
+
+      // Frequency buttons
+      const freqBtns = document.querySelectorAll('.freq-btn');
+      const freqKeys = ['calc.freq.monthly', 'calc.freq.quarterly', 'calc.freq.annually'];
+      freqBtns.forEach((btn, i) => { btn.textContent = tx[freqKeys[i]]; });
+
+      // Stat labels
+      const statLabels = document.querySelectorAll('.stat-box__label');
+      const statKeys = ['calc.invested', 'calc.interest', 'calc.balance'];
+      statLabels.forEach((el, i) => { el.textContent = tx[statKeys[i]]; });
+
+      // Equities note
+      const eqNote = document.querySelector('.equities-note');
+      eqNote.querySelector('h4').textContent = tx['equities.title'];
+      eqNote.querySelector('p').textContent = tx['equities.desc'];
+
+      // Final CTA
+      const finalCta = document.querySelector('.final-cta');
+      finalCta.querySelector('h2').textContent = tx['final.title'];
+      finalCta.querySelector('p').textContent = tx['final.desc'];
+      finalCta.querySelector('.btn-cta').textContent = tx['final.cta'];
+
+      // CTA Banner
+      document.querySelector('.cta-banner__tagline').textContent = tx['cta.tagline'];
+
+      // Footer
+      document.getElementById('landing-disclaimer').textContent = tx['footer'];
+      const attrEl = document.getElementById('landing-attribution');
+      const email = tx['footer.contact'];
+      attrEl.innerHTML = tx['footer.attribution'] + ' | Contact: <a href="mailto:' + email + '">' + email + '</a>';
+
+      // Update slider "years" label
+      document.getElementById('lbl-years').textContent = document.getElementById('sl-years').value + ' ' + tx['years'];
+    }
+
+    document.getElementById('lang-toggle').addEventListener('click', () => {
+      currentLang = currentLang === 'en' ? 'es' : 'en';
+      sessionStorage.setItem(LANG_KEY, currentLang);
+      applyLang();
+    });
+
+    applyLang();
+
+    // ── Theme ──
+    const THEME_KEY = 'trifecta-theme';
+
+    function applyTheme(theme) {
+      document.documentElement.dataset.theme = theme;
+      localStorage.setItem(THEME_KEY, theme);
+      document.getElementById('theme-toggle').textContent = theme === 'dark' ? 'LIGHT' : 'DARK';
+      updateChartColors(theme);
+    }
+
+    function updateChartColors(theme) {
+      if (!chart) return;
+      const isDark = theme === 'dark';
+      const accent = isDark ? '#c9a84c' : '#9e7c1a';
+      const muted = isDark ? '#706b63' : '#6b6860';
+      const grid = isDark ? 'rgba(42, 39, 37, 0.6)' : 'rgba(212, 208, 200, 0.4)';
+      const tooltipBg = isDark ? '#141618' : '#fff';
+      const tooltipText = isDark ? '#d8d4cf' : '#2c2a26';
+      const tooltipBorder = isDark ? '#2a2725' : '#d4d0c8';
+
+      chart.data.datasets[0].borderColor = accent;
+      chart.data.datasets[0].backgroundColor = isDark ? 'rgba(201, 168, 76, 0.10)' : 'rgba(158, 124, 26, 0.10)';
+      chart.data.datasets[1].borderColor = isDark ? '#4a4740' : '#b4b2a9';
+      chart.data.datasets[1].backgroundColor = isDark ? 'rgba(74, 71, 64, 0.06)' : 'rgba(180, 178, 169, 0.06)';
+
+      chart.options.scales.x.ticks.color = muted;
+      chart.options.scales.y.ticks.color = muted;
+      chart.options.scales.y.grid.color = grid;
+      chart.options.plugins.tooltip.backgroundColor = tooltipBg;
+      chart.options.plugins.tooltip.titleColor = tooltipText;
+      chart.options.plugins.tooltip.bodyColor = muted;
+      chart.options.plugins.tooltip.borderColor = tooltipBorder;
+
+      chart.update();
+    }
+
+    const savedTheme = localStorage.getItem(THEME_KEY);
+    if (savedTheme) applyTheme(savedTheme);
+
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      const current = document.documentElement.dataset.theme || 'light';
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  </script>
+</body>
+</html>

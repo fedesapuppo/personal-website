@@ -1,0 +1,110 @@
+[
+  {
+    "ticker": "IRS",
+    "company": "Irsa Inversiones Y Representaciones S.A. ADR",
+    "sentiment_score": 48,
+    "ai_confidence": "low",
+    "ai_reasoning": "Exceptional fundamentals with P/E of 3.29, ROE of 31.47%, and profit margin of 86.92% suggest market is severely undervaluing this Argentine real estate company. The P/B ratio of 0.9 indicates trading below book value despite strong cash position and low debt levels.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Argentine economic stabilization or currency devaluation benefits to real estate assets",
+    "short_float": 0.22,
+    "insider_transactions": 0.0,
+    "analyst_target_price": 21.33
+  },
+  {
+    "ticker": "CEPU",
+    "company": "Central Puerto ADR",
+    "sentiment_score": 48,
+    "ai_confidence": "low",
+    "ai_reasoning": "Despite strong fundamentals (27% profit margin, 13% ROE, low 0.26 debt/equity, PEG of 0.4), institutional ownership is extremely low at 4%, suggesting potential overlooked value. The 45% upside to analyst target of $23 combined with solid cash generation and reasonable valuation metrics indicates market may be undervaluing this Argentine utility.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Improved investor sentiment toward Argentine assets or utility sector re-rating as interest rates stabilize",
+    "short_float": null,
+    "insider_transactions": null,
+    "analyst_target_price": 23.0
+  },
+  {
+    "ticker": "EDN",
+    "company": "Empresa Distribuidora y Comercial Norte S.A. ADR",
+    "sentiment_score": 48,
+    "ai_confidence": "high",
+    "ai_reasoning": "EDN trades at extremely attractive valuations (P/E 6.69, P/B 0.83) with strong fundamentals including 13.92% ROE and massive cash position ($15.96/share vs $27.92 price). The 70% decline from highs appears overdone for a regulated utility with solid margins and low debt, suggesting market overreaction to Argentine economic concerns.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Argentine peso stabilization or utility rate adjustments could unlock significant value given the substantial cash holdings and low institutional ownership",
+    "short_float": 1.27,
+    "insider_transactions": null,
+    "analyst_target_price": 37.0
+  },
+  {
+    "ticker": "CRESY",
+    "company": "Cresud ADR",
+    "sentiment_score": 43,
+    "ai_confidence": "high",
+    "ai_reasoning": "CRESY trades at extremely attractive valuations (P/E 4.0, P/B 0.88) with exceptional profitability metrics (ROE 27%, profit margin 24%) and massive cash position (65% cash yield), suggesting market is pricing in excessive pessimism about Argentine assets. The combination of deep value metrics with strong operational performance indicates potential mispricing despite legitimate emerging market risks.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Argentine economic stabilization or currency devaluation reversal could unlock significant value given the cash-heavy balance sheet",
+    "short_float": 1.69,
+    "insider_transactions": 0.0,
+    "analyst_target_price": 14.93
+  },
+  {
+    "ticker": "LOMA",
+    "company": "Loma Negra Compania Industrial Argentina Sociedad Anonima ADR",
+    "sentiment_score": 53,
+    "ai_confidence": "low",
+    "ai_reasoning": "The stock shows classic value trap characteristics with a high P/E of 33.75 but forward P/E of 12.22 and PEG of 0.45 suggesting earnings acceleration ahead. Argentine cement company trading at reasonable multiples with 27.2% projected EPS growth and analyst target 41% above current price indicates market pessimism may be overdone.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Argentina economic stabilization and infrastructure spending recovery driving cement demand",
+    "short_float": 2.41,
+    "insider_transactions": 0.0,
+    "analyst_target_price": 15.0
+  },
+  {
+    "ticker": "BMA",
+    "company": "Banco Macro S.A. ADR",
+    "sentiment_score": 48,
+    "ai_confidence": "high",
+    "ai_reasoning": "The selloff appears largely emotional given the stark disconnect between fundamentals and price action - a PEG of 0.13 with 53.68% expected EPS growth suggests significant undervaluation. The analyst target of $124.12 versus current $74.72 price, combined with low institutional ownership of 11.41%, indicates potential for mean reversion once Argentine banking fears subside.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Stabilization of Argentine economic policy or currency, leading to multiple expansion for undervalued regional bank with strong operating margins",
+    "short_float": 0.52,
+    "insider_transactions": 0.0,
+    "analyst_target_price": 124.12
+  },
+  {
+    "ticker": "GGAL",
+    "company": "Grupo Financiero Galicia ADR",
+    "sentiment_score": 53,
+    "ai_confidence": "low",
+    "ai_reasoning": "The massive disconnect between current price ($45.43) and analyst target ($69.97) suggests oversold conditions, while the dramatic P/E compression from 40.86 to forward 9.21 indicates market pricing in excessive pessimism. Despite concerning negative EPS growth projections, the low P/S ratio of 0.6 and reasonable P/B of 1.36 suggest the Argentine bank is trading below intrinsic value.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Argentine economic stabilization or currency devaluation fears subsiding could trigger multiple expansion",
+    "short_float": 5.0,
+    "insider_transactions": 0.0,
+    "analyst_target_price": 69.97
+  },
+  {
+    "ticker": "BBAR",
+    "company": "BBVA Argentina ADR",
+    "sentiment_score": 48,
+    "ai_confidence": "low",
+    "ai_reasoning": "The stock shows classic value trap characteristics with a PEG of 0.12 and forward P/E of 8.95, yet trades at massive discount to analyst target of $20.01. Despite Argentine banking sector headwinds, the 72.9% projected EPS growth and reasonable debt levels suggest market pessimism may be overdone.",
+    "ai_classification": "structural",
+    "ai_catalyst": "Argentine economic stabilization or currency policy reform reducing sovereign risk premium",
+    "short_float": 0.77,
+    "insider_transactions": 0.0,
+    "analyst_target_price": 20.01
+  },
+  {
+    "ticker": "BIOX",
+    "company": "Bioceres Crop Solutions Corp",
+    "sentiment_score": 48,
+    "ai_confidence": "low",
+    "ai_reasoning": "Despite horrific price action (-90% from highs), the fundamentals show a deeply oversold agricultural inputs company trading at 0.1x sales and 0.13x book value with 50% cash yield. The negative margins and ROE reflect cyclical agricultural headwinds rather than permanent impairment, while 26.7% insider ownership and $2.00 analyst target suggest significant undervaluation.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Agricultural commodity price recovery or successful cost restructuring given the company's substantial cash position relative to market cap",
+    "short_float": 1.88,
+    "insider_transactions": 0.0,
+    "analyst_target_price": 2.0
+  }
+]

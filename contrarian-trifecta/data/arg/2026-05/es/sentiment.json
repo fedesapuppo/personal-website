@@ -1,0 +1,92 @@
+[
+  {
+    "ticker": "PAM",
+    "company": "Pampa Energia SA ADR",
+    "sentiment_score": 74,
+    "ai_score": 9,
+    "ai_reasoning": "PEG de 0.25 con crecimiento esperado de EPS del 26.4%, cotizando a solo 6.5x ganancias forward. Cash/sh de $20.11 representa el 25% del precio, current ratio de 3.11 es nivel fortaleza. Precio objetivo de analistas en $111 implica 40% de upside. La venta casi total de insiders (-99.81%) es preocupante pero podria reflejar razones fiscales o regulatorias argentinas mas que pesimismo.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Expansion de infraestructura energetica en Argentina y monetizacion de Vaca Muerta impulsando un punto de inflexion en ganancias",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "IRS",
+    "company": "Irsa Inversiones Y Representaciones SA ADR",
+    "sentiment_score": 58,
+    "ai_score": 6,
+    "ai_reasoning": "P/E de 2.92 y P/B de 0.8 con ROE de 31.47% lucen atractivos, pero la venta de insiders de -56.75% es una gran senal de alerta. RSI en 28 esta profundamente sobrevendido y el margen de ganancia de 86.92% probablemente refleja ganancias por revaluacion no recurrentes. El real estate en Argentina conlleva riesgo cambiario y regulatorio significativo.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Recuperacion del real estate argentino y revaluacion de activos denominados en pesos a medida que la inflacion se normaliza",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "TGS",
+    "company": "Transportadora de Gas del Sur ADR",
+    "sentiment_score": 54,
+    "ai_score": 8,
+    "ai_reasoning": "Balance excepcional con 61% de cash yield, current ratio de 5.0 y solidos margenes operativos del 43%. Cotiza a 13.67x trailing pero solo 10.66x forward con crecimiento esperado de EPS del 9.4%. Beta bajo (0.61) y colchon de efectivo masivo ($17.92/sh vs precio de $29.27) lo convierten en una compra contrarian atractiva durante la debilidad general de ADRs argentinos.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Expansion de gasoductos de Vaca Muerta impulsando crecimiento de volumen e ingresos por exportacion de energia",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "CEPU",
+    "company": "Central Puerto ADR",
+    "sentiment_score": 48,
+    "ai_score": 7,
+    "ai_reasoning": "Utility regulada cotizando a 7.67x ganancias con ROE de 15.65%, deuda baja (0.19 D/E) y margenes solidos. RSI en 33 sugiere condiciones de sobreventa. Cash yield del 11% y precio objetivo de analistas 71% por encima del precio actual indican miedo irracional por el contexto macro argentino y no por problemas especificos de la empresa.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Normalizacion de tarifas de servicios publicos en Argentina bajo las reformas de Milei y estabilizacion continua del peso",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "CRESY",
+    "company": "Cresud ADR",
+    "sentiment_score": 63,
+    "ai_score": 7,
+    "ai_reasoning": "Cotiza a 3.71x ganancias con P/B de 0.82 y un masivo cash yield de 70.44%. La compra de insiders de +84.56% es una fuerte senal alcista del management. El mayor apalancamiento (1.86 D/E) es el riesgo principal, pero el ROE de 27.16% demuestra que el negocio genera retornos solidos sobre el capital a pesar de la deuda.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "La compra de insiders senala confianza; revaluacion de tierras agricolas argentinas a medida que el contexto macro se estabiliza",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "EDN",
+    "company": "Empresa Distribuidora y Comercial Norte SA ADR",
+    "sentiment_score": 48,
+    "ai_score": 7,
+    "ai_reasoning": "P/S de 0.23 y P/B de 0.68 con cash/sh superando el precio de la accion (104% cash yield) sugieren valor profundo. Sin embargo, margenes delgados (3% operativo, 8% neto) reflejan compresion tarifaria regulada. RSI en 33 y 37.66% por debajo de maximos indican venta fuerte. El valor es real pero la recuperacion de margenes depende de accion regulatoria.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Continuos aumentos de tarifas de servicios publicos bajo la administracion Milei restaurando margenes a niveles sostenibles",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "BMA",
+    "company": "Banco Macro SA ADR",
+    "sentiment_score": 54,
+    "ai_score": 8,
+    "ai_reasoning": "Forward P/E de 6.28 y PEG de 0.10 con crecimiento esperado de EPS del 65.94% representan subvaluacion extrema si el crecimiento se materializa. La caida del 34% desde maximos y RSI en 33.58 reflejan miedo generalizado hacia bancos de mercados emergentes. Deuda baja (0.29 D/E) y precio objetivo de analistas 69% por encima del precio actual. El ROE trailing esta deprimido en 6% pero las estimaciones forward implican una normalizacion masiva.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Crecimiento del credito en el sector bancario argentino a medida que la economia se estabiliza y las tasas de interes reales se normalizan",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "GGAL",
+    "company": "Grupo Financiero Galicia ADR",
+    "sentiment_score": 64,
+    "ai_score": 8,
+    "ai_reasoning": "PEG de 0.04 es extraordinariamente bajo, con crecimiento esperado de EPS del 124% y forward P/E de solo 4.91. RSI en 29.57 es el mas sobrevendido del grupo. 38% por debajo de maximos con short float de 5.21% sugiere fuerte venta especulativa. Las metricas trailing actuales son debiles (ROE de 3.18%) pero la trayectoria de ganancias forward implica una normalizacion masiva en la rentabilidad bancaria argentina.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Reintermediacion del sistema financiero argentino a medida que los depositos crecen y la penetracion crediticia aumenta desde niveles historicamente bajos",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "LOMA",
+    "company": "Loma Negra Compania Industrial Argentina Sociedad Anonima ADR",
+    "sentiment_score": 37,
+    "ai_score": 5,
+    "ai_reasoning": "P/E trailing de 66x con solo 2.48% de ROE y 3% de margen neto muestra un negocio que actualmente genera muy poco. La tesis alcista descansa enteramente en estimaciones forward (16x forward, 72.6% de crecimiento de EPS) impulsadas por la recuperacion de la construccion argentina. Cash yield minimo (1.79%) no ofrece colchon a la baja. Es una apuesta puramente macro.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Recuperacion del gasto en construccion e infraestructura en Argentina impulsando la demanda de cemento",
+    "ai_confidence": "low"
+  }
+]

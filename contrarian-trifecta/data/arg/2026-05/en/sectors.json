@@ -1,0 +1,101 @@
+{
+  "Basic Materials": {
+    "pe": 24.4,
+    "forward_pe": 14.14,
+    "ps": 2.44,
+    "pb": 2.93,
+    "perf_week": -2.8,
+    "perf_1m": 0.33,
+    "perf_3m": 2.43
+  },
+  "Communication Services": {
+    "pe": 38.8,
+    "forward_pe": 32.86,
+    "ps": 5.49,
+    "pb": 8.14,
+    "perf_week": 4.04,
+    "perf_1m": 14.98,
+    "perf_3m": 3.38
+  },
+  "Consumer Cyclical": {
+    "pe": 30.42,
+    "forward_pe": 21.67,
+    "ps": 1.93,
+    "pb": 4.69,
+    "perf_week": 0.13,
+    "perf_1m": 8.86,
+    "perf_3m": -2.39
+  },
+  "Consumer Defensive": {
+    "pe": 27.06,
+    "forward_pe": 20.9,
+    "ps": 1.47,
+    "pb": 5.24,
+    "perf_week": 1.15,
+    "perf_1m": 3.48,
+    "perf_3m": 1.96
+  },
+  "Energy": {
+    "pe": 19.05,
+    "forward_pe": 13.47,
+    "ps": 1.46,
+    "pb": 2.3,
+    "perf_week": 3.3,
+    "perf_1m": 0.98,
+    "perf_3m": 18.23
+  },
+  "Financial": {
+    "pe": 16.88,
+    "forward_pe": 13.7,
+    "ps": 2.25,
+    "pb": 2.11,
+    "perf_week": 0.95,
+    "perf_1m": 5.46,
+    "perf_3m": -2.38
+  },
+  "Healthcare": {
+    "pe": 28.7,
+    "forward_pe": 16.61,
+    "ps": 1.79,
+    "pb": 4.36,
+    "perf_week": 0.41,
+    "perf_1m": -1.21,
+    "perf_3m": -5.36
+  },
+  "Industrials": {
+    "pe": 32.28,
+    "forward_pe": 23.14,
+    "ps": 2.64,
+    "pb": 5.66,
+    "perf_week": 0.32,
+    "perf_1m": 6.18,
+    "perf_3m": 5.68
+  },
+  "Real Estate": {
+    "pe": 32.77,
+    "forward_pe": 29.31,
+    "ps": 4.44,
+    "pb": 2.47,
+    "perf_week": 0.69,
+    "perf_1m": 7.67,
+    "perf_3m": 5.26
+  },
+  "Technology": {
+    "pe": 37.98,
+    "forward_pe": 26.32,
+    "ps": 7.27,
+    "pb": 10.26,
+    "perf_week": 0.08,
+    "perf_1m": 17.4,
+    "perf_3m": 10.92
+  },
+  "Utilities": {
+    "pe": 21.99,
+    "forward_pe": 15.86,
+    "ps": 2.65,
+    "pb": 2.34,
+    "perf_week": 0.22,
+    "perf_1m": 2.12,
+    "perf_3m": 7.57
+  }
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "ticker": "TGS",
+    "company": "Transportadora de Gas del Sur ADR",
+    "sentiment_score": 54,
+    "ai_confidence": "high",
+    "ai_reasoning": "TGS combina un P/E de 13.5, un margen operativo del 44%, un sólido current ratio de 5.11 y un extraordinario cash yield del 62.6%, lo que indica un balance mucho más fuerte de lo que sugiere el precio. La caída responde a un miedo macroeconómico, no a un modelo de negocio roto, con volúmenes de transporte de gas de Vaca Muerta en expansión estructural y un precio objetivo de los analistas superior a $40. La amplia brecha entre el efectivo por acción ($18.79) y la liquidación lo convierte en un caso contrarian de alta convicción.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Expansión del gasoducto de Vaca Muerta y aumento de los volúmenes de exportación que impulsan los ingresos por transporte"
+  },
+  {
+    "ticker": "CEPU",
+    "company": "Central Puerto ADR",
+    "sentiment_score": 48,
+    "ai_confidence": "high",
+    "ai_reasoning": "Central Puerto cotiza a un P/E de 6.65 con un ROE del 17%, márgenes del 37% y una baja deuda de 0.28, mientras se ubica un 21% por debajo de su máximo de 52 semanas. La liquidación refleja un descuento generalizado por el riesgo país argentino en lugar de un deterioro del negocio de energía regulada, y los precios objetivo de los analistas implican un potencial alcista de ~65%. Un beta estable (0.95) y un cash yield saludable respaldan una tesis contrarian ligada a la normalización en curso de las tarifas energéticas.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Continua normalización de las tarifas eléctricas y reforma de subsidios bajo Milei que mejora los márgenes de las utilities reguladas"
+  },
+  {
+    "ticker": "PAM",
+    "company": "Pampa Energia SA ADR",
+    "sentiment_score": 54,
+    "ai_confidence": "high",
+    "ai_reasoning": "Pampa Energia muestra un forward P/E de 6.5, un PEG de 0.24, un crecimiento proyectado del EPS del 27% y $20 de efectivo por acción frente a un precio de $83, un conglomerado energético diversificado profundamente mal valorado. El retroceso es ruido por el riesgo país más que una debilidad operativa, con una fuerte exposición al petróleo y gas de Vaca Muerta y un precio objetivo de $114. Un sólido current ratio (3.11) y un apalancamiento razonable refuerzan la convicción.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Aceleración de la producción upstream de Vaca Muerta y expansión de la generación eléctrica que impulsan el crecimiento del 27% del EPS proyectado"
+  },
+  {
+    "ticker": "CRESY",
+    "company": "Cresud ADR",
+    "sentiment_score": 58,
+    "ai_confidence": "low",
+    "ai_reasoning": "Cresud está barata a un P/E de 5.0 y un P/B de 0.74 con un cash yield del 66% y una compra alcista de insiders del 309%, pero una elevada relación deuda/capital de 1.49 y un escaso ROA del 3.2% moderan el caso. Sus tenencias agrícolas y vinculadas a IRSA están expuestas a oscilaciones de commodities y de divisa, dejando un panorama mixto entre valor y riesgo de apalancamiento. El potencial alcista hacia el objetivo de $15 es modesto frente a sus pares.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Fuerte acumulación de insiders más recuperación del valor de tierras agrícolas y cultivos si el peso se estabiliza"
+  },
+  {
+    "ticker": "IRS",
+    "company": "Irsa Inversiones Y Representaciones SA ADR",
+    "sentiment_score": 48,
+    "ai_confidence": "high",
+    "ai_reasoning": "IRSA cotiza a un P/E de 4.4 y un P/B de 0.88 con un margen de beneficio del 65% y un RSI fuerte (57) que muestra que el momentum ya está girando al alza. Como proxy apalancado de la recuperación inmobiliaria argentina, se beneficia directamente de la desinflación y de la reapertura del crédito. La cifra de transacciones de insiders del -54% es una leve señal de cautela, pero la valoración y el respaldo en activos dominan.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Revitalización del sector inmobiliario y del crédito hipotecario argentino a medida que cae la inflación y se relajan los controles de capital"
+  },
+  {
+    "ticker": "EDN",
+    "company": "Empresa Distribuidora y Comercial Norte SA ADR",
+    "sentiment_score": 48,
+    "ai_confidence": "low",
+    "ai_reasoning": "Edenor cotiza a un P/E de 6.1 y un P/B de 0.74 con un llamativo cash yield del 95%, pero un escaso margen operativo del 3% y un alto beta de 1.45 revelan la fragilidad de esta distribuidora regulada. La liquidación está parcialmente justificada por el rezago tarifario y la incertidumbre regulatoria, aunque los vientos de cola de la reforma y un objetivo de $37 ofrecen un potencial alcista real. El riesgo/recompensa es equilibrado más que convincente.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Aprobaciones de la revisión tarifaria de distribución (RTI) que restauran los márgenes bajo la desregulación"
+  },
+  {
+    "ticker": "BMA",
+    "company": "Banco Macro SA ADR",
+    "sentiment_score": 48,
+    "ai_confidence": "high",
+    "ai_reasoning": "Banco Macro presenta un forward P/E de 7.3 y un PEG de 0.11 frente a un crecimiento proyectado del EPS del 67%, con el P/E trailing de 18.9 y el deprimido ROE del 6.8% reflejando comparables distorsionados por la inflación que ahora se están normalizando. La caída del 19% es miedo macroeconómico sobre un banco bien capitalizado preparado para beneficiarse de la expansión del crédito. Un objetivo de $122 implica un potencial alcista de ~46%.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Reanudación del crecimiento del crédito real a medida que la desinflación restaura la rentabilidad de los préstamos bancarios"
+  },
+  {
+    "ticker": "BBAR",
+    "company": "BBVA Argentina ADR",
+    "sentiment_score": 43,
+    "ai_confidence": "high",
+    "ai_reasoning": "BBVA Argentina muestra un forward P/E de 8.8, un PEG de 0.15 y un crecimiento esperado del EPS del 61%, con el deprimido ROE trailing (6.2%) como función de la contabilidad por inflación en lugar de una franquicia de baja calidad. El retroceso es sentimiento por el riesgo país sobre un banco sólido y líquido bien posicionado para la normalización del crédito. El potencial alcista hacia el objetivo de $20.84 es más modesto que el de sus pares, lo que modera la puntuación.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Recuperación del crédito bancario y normalización de las ganancias a medida que disminuye la inflación"
+  },
+  {
+    "ticker": "LOMA",
+    "company": "Loma Negra Compania Industrial Argentina Sociedad Anonima ADR",
+    "sentiment_score": 43,
+    "ai_confidence": "low",
+    "ai_reasoning": "El P/E óptico de 47 de Loma Negra refleja un valle cíclico de ganancias, pero el forward P/E de 13.2, el PEG de 0.17 y el crecimiento proyectado del EPS del 76% apuntan a un repunte de la demanda de cemento. La recuperación de la construcción depende en gran medida de un giro macroeconómico sostenido, lo que la convierte en una apuesta cíclica de mayor riesgo. Un escaso ROE actual (3.2%) y un potencial alcista limitado mantienen la convicción moderada.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Reactivación de la infraestructura y la construcción que eleva los volúmenes de cemento desde el mínimo del ciclo"
+  },
+  {
+    "ticker": "GGAL",
+    "company": "Grupo Financiero Galicia ADR",
+    "sentiment_score": 53,
+    "ai_confidence": "high",
+    "ai_reasoning": "El distorsionado P/E trailing de 86.8 de Grupo Galicia colapsa a un forward P/E de 6.1 con un PEG de 0.05 y un crecimiento proyectado del EPS de ~118%, el caso más claro de ruido contable por inflación que enmascara la fortaleza de la franquicia. La caída del 24% es de origen macroeconómico sobre el mayor grupo financiero privado de Argentina, bien posicionado para un ciclo alcista del crédito. Un objetivo de $70 implica un potencial alcista de ~49%, aunque un elevado short float (4.95%) justifica cierta cautela.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Recuperación explosiva de las ganancias futuras a medida que se expande el crédito y se normaliza la contabilidad por inflación"
+  }
+]

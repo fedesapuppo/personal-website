@@ -1,0 +1,110 @@
+[
+  {
+    "ticker": "PAM",
+    "company": "Pampa Energia SA ADR",
+    "sentiment_score": 64,
+    "ai_score": 8,
+    "ai_reasoning": "Mejor relacion riesgo-retorno del grupo: PEG de 0.29 senala un crecimiento masivo de ganancias, Fwd P/E de 7.6x es barato para un conglomerado energetico con exposicion a Vaca Muerta. Ratio corriente de 3.11 y cash/sh de $20.11 (23% del precio) brindan fuerte proteccion a la baja. Precio objetivo de analistas de $108.57 implica 24% de suba. Las transacciones de insiders de -98.5% son preocupantes pero podrian reflejar ventas por motivos impositivos mas que falta de conviccion.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Aceleracion del desarrollo energetico de Vaca Muerta e infraestructura de exportacion de GNL impulsando crecimiento de ganancias a varios anos",
+    "ai_confidence": "high",
+    "trifecta_score": 59,
+    "divergence_flag": true
+  },
+  {
+    "ticker": "IRS",
+    "company": "Irsa Inversiones Y Representaciones S.A. ADR",
+    "sentiment_score": 58,
+    "ai_score": 6,
+    "ai_reasoning": "Extremadamente barata a 3.5x ganancias y 0.95 P/B con un rendimiento de caja masivo de 28.7% y ROE de 31.5%. Sin embargo, las transacciones de insiders de -56.75% son una gran senal de alerta — los insiders estan vendiendo agresivamente. Las valuaciones inmobiliarias en Argentina son volatiles y altamente dependientes del tipo de cambio. El margen de ganancia de 87% parece inflado por ganancias de revaluacion mas que por desempeno operativo.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Recuperacion del mercado inmobiliario argentino a medida que el peso se estabiliza y se desarrolla el mercado hipotecario, pero la venta de insiders reduce la conviccion",
+    "ai_confidence": "low",
+    "trifecta_score": 58,
+    "divergence_flag": true
+  },
+  {
+    "ticker": "CEPU",
+    "company": "Central Puerto ADR",
+    "sentiment_score": 48,
+    "ai_score": 7,
+    "ai_reasoning": "Utility regulada argentina cotizando a 9x ganancias con margenes de ganancia del 32%, ROE del 15.6% y deuda minima (D/E de 0.19). El precio esta bien por encima de los minimos de 52 semanas con fuerte tendencia alcista (SMA200 +24%), y el precio objetivo de analistas de $23 implica 38% de suba. La normalizacion tarifaria bajo Milei es un viento de cola estructural para las utilities argentinas que aun se esta desarrollando.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Continuidad de la normalizacion tarifaria y potencial upgrade de MSCI para acciones argentinas impulsando flujos institucionales",
+    "ai_confidence": "high",
+    "trifecta_score": 57,
+    "divergence_flag": true
+  },
+  {
+    "ticker": "TGS",
+    "company": "Transportadora de Gas del Sur ADR",
+    "sentiment_score": 27,
+    "ai_score": 5,
+    "ai_reasoning": "RSI en 71.6 senala condiciones de sobrecompra tras una fuerte suba (+24.5% sobre SMA200). Si bien el rendimiento de caja de 50.9% y el ratio corriente de 5x son extraordinarios, la accion ya tiene incorporada gran parte de la recuperacion del transporte de gas. P/E de 16.4x es el mas caro entre los nombres no bancarios. Mejor esperar un retroceso en lugar de perseguir el impulso.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Expansion de infraestructura de transporte de gas para el crecimiento de produccion de Vaca Muerta, pero el precio actual ya refleja esto",
+    "ai_confidence": "low",
+    "trifecta_score": 46,
+    "divergence_flag": true
+  },
+  {
+    "ticker": "EDN",
+    "company": "Empresa Distribuidora y Comercial Norte S.A. ADR",
+    "sentiment_score": 49,
+    "ai_score": 8,
+    "ai_reasoning": "Valuacion mas atractiva del grupo: P/S de 0.29 y P/B de 0.87 para una utility regulada con 82% de rendimiento de caja. Los bajos margenes actuales (3% operativo, 8% neto) son la oportunidad — los ajustes tarifarios aun estan alcanzando a la inflacion, lo que significa que las ganancias tienen enorme espacio para expandirse. Fwd P/E de 10.66 vs trailing 7.08 sugiere un ano de transicion, pero la trayectoria es claramente positiva.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Aumentos tarifarios regulados cerrando la brecha hacia niveles que reflejen costos, expandiendo directamente los margenes desde los niveles comprimidos actuales",
+    "ai_confidence": "high",
+    "trifecta_score": 46,
+    "divergence_flag": true
+  },
+  {
+    "ticker": "CRESY",
+    "company": "Cresud ADR",
+    "sentiment_score": 38,
+    "ai_score": 7,
+    "ai_reasoning": "Cotizando por debajo del valor libro (P/B 0.95) a 4.3x ganancias con un impresionante rendimiento de caja del 60.9%. El conglomerado agropecuario se beneficia de la normalizacion del peso y un contexto favorable de commodities. El D/E de 1.86 es elevado pero manejable dado el caracter intensivo en activos del negocio. El precio objetivo de analistas de $14.93 implica 19% de suba a corto plazo con un margen de seguridad sustancial respaldado por el valor de los activos.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Revaluacion de tierras agricolas a medida que Argentina normaliza los controles cambiarios y la inversion extranjera regresa al sector",
+    "ai_confidence": "medium",
+    "trifecta_score": 45,
+    "divergence_flag": true
+  },
+  {
+    "ticker": "BMA",
+    "company": "Banco Macro S.A. ADR",
+    "sentiment_score": 54,
+    "ai_score": 8,
+    "ai_reasoning": "El Fwd P/E de 7.13 vs trailing 21.14 implica que se espera que las ganancias casi se tripliquen — PEG de 0.11 es el mas bajo del grupo. Los bancos argentinos estan en las etapas iniciales de un ciclo de expansion crediticia a medida que la inflacion baja y el credito se normaliza. La accion esta 28.6% por debajo de su maximo de 52 semanas y el SMA50 es negativo, creando un punto de entrada contrario. D/E bajo de 0.29 para un banco senala posicionamiento conservador.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Punto de inflexion del ciclo crediticio a medida que la inflacion argentina se normaliza, impulsando una expansion masiva del margen neto de interes y crecimiento de prestamos desde una base muy baja",
+    "ai_confidence": "high",
+    "trifecta_score": 42,
+    "divergence_flag": false
+  },
+  {
+    "ticker": "GGAL",
+    "company": "Grupo Financiero Galicia ADR",
+    "sentiment_score": 64,
+    "ai_score": 9,
+    "ai_reasoning": "Senal contraria mas fuerte: PEG de 0.05 es extraordinariamente bajo, lo que significa que el mercado esta subvalorando dramaticamente el crecimiento de ganancias. Fwd P/E de 5.77 vs trailing 40.41 implica una expansion de ganancias de 7x. La accion esta 31.7% por debajo de su maximo de 52 semanas y cotiza por debajo de su SMA200, generando el retroceso mas profundo entre los ADRs argentinos. La mayor participacion institucional (23.9%) y short float (4.5%) configuran un potencial short squeeze a medida que las ganancias se inflexionan. El banco privado mas grande de Argentina es la apuesta mas pura a la normalizacion crediticia.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Inflexion de ganancias por normalizacion del ciclo crediticio — como el banco privado mas grande de Argentina, GGAL captura una suba desproporcionada por crecimiento de depositos, expansion de prestamos y recuperacion de ingresos por comisiones",
+    "ai_confidence": "high",
+    "trifecta_score": 35,
+    "divergence_flag": true
+  },
+  {
+    "ticker": "LOMA",
+    "company": "Loma Negra Compania Industrial Argentina Sociedad Anonima ADR",
+    "sentiment_score": 32,
+    "ai_score": 4,
+    "ai_reasoning": "P/E trailing de 67x con un anemico ROE de 2.5% y margenes de ganancia del 3% — este es el perfil fundamental mas debil del grupo. Los materiales de construccion deberian beneficiarse del gasto en infraestructura, pero la rentabilidad actual no respalda la valuacion. Fwd P/E de 23x y PEG de 0.52 sugieren mejora por venir, pero la accion necesita demostrar recuperacion de ganancias antes de justificar conviccion.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Recuperacion de la actividad de construccion argentina y gasto en infraestructura bajo la administracion Milei, pero el riesgo de ejecucion sigue siendo alto",
+    "ai_confidence": "low",
+    "trifecta_score": 32,
+    "divergence_flag": false
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "AAPL":  { "rsi14": 58.2, "stochastic_k": 62.3, "stochastic_d": 55.8, "supertrend_trend": "up",  "sma20": 17800.0, "sma50": 16500.0, "ath": 21000.0, "pct_below_ath": 9.5 },
+  "GOOGL": { "rsi14": 54.7, "stochastic_k": 51.2, "stochastic_d": 48.9, "supertrend_trend": "up",  "sma20": 7200.0,  "sma50": 6800.0,  "ath": 8500.0,  "pct_below_ath": 10.6 },
+  "MELI":  { "rsi14": 65.1, "stochastic_k": 72.4, "stochastic_d": 68.1, "supertrend_trend": "up",  "sma20": 20000.0, "sma50": 18500.0, "ath": 24000.0, "pct_below_ath": 10.8 },
+  "NVDA":  { "rsi14": 61.8, "stochastic_k": 68.5, "stochastic_d": 63.2, "supertrend_trend": "up",  "sma20": 10200.0, "sma50": 9500.0,  "ath": 12500.0, "pct_below_ath": 12.8 },
+  "MSFT":  { "rsi14": 52.3, "stochastic_k": 48.7, "stochastic_d": 50.1, "supertrend_trend": "up",  "sma20": 17500.0, "sma50": 16800.0, "ath": 20500.0, "pct_below_ath": 10.7 },
+  "GGAL":  { "rsi14": 63.5, "stochastic_k": 71.2, "stochastic_d": 65.8, "supertrend_trend": "up",  "sma20": 6500.0,  "sma50": 6000.0,  "ath": 7500.0,  "pct_below_ath": 8.0 },
+  "YPFD":  { "rsi14": 59.8, "stochastic_k": 64.3, "stochastic_d": 58.7, "supertrend_trend": "up",  "sma20": 62000.0, "sma50": 58000.0, "ath": 72000.0, "pct_below_ath": 9.0 },
+  "TXAR":  { "rsi14": 47.2, "stochastic_k": 42.8, "stochastic_d": 45.3, "supertrend_trend": "down","sma20": 720.0,   "sma50": 750.0,   "ath": 950.0,   "pct_below_ath": 26.3 },
+  "PAMP":  { "rsi14": 56.4, "stochastic_k": 58.9, "stochastic_d": 54.2, "supertrend_trend": "up",  "sma20": 4900.0,  "sma50": 4600.0,  "ath": 5800.0,  "pct_below_ath": 10.3 },
+  "TSLA":  { "rsi14": 62.7, "stochastic_k": 69.1, "stochastic_d": 64.5, "supertrend_trend": "up",  "sma20": 340.0,   "sma50": 310.0,   "ath": 410.0,   "pct_below_ath": 12.2 },
+  "AVGO":  { "rsi14": 55.9, "stochastic_k": 53.4, "stochastic_d": 50.8, "supertrend_trend": "up",  "sma20": 300.0,   "sma50": 280.0,   "ath": 350.0,   "pct_below_ath": 10.0 },
+  "QQQ":   { "rsi14": 53.1, "stochastic_k": 50.6, "stochastic_d": 48.2, "supertrend_trend": "up",  "sma20": 560.0,   "sma50": 530.0,   "ath": 620.0,   "pct_below_ath": 5.6 }
+}

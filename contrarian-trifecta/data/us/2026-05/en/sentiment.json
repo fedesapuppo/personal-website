@@ -1,0 +1,1592 @@
+[
+  {
+    "ticker": "LULU",
+    "company": "Lululemon Athletica Inc",
+    "sentiment_score": 59,
+    "ai_score": 8,
+    "ai_reasoning": "A 34% ROE, 20% operating margin, and P/E of 10 on a dominant athleisure brand is pricing in permanent decline that the fundamentals don't support. The 2.26 current ratio and 0.36 Debt/Eq show a fortress balance sheet, while the RSI of 29 signals oversold panic. The 60% drawdown from 52W high is excessive for a business still generating $13+ EPS.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Earnings beat or guidance raise proving international expansion and men's category growth remain intact",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "EVER",
+    "company": "EverQuote Inc",
+    "sentiment_score": 68,
+    "ai_score": 7,
+    "ai_reasoning": "A 53% ROE, 37% ROA, P/E of 5.5, and 33% cash yield on a profitable digital insurance marketplace is deeply contrarian. The 50% drawdown and 18.8% short float suggest heavy skepticism, but the fundamentals are outstanding. The 23.6% insider ownership shows management skin in the game. Near-zero debt removes downside risk.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Short squeeze potential or sustained profitable growth proving the business model's durability",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "RMD",
+    "company": "Resmed Inc",
+    "sentiment_score": 63,
+    "ai_score": 7,
+    "ai_reasoning": "ResMed's 27% profit margin, 25% ROE, and dominant position in sleep apnea devices make the 30% drawdown look like GLP-1 fear overreaction. Forward P/E of 16.7 with 12% EPS growth expected gives a PEG of 1.39, reasonable for a healthcare compounder. The RSI of 26.6 is deeply oversold with a pristine 0.13 Debt/Eq balance sheet.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Clinical data showing GLP-1 drugs complement rather than replace CPAP therapy, or an earnings beat demonstrating resilient device demand",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "EPAM",
+    "company": "EPAM Systems Inc",
+    "sentiment_score": 74,
+    "ai_score": 9,
+    "ai_reasoning": "Former high-growth IT services leader down 50% from highs with RSI at 27 — deeply oversold. Fwd P/E of 8 for a company with 10% expected growth, near-zero debt, and $24.59 cash per share is extreme pessimism pricing in permanent impairment that seems unlikely. The PEG of 0.79 and massive gap to analyst target ($187 vs $112) confirm irrational fear, likely Ukraine war overhang and AI displacement narrative.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Acceleration in AI-related service engagements; geopolitical de-escalation; earnings beat proving resilience of delivery model",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "TME",
+    "company": "Tencent Music Entertainment Group ADR",
+    "sentiment_score": 53,
+    "ai_score": 7,
+    "ai_reasoning": "Trading at 9x earnings with 33.5% profit margins and a staggering 64% cash yield (cash/sh of $5.82 on a $9.10 stock) means you're essentially buying the business for less than 2x ex-cash earnings. The 66% decline from highs is classic China ADR panic pricing. Near-zero debt and 2.23 current ratio eliminate solvency risk.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Shareholder-friendly capital return announcement (buyback/dividend increase) or easing of US-China regulatory tensions",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "ANF",
+    "company": "Abercrombie & Fitch Co",
+    "sentiment_score": 68,
+    "ai_score": 6,
+    "ai_reasoning": "Strong fundamentals (37% ROE, 8x P/E, PEG 0.66) but the -27.9% insider selling is a major red flag that insiders see something the valuation doesn't capture. Apparel retail is inherently fickle, and the brand could be peaking post-transformation. Institutional ownership above 104% and 7.5% short float add volatility risk.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Continued same-store sales growth proving the brand refresh has staying power",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "BBW",
+    "company": "Build A Bear Workshop Inc",
+    "sentiment_score": 63,
+    "ai_score": 6,
+    "ai_reasoning": "Solid retail execution (35.5% ROE, 9x P/E) but the 52.5% drawdown, missing forward growth estimates, and 20.5% short float suggest the market sees peak earnings. Without forward EPS growth data, it's hard to assess whether the valuation is genuinely cheap or reflects justified normalization of post-pandemic demand.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Holiday season same-store sales proving the experiential retail model has structural staying power",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "CHKP",
+    "company": "Check Point Software Technologies Ltd",
+    "sentiment_score": 64,
+    "ai_score": 8,
+    "ai_reasoning": "A cybersecurity leader with 38% profit margins, 38% ROE, and a P/E of 11.8 at a 51% discount from highs is mispriced. Cash/sh of $26.56 represents 23% of the stock price. The 23.4% insider ownership signals conviction, and cybersecurity spending is non-discretionary. The selloff appears to be broad tech multiple compression hitting an already cheap stock.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Cybersecurity spending resilience in upcoming earnings or a major product cycle driving reacceleration",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "RYAAY",
+    "company": "Ryanair Holdings Plc ADR",
+    "sentiment_score": 54,
+    "ai_score": 8,
+    "ai_reasoning": "Europe's lowest-cost airline at a P/E of 11 with 28% ROE and 20% expected EPS growth is a textbook contrarian setup. PEG of 0.51 is remarkably cheap, and the 0.17 Debt/Eq is exceptional for an airline. The selloff appears driven by macro fear rather than operational deterioration.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Summer travel season bookings exceeding expectations or fuel cost tailwinds boosting margins",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "CMCL",
+    "company": "Caledonia Mining Corp Plc",
+    "sentiment_score": 58,
+    "ai_score": 7,
+    "ai_reasoning": "A gold miner with 45% operating margins, 23% ROE, and a P/E of 7.9 trading at a PEG of 0.31 is deeply undervalued. The 25% insider ownership signals management conviction. The 42% drawdown from highs despite gold remaining near record levels suggests small-cap neglect rather than fundamental problems.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Production growth from Bilboes expansion or continued gold price strength flowing through to earnings",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "PEGA",
+    "company": "Pegasystems Inc",
+    "sentiment_score": 58,
+    "ai_score": 7,
+    "ai_reasoning": "A 51.7% ROE software company with 45.8% insider ownership trading at a forward P/E of 11.8 with a PEG of 0.66 is deeply undervalued. The gap between trailing P/E (19.5) and forward P/E (11.8) implies significant earnings growth ahead. The 47% drawdown on a low-debt, high-margin business with massive insider alignment is a classic contrarian setup.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "AI-powered decisioning platform gaining market share, reflected in bookings growth at next earnings",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "CTSH",
+    "company": "Cognizant Technology Solutions Corp",
+    "sentiment_score": 63,
+    "ai_score": 7,
+    "ai_reasoning": "CTSH at 8.5x forward earnings with a PEG of 0.96 is cheaply valued for a $20B+ revenue IT services leader. The RSI of 25.8 is the most oversold in this entire batch. The 40% drawdown with a clean balance sheet (0.07 Debt/Eq, 2.23 current ratio) and 14.9% ROE suggests excessive pessimism about IT spending.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Enterprise IT spending recovery or large AI-related consulting deal wins",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "ACN",
+    "company": "Accenture plc",
+    "sentiment_score": 58,
+    "ai_score": 7,
+    "ai_reasoning": "The premier IT consulting firm at 12x forward earnings with 25% ROE and a 45% drawdown from highs is pricing in a severe structural decline that likely won't materialize. Accenture's scale, client relationships, and AI transformation capabilities provide durable competitive advantages. PEG of 1.52 is reasonable for a blue-chip compounder.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "GenAI consulting bookings acceleration showing Accenture is a net beneficiary of AI disruption rather than a victim",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "ITRI",
+    "company": "Itron Inc",
+    "sentiment_score": 73,
+    "ai_score": 6,
+    "ai_reasoning": "Strong ROE (18.67%) and margins for a utility-tech company, with 18.83% cash yield providing support. However, PEG of 3.51 signals slowing growth, and massive insider selling (-14.95%) is a red flag that insiders see limited near-term upside. The 11.54% short float adds to caution.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Utility infrastructure spending acceleration or new smart grid contract wins",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "CLMB",
+    "company": "Climb Global Solutions Inc",
+    "sentiment_score": 58,
+    "ai_score": 7,
+    "ai_reasoning": "Small-cap IT distributor down 48% with PEG of 0.52 and 21% expected growth. The 13% daily bounce suggests a potential bottom forming. P/S of 0.5 for a tech distributor with 19% ROE and minimal debt is attractive. Thin margins (3% net) are normal for distribution and already reflected in the valuation.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Cloud and cybersecurity software distribution growth; enterprise IT spending recovery; earnings beat proving growth trajectory",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "EFOR",
+    "company": "Everforth Inc",
+    "sentiment_score": 79,
+    "ai_score": 9,
+    "ai_reasoning": "Down 65% from highs with RSI at 27 and trading at 0.49x book value and 4.65x forward earnings — the market is pricing in near-death for a profitable IT services company. PEG of 0.55, 16.4% cash yield, and massive insider buying (+6.07%) are screaming contrarian signals. Current ratio of 2.1 and manageable debt mean no imminent solvency risk.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Insider buying at 6%+ is one of the strongest bullish signals possible; analyst target of $33 implies 57% upside; any earnings stabilization triggers violent re-rating",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "INFY",
+    "company": "Infosys Ltd ADR",
+    "sentiment_score": 37,
+    "ai_score": 5,
+    "ai_reasoning": "Decent quality metrics (31.7% ROE, 16.5% margin) but the 4.5% forward EPS growth is anemic for a tech services firm, and the PEG of 3.16 signals the stock isn't as cheap as the P/E of 15 suggests. The 58% drawdown from highs may reflect real structural concerns about AI disrupting traditional IT outsourcing.",
+    "ai_classification": "structural",
+    "ai_catalyst": "Large deal wins demonstrating AI-augmented services revenue growth",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "TSCO",
+    "company": "Tractor Supply Co",
+    "sentiment_score": 79,
+    "ai_score": 8,
+    "ai_reasoning": "Best-in-class specialty retailer at RSI 17.64 — extreme capitulation levels. Despite 2.55 D/E, the 45.5% ROE and 9.81% ROA demonstrate capital efficiency. The 47% drawdown from highs is massively overdone for a resilient rural lifestyle retailer with loyal customer base. Fwd P/E of 14.63 is historically cheap for this compounder.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Earnings stabilization showing rural consumer resilience and pet/livestock spending durability",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "VRTX",
+    "company": "Vertex Pharmaceuticals Inc",
+    "sentiment_score": 58,
+    "ai_score": 6,
+    "ai_reasoning": "Best-in-class CF franchise with 39% operating margins and low beta of 0.3, but the 17% pullback is modest and the P/E of 27.6 isn't cheap. The -30.9% insider selling is concerning. The forward P/E compression to 19.3 implies growth expectations, but PEG of 1.8 is only fairly valued, not cheap.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Positive pipeline readouts in pain or kidney disease expanding the TAM beyond cystic fibrosis",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "MMS",
+    "company": "Maximus Inc",
+    "sentiment_score": 59,
+    "ai_score": 8,
+    "ai_reasoning": "Government services contractor at under 10x earnings with 22% ROE and Fwd P/E of 7.2 — analyst target at $110 implies 68% upside. The 34% drawdown likely reflects DOGE/government spending cut fears, but Maximus operates in healthcare and social services administration where demand is structurally sticky. P/S of 0.67 is deeply discounted for a services business.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Government contract renewals proving spending resilience; Medicaid redetermination volume; clarity on federal budget direction",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "BMI",
+    "company": "Badger Meter Inc",
+    "sentiment_score": 42,
+    "ai_score": 4,
+    "ai_reasoning": "Quality company (zero debt, 19.6% ROE) but at 27.6x P/E with a PEG of 4.59 and only 5.4% expected growth, it remains expensive despite the 52% drawdown. The market is repricing a former momentum stock to more rational levels. The 11% short float adds downside pressure.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Infrastructure spending bill driving water meter replacement cycle acceleration",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "GLOB",
+    "company": "Globant SA",
+    "sentiment_score": 58,
+    "ai_score": 6,
+    "ai_reasoning": "Trading below book (P/B 0.85) with Fwd P/E of 6.12 vs trailing 17.84 implies expected earnings explosion, but current margins are thin (4.19% net) and ROE is weak (5.07%). The 71% drawdown from highs is severe. Low debt (0.23) provides safety, but IT services face real AI displacement risk for nearshore delivery models.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "AI-driven service offerings proving the business model adapts rather than gets disrupted",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "IDCC",
+    "company": "Interdigital Inc",
+    "sentiment_score": 51,
+    "ai_score": 3,
+    "ai_reasoning": "Despite impressive 44% margins and 36% ROE, the forward P/E of 33.7 (higher than trailing) signals expected earnings decline. PEG of 4.36 is expensive, and -11.7% insider selling confirms concern. Patent licensing revenue is inherently lumpy and faces renewal risk, making the 30% drawdown potentially justified.",
+    "ai_classification": "structural",
+    "ai_catalyst": "Major new licensing deal or favorable patent litigation outcome",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "AEO",
+    "company": "American Eagle Outfitters Inc",
+    "sentiment_score": 73,
+    "ai_score": 7,
+    "ai_reasoning": "PEG of 0.44 with Fwd P/E of 8.58 suggests strong earnings growth priced too cheaply. The 40% drawdown is excessive for a profitable retailer with 9% insider ownership. High short float (11.58%) and insider selling (-9.31%) are concerns, but P/S of 0.51 provides significant margin of safety.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Back-to-school or holiday season earnings beat proving consumer resilience in the teen/young adult segment",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "QGEN",
+    "company": "Qiagen NV",
+    "sentiment_score": 53,
+    "ai_score": 7,
+    "ai_reasoning": "Diagnostics leader down 41% with RSI at 26 — most oversold stock in this batch. Fwd P/E of 12.8 with 20% profit margins, strong current ratio (3.9), and 15.6% cash yield suggest excessive pessimism. The post-COVID diagnostics demand normalization appears fully priced in and then some.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Sample technologies demand stabilization; companion diagnostics growth in precision medicine; potential acquisition target at these valuations",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "INGR",
+    "company": "Ingredion Inc",
+    "sentiment_score": 59,
+    "ai_score": 8,
+    "ai_reasoning": "Defensive compounder trading at under 10x earnings with 18% ROE, low debt, and strong current ratio. The 22% drawdown from highs in a consumer staples name with sticky ingredient supply contracts looks like irrational selling. Insider selling is a minor concern but institutional ownership over 100% reflects deep confidence.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Stabilization of commodity input costs; earnings beat demonstrating pricing power; defensive rotation in risk-off environment",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "SPOT",
+    "company": "Spotify Technology SA",
+    "sentiment_score": 48,
+    "ai_score": 6,
+    "ai_reasoning": "Spotify has achieved profitability at scale with 40% ROE and 22% ROA, a major inflection. However, at 35x trailing P/E and nearly 10x book, the stock is not cheap even after a 44% drawdown. The PEG of 1.06 is fair but not contrarian-level. This is a quality growth stock correcting to reasonable valuation, not deep value.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Continued margin expansion; podcast monetization inflection; price increases in emerging markets",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "MEDP",
+    "company": "Medpace Holdings Inc",
+    "sentiment_score": 53,
+    "ai_score": 7,
+    "ai_reasoning": "Best-in-class CRO with 77% ROE, 23% ROA, and strong insider ownership at nearly 20%. The 34% drawdown from highs and RSI of 37 suggest emotional selling, likely driven by biotech funding slowdown fears rather than fundamental deterioration. Fwd P/E of 23 is reasonable for a compounder with 11% expected EPS growth.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Biotech funding recovery; new bookings acceleration; insider buying at these levels given high ownership stake",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "TMDX",
+    "company": "Transmedics Group Inc",
+    "sentiment_score": 62,
+    "ai_score": 5,
+    "ai_reasoning": "Outstanding ROE (54.24%) and margins, but 22.85% short float signals significant skepticism. Fwd P/E of 27 vs trailing 20.59 implies expected earnings deceleration. High beta (2.06) and debt/eq of 1.1 add risk. The organ transplant logistics business is genuinely innovative but priced for perfection even after the decline.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Expansion into new organ types or international markets proving growth runway",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "PTC",
+    "company": "PTC Inc",
+    "sentiment_score": 63,
+    "ai_score": 6,
+    "ai_reasoning": "Outstanding margins (39.27% operating, 28.86% net) and strong ROE (23.34%) for a sticky enterprise software business. However, PEG of 2.78 suggests growth is slowing, and heavy insider selling (-14.42%) mirrors ITRI's insider caution pattern. P/S of 5.68 is still premium pricing despite the drawdown.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "CAD/PLM software demand reacceleration tied to manufacturing reshoring or AI-enhanced product launches",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "DLB",
+    "company": "Dolby Laboratories Inc",
+    "sentiment_score": 58,
+    "ai_score": 7,
+    "ai_reasoning": "Dolby dropped 10.4% in a single day, pushing RSI to 32 — likely an earnings miss reaction. But Fwd P/E of 12.5 for an IP/licensing business with near-zero debt, 37% insider ownership, and 18% profit margins is very cheap. The licensing model provides recurring revenue with high incremental margins.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Dolby Atmos and Vision adoption in automotive and streaming; licensing revenue normalization; insider buying given 37% ownership stake",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "G",
+    "company": "Genpact Ltd",
+    "sentiment_score": 64,
+    "ai_score": 8,
+    "ai_reasoning": "Exceptional value with PEG 0.66, ROE 22.37%, and Fwd P/E 7.73 for a profitable IT services company. Cash yield of 20.65% and strong margins suggest the 32% drawdown from highs is overdone. AI disruption fears are likely overstated for a process-oriented BPO/IT services firm with deep client integration.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Earnings beat demonstrating AI as a tailwind (automation uplift) rather than threat, plus analyst target implying 40% upside",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "EGO",
+    "company": "Eldorado Gold Corp",
+    "sentiment_score": 59,
+    "ai_score": 8,
+    "ai_reasoning": "PEG of 0.09 is extraordinarily low — 50% expected EPS growth at only 10x trailing earnings. The 42% drawdown from highs with Fwd P/E of 4.65 in a gold miner with 29% profit margins and 14% ROE suggests massive mispricing. Low debt (0.29 D/E) and solid operations support the contrarian thesis.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Skouries mine completion driving production growth; gold price recovery; earnings demonstrating growth trajectory",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "NMIH",
+    "company": "NMI Holdings Inc",
+    "sentiment_score": 63,
+    "ai_score": 7,
+    "ai_reasoning": "Mortgage insurer with 54% profit margins, 73% operating margins, and P/E under 8 at a low beta of 0.59. The selloff appears driven by housing market fears, but the company's balance sheet (D/E 0.16, current ratio 3.4) is fortress-like. Insider selling of 11% is the main red flag, but institutional ownership near 97% reflects strong conviction.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Housing market stabilization; Fed rate cuts reducing mortgage default fears; book value growth from retained earnings",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "DRD",
+    "company": "DRDGold Ltd ADR",
+    "sentiment_score": 54,
+    "ai_score": 8,
+    "ai_reasoning": "A zero-debt gold miner with 34% ROE, 35% margins, and a PEG of 0.13 is extraordinarily cheap. Forward P/E of 6.2 with 46.6% expected EPS growth means earnings are expected to more than double. The 32% drawdown during a gold bull market is irrational for a company with 3x current ratio and 25% ROA.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Gold price stability above $3,000 and production growth flowing through to earnings, closing the gap to forward estimates",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "WB",
+    "company": "Weibo Corp ADR",
+    "sentiment_score": 48,
+    "ai_score": 6,
+    "ai_reasoning": "Trading at massive discount to cash (Cash/sh $15.24 vs price $8.36) with P/E under 5 and solid profitability. However, Chinese regulatory overhang, declining growth (EPS next 5Y only 2.36%), and structural user engagement concerns in a competitive social media landscape temper enthusiasm. The cash cushion provides a floor but not a catalyst.",
+    "ai_classification": "structural",
+    "ai_catalyst": "Share buybacks or special dividend utilizing excess cash; any easing of US-China ADR delisting fears",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "OLLI",
+    "company": "Ollies Bargain Outlet Holdings Inc",
+    "sentiment_score": 68,
+    "ai_score": 7,
+    "ai_reasoning": "Discount retailer with solid fundamentals (13% ROE, 2.41 current ratio, low debt) trading at a reasonable 16.69 Fwd P/E in a defensive sector. The 27% decline from 52W high appears overdone for a business that should benefit from consumer trade-down in uncertain macro environments. Analyst target of $138 implies 60%+ upside.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Next earnings report showing consumer trade-down tailwind boosting same-store sales",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "UHS",
+    "company": "Universal Health Services Inc",
+    "sentiment_score": 64,
+    "ai_score": 9,
+    "ai_reasoning": "P/E of 7.21, PEG of 0.67, and 21.36% ROE with 16.57% insider ownership is a textbook contrarian buy. Hospital operators benefit from aging demographics and behavioral health demand. The 32% drawdown on a defensive healthcare operator generating $23.15 EPS at $167 price is deeply irrational.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Behavioral health volume growth, favorable payer mix, or Medicaid expansion in key states",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "PTCT",
+    "company": "PTC Therapeutics Inc",
+    "sentiment_score": 78,
+    "ai_score": 7,
+    "ai_reasoning": "Trailing P/E of 8.42 with 39.44% profit margin and 36% cash yield is exceptional for biotech. However, Fwd P/E jumping to 53.8 signals a one-time event inflating trailing earnings. Negative book value (no P/B) and no debt/equity data suggest balance sheet complexity. The 29.5% ROA is genuinely strong if sustainable.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Pipeline readouts or regulatory approvals validating sustainable revenue beyond one-time gains",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "OPCH",
+    "company": "Option Care Health Inc",
+    "sentiment_score": 64,
+    "ai_score": 8,
+    "ai_reasoning": "RSI of 15.2 is extremely oversold — nearly unprecedented. At 9.6x forward earnings with a PEG of 0.84, the market is pricing in permanent impairment for a home/alternate-site infusion business that has structural tailwinds from hospital cost reduction. Thin margins (3.6% net) are characteristic of the industry, not a red flag. Insider buying (0.06%) and massive institutional ownership suggest no fundamental crisis.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Any stabilization in reimbursement rates or strong quarterly results; 56% upside to analyst target of $31.27",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "PPC",
+    "company": "Pilgrim's Pride Corp",
+    "sentiment_score": 58,
+    "ai_score": 7,
+    "ai_reasoning": "P/E of 8.56 with 25.9% ROE and 82.36% insider ownership (JBS parent) is compelling. Defensive consumer staples business trading at P/S 0.41 after a 35% drawdown from highs. The selloff likely reflects avian flu fears or input cost concerns, which are cyclical and temporary for a dominant poultry processor.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Chicken pricing stabilization or input cost relief restoring margin expansion",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "CRESY",
+    "company": "Cresud ADR",
+    "sentiment_score": 58,
+    "ai_score": 6,
+    "ai_reasoning": "Argentine conglomerate at 3.7x earnings with 27% ROE and massive 84% insider buying is intriguing. However, Argentina macro risk (currency, political uncertainty), high leverage (D/E 1.86), and ADR illiquidity make this speculative. The cash yield of 70% and P/B of 0.82 provide deep value support if Argentina's reform trajectory continues.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Argentine economic stabilization under Milei reforms; peso stability; agricultural commodity price recovery",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "WSM",
+    "company": "Williams-Sonoma Inc",
+    "sentiment_score": 47,
+    "ai_score": 5,
+    "ai_reasoning": "Impressive 51.5% ROE and 20% ROA but at 20x P/E with P/B of 10.3, the valuation already reflects premium quality. The 19% drawdown is relatively mild and the stock remains well above its 52W low. The -5.4% insider selling and housing market sensitivity add risk. Not yet cheap enough for a high-conviction contrarian call.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Housing market recovery driving home furnishing spending or margin expansion through cost discipline",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "MMSI",
+    "company": "Merit Medical Systems Inc",
+    "sentiment_score": 63,
+    "ai_score": 7,
+    "ai_reasoning": "The -9.05% daily plunge pushed RSI to 33.29 and the stock 38% below its 52W high. Fwd P/E of 14.08 vs trailing 26.76 implies massive earnings growth ahead. Strong current ratio (5.08), low debt (0.51), and 13.26% cash yield provide a solid floor. Medical devices is a secular growth market and this looks like an overreaction.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Earnings beat confirming the forward growth implied by Fwd P/E compression, or procedure volume recovery",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "GEHC",
+    "company": "GE HealthCare Technologies Inc",
+    "sentiment_score": 54,
+    "ai_score": 8,
+    "ai_reasoning": "RSI at 29.44 is deeply oversold for a medical devices blue chip with 19.24% ROE and solid margins. Fwd P/E of 11.26 for a healthcare technology leader with recurring imaging/services revenue is too cheap. The 32% drawdown and -13.23% vs SMA20 suggest capitulation selling, likely tariff or China-related fears overblown for a global healthcare franchise.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Tariff exemptions for medical equipment or strong hospital capital spending cycle",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "TM",
+    "company": "Toyota Motor Corp ADR",
+    "sentiment_score": 54,
+    "ai_score": 8,
+    "ai_reasoning": "Toyota at P/B 0.99 and P/E under 10 with 20.54% cash yield is a rare valuation for the world's largest automaker. RSI at 29.37 signals deeply oversold territory. Tariff fears and EV transition concerns are creating irrational panic on a company with fortress balance sheet and hybrid leadership.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Tariff resolution or clarification removing worst-case scenario pricing; hybrid vehicle demand surge",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "MKC",
+    "company": "McCormick & Co Inc",
+    "sentiment_score": 53,
+    "ai_score": 7,
+    "ai_reasoning": "Trailing P/E of 8.24 with 26.5% ROE and 23.12% profit margin for a consumer staples monopoly in spices is historically rare. The current ratio (0.76) is the main concern, but the brand moat and pricing power are durable. The 36% drawdown from highs on a defensive name screams irrational fear.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Volume recovery in at-home cooking or successful price increases flowing through to earnings",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "MZTI",
+    "company": "Marzetti Co",
+    "sentiment_score": 47,
+    "ai_score": 5,
+    "ai_reasoning": "Quality packaged food company (30% insider ownership, minimal debt) but PEG of 3.84 with only 4.4% expected growth means valuation is still stretched at 19x earnings even after a 35% drawdown. The 4.5% single-day drop and deep RSI suggest panic, but the premium valuation needs further compression to offer a true margin of safety.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Consumer staples defensive rotation; private label competition stabilization; margin recovery from input cost normalization",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "MNSO",
+    "company": "MINISO Group Holding Ltd ADR",
+    "sentiment_score": 48,
+    "ai_score": 7,
+    "ai_reasoning": "PEG of 0.19 is extraordinary, with Fwd P/E collapsing from 27 trailing to 9.21, implying massive earnings growth ahead. Cash yield of 22.34% is robust. The 44% drawdown from highs looks disproportionate for a profitable, growing specialty retailer with low beta (0.11). China exposure creates sentiment discount beyond fundamentals.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Strong international expansion results or China consumer recovery proving growth trajectory",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "WTW",
+    "company": "Willis Towers Watson Public Limited Co",
+    "sentiment_score": 64,
+    "ai_score": 9,
+    "ai_reasoning": "RSI of 25.6 signals extreme oversold conditions on a high-quality insurance broker with 20.7% ROE, 23.4% operating margins, and a PEG of 0.82. Trading at 11.5x forward earnings with 27% downside from highs is irrational for a business with recurring revenue streams and strong institutional ownership. Insider buying (0.16%) confirms management confidence.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Analyst target of $347 implies 35% upside; next earnings report should demonstrate resilient organic growth in insurance brokerage",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "AOS",
+    "company": "A.O. Smith Corp",
+    "sentiment_score": 37,
+    "ai_score": 5,
+    "ai_reasoning": "Decent industrial with 28% ROE and reasonable balance sheet, but the 16x P/E with a PEG of 2.83 and only 5% expected growth means it's not particularly cheap. The 26% drawdown is modest and likely reflects real concerns about China housing weakness impacting water heater demand. Low cash yield of 2.4% offers little margin of safety.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "China housing market stabilization or North American replacement cycle uptick",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "MTG",
+    "company": "MGIC Investment Corp",
+    "sentiment_score": 53,
+    "ai_score": 6,
+    "ai_reasoning": "Similar profile to NMIH — mortgage insurer with exceptional margins (78% operating) at 8x earnings. However, the 12% drawdown is modest (not a deep selloff), the 3.7% growth rate is pedestrian, and insider selling over 10% is concerning. Fair value rather than deep contrarian territory.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Housing market stabilization; capital returns via buybacks; interest rate cuts reducing default risk perception",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "NOC",
+    "company": "Northrop Grumman Corp",
+    "sentiment_score": 58,
+    "ai_score": 7,
+    "ai_reasoning": "Defense prime contractor at 17.75 P/E with 28.51% ROE and negative beta, trading at RSI 21 — deeply oversold. Defense spending trajectory remains structurally higher globally. The -13.76% insider selling is a concern but likely reflects routine diversification at previously elevated prices rather than fundamental pessimism.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Defense budget increases and major contract wins providing earnings visibility",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "BSX",
+    "company": "Boston Scientific Corp",
+    "sentiment_score": 59,
+    "ai_score": 8,
+    "ai_reasoning": "Premier med-tech innovator down 48% from highs with 14.83% ROE, 20.62% operating margin, and Fwd P/E of 15. This is an extreme selloff for a company with strong procedure volume growth and pipeline. The 37% discount to 200-day SMA is historically rare for BSX. Analyst target of $85.84 implies 52% upside.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Electrophysiology and structural heart procedure volumes rebounding, plus new product launches",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "LKQ",
+    "company": "LKQ Corp",
+    "sentiment_score": 58,
+    "ai_score": 7,
+    "ai_reasoning": "The -9.72% daily drop alongside Fwd P/E of 8.58 and P/B 1.13 suggests an earnings-related capitulation that may be overdone. Auto parts recycling is a durable business with high barriers. Analyst target of $39.86 implies 40% upside. The selloff pattern looks emotional following what was likely a guidance cut.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Used car market recovery driving salvage volumes or European operations margin improvement",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "MHK",
+    "company": "Mohawk Industries Inc",
+    "sentiment_score": 48,
+    "ai_score": 6,
+    "ai_reasoning": "Trading below book value (P/B 0.73) with low debt (0.3) and strong cash yield (14.26%). However, thin margins (3.77% net) in a cyclical housing-tied business with weak ROE (5.1%) suggest earnings pressure is real. Insider ownership at 18.49% provides alignment but housing cycle headwinds persist.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Housing market stabilization or rate cuts improving renovation spending",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "MKTX",
+    "company": "MarketAxess Holdings Inc",
+    "sentiment_score": 59,
+    "ai_score": 8,
+    "ai_reasoning": "Dominant electronic bond trading platform with 41% operating margins, 19.46% ROE, 10.62% cash yield, and near-zero debt. RSI at 27.8 signals extreme oversold conditions. The 34% decline from highs is irrational for a secular winner in fixed-income electronification with strong network effects. Fwd P/E of 16.96 is historically cheap.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Bond market volatility driving higher trading volumes and market share gains",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "BRO",
+    "company": "Brown & Brown Inc",
+    "sentiment_score": 64,
+    "ai_score": 8,
+    "ai_reasoning": "Best-in-class insurance broker with 29% operating margins and 17.7% profit margins trading at RSI 25.8 — deeply oversold. Fwd P/E of 11.74 for a high-quality compounder with 14.68% insider ownership is a rare opportunity. The 29% drawdown from 200-day SMA is extreme for a low-beta (0.66) defensive business.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Insurance brokerage is a recurring-revenue, asset-light model with pricing power; mean reversion toward analyst target of $74.93 (30% upside) likely as fear subsides",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "SRAD",
+    "company": "Sportradar Group AG",
+    "sentiment_score": 58,
+    "ai_score": 7,
+    "ai_reasoning": "PEG of 0.40 is exceptionally low, indicating the market is ignoring rapid growth. Near-zero debt (D/E 0.07) and 39.73% insider ownership provide strong alignment. The 42% decline from 200-day SMA is severe for a company with improving fundamentals and expanding sports betting TAM.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Fwd P/E compression from 53 to 16.84 implies massive earnings inflection; continued global sports betting legalization is a secular tailwind",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "PBH",
+    "company": "Prestige Consumer Healthcare Inc",
+    "sentiment_score": 53,
+    "ai_score": 7,
+    "ai_reasoning": "Exceptional 30.34% operating margin, 3.11 current ratio, and low P/E of 14.57 (Fwd 11.44) for a consumer healthcare company with strong brands. The 38% decline from highs looks excessive for a stable, low-beta business. Minimal insider selling and analyst target of $78 implies 42% upside.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Demonstration of pricing power and brand resilience in next earnings cycle",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "MDT",
+    "company": "Medtronic Plc",
+    "sentiment_score": 58,
+    "ai_score": 7,
+    "ai_reasoning": "Medical devices giant with 13.18 Fwd P/E, strong balance sheet (2.54 current ratio), and 8.16% cash yield is being sold off indiscriminately. The 15% decline from 200-day SMA is steep for a low-beta defensive name with consistent cash flows and a 3.5%+ dividend yield. RSI at 32 signals oversold conditions.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Pipeline approvals or quarterly earnings demonstrating stable organic growth in key segments",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "CCS",
+    "company": "Century Communities Inc",
+    "sentiment_score": 47,
+    "ai_score": 5,
+    "ai_reasoning": "Below book value (P/B 0.63) and strong current ratio (5.74) provide downside protection. However, razor-thin margins (3.36% net, 3.25% operating) and weak ROE (5.17%) in a rate-sensitive homebuilder suggest fundamental headwinds are real. Insider selling at -2.48% is concerning.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Mortgage rate decline or housing supply shortage driving volume recovery",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "GFI",
+    "company": "Gold Fields Ltd ADR",
+    "sentiment_score": 48,
+    "ai_score": 7,
+    "ai_reasoning": "PEG of 0.32 with 52% ROE and 41% profit margins in a gold miner is exceptional. The 32% drawdown appears driven by gold price pullback rather than operational issues. Fwd P/E of 6.9 with 21.5% expected growth implies significant upside if gold stabilizes or resumes its uptrend.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Gold price recovery above recent highs; production growth from Salares Norte ramp-up; central bank gold buying resumption",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "BDC",
+    "company": "Belden Inc",
+    "sentiment_score": 53,
+    "ai_score": 6,
+    "ai_reasoning": "Strong ROE of 18.89% and reasonable Fwd P/E of 12.86, but higher debt (1.07 D/E) and cyclical exposure to industrial connectivity markets create legitimate concern. The selloff is moderate and partially justified by tariff/macro uncertainty affecting communication equipment demand.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Data center and industrial automation capex recovery driving order growth",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "ELF",
+    "company": "e.l.f. Beauty Inc",
+    "sentiment_score": 67,
+    "ai_score": 5,
+    "ai_reasoning": "60% decline from 52W high with 12.93% short float suggests both fundamental and sentiment headwinds. Trailing P/E of 34 remains elevated for a company with only 6.84% profit margins. Insider selling (-10.31%) is concerning. Growth deceleration in mass-market cosmetics is a legitimate concern, not just fear.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "International expansion and Naturium brand integration could reignite growth narrative; strong balance sheet (current ratio 2.76) provides runway",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "GGG",
+    "company": "Graco Inc",
+    "sentiment_score": 37,
+    "ai_score": 5,
+    "ai_reasoning": "Premium industrial compounder with near-zero debt and excellent margins, but P/E of 26 and PEG of 2.83 suggest it is not yet cheap enough for a contrarian entry. The 17% drawdown is modest and RSI at 31 hints at short-term oversold conditions, but valuation still prices in steady execution rather than offering a margin of safety.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Infrastructure spending uptick; housing starts recovery boosting fluid handling equipment demand",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "PLNT",
+    "company": "Planet Fitness Inc",
+    "sentiment_score": 58,
+    "ai_score": 7,
+    "ai_reasoning": "43% decline for a franchise model with 29.4% operating margins and PEG of 1.0 is excessive. The negative equity (missing D/E) is by design — franchise asset-light model with buybacks. Forward P/E of 16.2 is reasonable for a high-growth fitness concept with unit economics intact. 7.6% short float suggests hedge fund crowding on the short side.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Membership growth re-acceleration; franchisee new unit openings; analyst target of $108 implies 66% upside",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "ETD",
+    "company": "Ethan Allen Interiors Inc",
+    "sentiment_score": 37,
+    "ai_score": 5,
+    "ai_reasoning": "Furniture retailer with thin margins (7% operating) in a weak housing/consumer discretionary environment. P/E of 13 and P/B of 1.12 are not screamingly cheap for a cyclical with declining demand. Cash/sh of $4.18 provides some support but the lack of growth estimates and falling margins suggest real headwinds.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Housing market recovery driving furniture replacement cycle; interest rate cuts spurring home purchases",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "WAY",
+    "company": "Waystar Holding Corp",
+    "sentiment_score": 58,
+    "ai_score": 7,
+    "ai_reasoning": "Healthcare revenue cycle management at 11.4x forward earnings with 25.4% operating margins and PEG of 0.76 after a 51% decline is deeply undervalued. The business has sticky, recurring revenue from hospital billing infrastructure. Low beta (0.20) makes this selloff magnitude anomalous. Trading near book value (1.02x).",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Healthcare IT spending is non-discretionary; analyst target of $35 implies 68% upside; high insider ownership (29%) aligns incentives",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "DPZ",
+    "company": "Dominos Pizza Inc",
+    "sentiment_score": 58,
+    "ai_score": 6,
+    "ai_reasoning": "Strong franchise model with 31.8% ROA and asset-light economics, but negative equity (missing D/E, P/B) means the balance sheet is leveraged to the hilt. At 16x forward earnings it's approaching fair value, but 9.7% short float and heavy insider selling (-5.38%) suggest near-term headwinds. International growth deceleration is a real concern.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Franchisee unit economics stabilization; any improvement in international same-store sales",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "DLTR",
+    "company": "Dollar Tree Inc",
+    "sentiment_score": 58,
+    "ai_score": 7,
+    "ai_reasoning": "At 12.7x forward earnings with 31.7% ROE, Dollar Tree is being punished for execution issues that are fixable. The Family Dollar turnaround is the key variable — management is actively closing underperforming stores. Debt/Eq of 1.88 is elevated but manageable for retail. Consumer trade-down in a weakening economy is a tailwind.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Family Dollar store closures completing, multi-price-point strategy gaining traction, consumer trade-down accelerating",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "ABT",
+    "company": "Abbott Laboratories",
+    "sentiment_score": 54,
+    "ai_score": 8,
+    "ai_reasoning": "RSI of 27.6 on a blue-chip medical device company at 14.75x forward earnings is classic irrational fear. ABT has diversified revenue (devices, diagnostics, nutrition, pharma), 13.9% profit margins, and insider buying (+0.30%). The 36% decline from highs is likely driven by tariff fears on medical devices or post-COVID diagnostics normalization, both transitory concerns.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Medical device demand is non-discretionary; analyst target of $118 implies 32% upside. FreeStyle Libre growth remains a secular driver.",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "TNL",
+    "company": "Travel+Leisure Co",
+    "sentiment_score": 63,
+    "ai_score": 7,
+    "ai_reasoning": "Forward P/E of 7.6 and PEG of 0.46 are screaming value for a travel/leisure company with 17.7% operating margins and 11.4% cash yield. However, heavy insider selling (-7.28%) is a warning flag. The negative book value (missing D/E and P/B) indicates aggressive leverage typical of timeshare businesses, which is structural risk in a downturn.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Summer travel season strength; dividend yield and buybacks at these levels make the stock self-correcting",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "WIT",
+    "company": "Wipro Ltd ADR",
+    "sentiment_score": 22,
+    "ai_score": 4,
+    "ai_reasoning": "Low-margin IT services at 14.3x P/E with a PEG of 2.42 and only 5.5% expected growth offers limited upside. The 16% ROE and 14% margins are mediocre for tech, and near-zero insider and institutional ownership suggests lack of conviction. This is a below-average IT services name in a sector facing AI disruption headwinds.",
+    "ai_classification": "structural",
+    "ai_catalyst": "Large enterprise AI implementation contract wins",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "AVY",
+    "company": "Avery Dennison Corp",
+    "sentiment_score": 58,
+    "ai_score": 6,
+    "ai_reasoning": "Solid industrial compounder with 30.86% ROE but elevated debt (1.65 D/E) and concerning -18.82% insider selling. The 18% decline is moderate and the Fwd P/E of 14.67 is reasonable but not deeply discounted. Packaging demand is tied to economic cycle, creating legitimate near-term uncertainty.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "RFID/intelligent label growth accelerating as retail adoption increases",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "FPI",
+    "company": "Farmland Partners Inc",
+    "sentiment_score": 32,
+    "ai_score": 4,
+    "ai_reasoning": "Farmland REIT with weak fundamentals: Fwd P/E jumps to 50x suggesting earnings deterioration, only 6% ROE, and no growth estimates available. RSI at 30 is oversold but the forward earnings collapse signals real problems, not just sentiment. The P/B near 1 provides limited downside but limited upside too.",
+    "ai_classification": "structural",
+    "ai_catalyst": "Agricultural commodity price recovery; farmland value appreciation in inflationary environment",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "AMCR",
+    "company": "Amcor Plc",
+    "sentiment_score": 68,
+    "ai_score": 6,
+    "ai_reasoning": "Fwd P/E of 8.64 vs trailing 24.68 suggests strong earnings growth ahead, and PEG of 0.89 is attractive. However, packaging is a low-margin commodity business (3% profit margin) with elevated debt (D/E 1.38). The 33.52% insider buying is a notable positive signal.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Insider accumulation at 33.52% and analyst target of $51 (35% upside) suggest the Berry Global merger integration may unlock value",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "PSN",
+    "company": "Parsons Corp",
+    "sentiment_score": 58,
+    "ai_score": 7,
+    "ai_reasoning": "Defense/IT services company with 101.63% institutional ownership trading at a Fwd P/E of 13.78 despite government spending tailwinds. Low beta (0.59) stock down 28.5% from 200-day SMA suggests irrational selling unrelated to fundamentals. Strong current ratio of 1.75 and manageable debt.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Growing defense and intelligence budgets plus infrastructure spending provide multi-year revenue visibility; analyst target of $73 implies 43% upside",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "PNR",
+    "company": "Pentair plc",
+    "sentiment_score": 48,
+    "ai_score": 6,
+    "ai_reasoning": "Excellent margins (21.56% operating) and solid ROE (17.61%) at a reasonable Fwd P/E of 13.6, but RSI at 28.32 and near 52W lows with virtually no cash cushion ($0.42/sh) raises questions. The water treatment thesis is intact long-term but near-term housing and pool markets face headwinds.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Housing market stabilization driving pool and water treatment equipment demand",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "NKE",
+    "company": "Nike Inc",
+    "sentiment_score": 37,
+    "ai_score": 4,
+    "ai_reasoning": "Iconic brand but fundamentally challenged — profit margins collapsed to 4.83%, PEG of 7.11 signals expensive relative to anemic growth, and the 45% decline from highs reflects genuine strategic missteps (DTC pivot issues, market share loss to HOKA/On). High P/E of 29 for deteriorating margins is not cheap.",
+    "ai_classification": "structural",
+    "ai_catalyst": "New product cycle or CEO strategic reset demonstrating margin recovery",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "CALX",
+    "company": "Calix Inc",
+    "sentiment_score": 78,
+    "ai_score": 7,
+    "ai_reasoning": "Calix at 17.4x forward P/E with a PEG of 0.46 suggests the market drastically underprices its growth trajectory in broadband service provider software. Near-zero debt (D/E 0.02), strong current ratio (3.29), and 9.25% insider ownership signal a healthy, aligned business. The 39% drawdown and -13% insider transactions create tension, but the valuation is compelling.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Federal broadband subsidies (BEAD program) driving rural ISP spending on Calix's cloud platform should accelerate revenue growth into the forward earnings estimate.",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "HHH",
+    "company": "Howard Hughes Holdings Inc",
+    "sentiment_score": 58,
+    "ai_score": 7,
+    "ai_reasoning": "Trading at 0.98x book value with $35.17 cash per share (56% of stock price) on a real estate developer with master-planned communities. The 32% decline from highs massively discounts the NAV of land assets. PEG of 0.76 suggests growth is underappreciated. The Pershing Square involvement provides activist backstop.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "NAV realization through asset sales or development milestones; housing market stabilization; privatization bid possibility",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "PODD",
+    "company": "Insulet Corp",
+    "sentiment_score": 58,
+    "ai_score": 7,
+    "ai_reasoning": "PEG of 0.78 and 18.12% ROE for a diabetes device leader with a 50% drawdown signals irrational fear. Omnipod's recurring revenue model and expanding total addressable market in Type 2 diabetes are durable growth drivers. Insider buying (+1.95%) and current ratio of 2.78 add conviction.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Type 2 diabetes market expansion and international penetration provide long runway for 20%+ revenue growth; analyst target $329 (88% upside)",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "PATK",
+    "company": "Patrick Industries Inc",
+    "sentiment_score": 58,
+    "ai_score": 6,
+    "ai_reasoning": "RSI of 26.36 signals deeply oversold conditions for this RV/housing supplier, but the cyclical exposure to housing and recreational vehicles is a real risk in a slowing economy. High debt (D/E 1.35) and thin margins (3.46% profit) amplify downside. Strong institutional ownership (109%) provides a floor.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Housing starts recovery and RV replacement cycle would drive significant operating leverage; analyst target of $121 (36% upside)",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "ATR",
+    "company": "Aptargroup Inc",
+    "sentiment_score": 42,
+    "ai_score": 4,
+    "ai_reasoning": "Decent quality (14.97% ROE, low beta 0.42) but PEG of 2.64 and Fwd P/E of 18.69 still reflect premium pricing even after the drawdown. Thin cash yield (3.02%) and insider selling (-4.27%) suggest this is a fair-value reversion, not a bargain. The business is steady but unexciting.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Pharma packaging demand acceleration or margin expansion from beauty/personal care segment",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "SYK",
+    "company": "Stryker Corp",
+    "sentiment_score": 59,
+    "ai_score": 8,
+    "ai_reasoning": "Elite medical device compounder with 22.8% operating margins and 15.2% ROE hitting RSI 21.43 — extremely oversold. Fwd P/E of 17.59 for a company with consistent double-digit earnings growth is a rare entry point. Low short float (1.31%) and strong balance sheet (current ratio 2.11) confirm this is fear-driven.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Aging demographics drive non-discretionary demand for orthopedic/surgical devices; analyst target of $399 (35% upside) anchors recovery thesis",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "UFPI",
+    "company": "UFP Industries Inc",
+    "sentiment_score": 53,
+    "ai_score": 7,
+    "ai_reasoning": "Extremely strong balance sheet — 4.64 current ratio, 0.08 D/E, and 15.88% cash yield at a P/B of only 1.57. The lumber and wood products cycle is depressed, but the company is well-positioned to survive and acquire. RSI at 30.6 and Fwd P/E of 15.09 for a cyclical at trough earnings suggests upside when housing activity normalizes.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Housing starts recovery and lumber price stabilization driving earnings reversion to mean",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "RERE",
+    "company": "ATRenew Inc ADR",
+    "sentiment_score": 53,
+    "ai_score": 7,
+    "ai_reasoning": "Chinese electronics recycling platform trading at 0.22 PEG and 7.17 Fwd P/E with 44% cash yield — the market is pricing in near-zero growth despite rapid earnings expansion expectations. Minimal debt (0.11 D/E) and strong current ratio (2.48) provide safety. ADR discount reflects geopolitical risk more than business fundamentals.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Continued earnings beats demonstrating sustainable profitability in circular economy model",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "AMSF",
+    "company": "Amerisafe Inc",
+    "sentiment_score": 43,
+    "ai_score": 7,
+    "ai_reasoning": "Workers' comp specialist at 12.39 P/E with zero debt, 18.27% ROE, and 0.25 beta — a quality defensive business at a discount valuation. The 36% decline from highs appears emotionally driven, possibly by fears of workers' comp pricing cycle turning. Low short float (1.33%) suggests limited bearish conviction.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Favorable loss reserve development or pricing discipline maintaining combined ratios",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "BF-B",
+    "company": "Brown-Forman Corp",
+    "sentiment_score": 31,
+    "ai_score": 3,
+    "ai_reasoning": "Negative forward EPS growth (-2.18%) for a spirits company trading at 15x earnings with high short interest (10.7%) signals structural challenges, not temporary fear. Tariff headwinds, changing consumer preferences away from brown spirits, and an aging brand portfolio represent real business deterioration. The 29% drawdown appears justified.",
+    "ai_classification": "structural",
+    "ai_catalyst": "Resolution of tariff headwinds on imported spirits; premiumization strategy gaining traction; activist involvement",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "DHR",
+    "company": "Danaher Corp",
+    "sentiment_score": 53,
+    "ai_score": 7,
+    "ai_reasoning": "Premier life sciences compounder at 19.2x forward earnings after a 28% decline. The bioprocess destocking cycle should be nearing its end, and the Danaher Business System drives consistent margin expansion. P/E of 33.9 on trailing is misleading due to depressed trough earnings. Insider selling (-1.77%) is modest for a company of this size.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Bioprocess order recovery inflection; China life sciences spending stabilization; analyst target of $248 implies 42% upside",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "WDH",
+    "company": "Waterdrop Inc ADR",
+    "sentiment_score": 32,
+    "ai_score": 4,
+    "ai_reasoning": "Chinese insurtech with a massive gap between trailing P/E (7.6) and forward P/E (57), signaling expected earnings collapse. Very low institutional ownership (3.3%) and micro-cap ADR status create liquidity risk. The P/B under 1 and cash yield of 52% are interesting but the forward earnings deterioration and China regulatory risk make this speculative.",
+    "ai_classification": "structural",
+    "ai_catalyst": "Chinese insurance market regulatory clarity; platform user growth re-acceleration; share buyback utilizing excess cash",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "COO",
+    "company": "Cooper Companies Inc",
+    "sentiment_score": 58,
+    "ai_score": 7,
+    "ai_reasoning": "Contact lens leader with Fwd P/E of 12.39, low debt (D/E 0.30), and positive insider buying (+1.24%) — a compelling setup. RSI of 27.29 is deeply oversold for a defensive healthcare name. The recurring nature of contact lens revenue provides earnings visibility that the market is undervaluing.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "MiSight myopia management growth and daily disposable lens adoption provide secular tailwinds; analyst target $90.93 (46% upside)",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "TMO",
+    "company": "Thermo Fisher Scientific Inc",
+    "sentiment_score": 63,
+    "ai_score": 7,
+    "ai_reasoning": "Premier life sciences franchise with 15.15% profit margins and 13.52% ROE trading at Fwd P/E 17.23 — below its historical average. The post-COVID normalization is well understood, and biotech funding is recovering. Insider selling (-18.55%) is a concern but common at these market cap levels.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Biotech funding recovery and pharma R&D spend acceleration provide volume tailwinds; analyst target of $623 implies 33% upside",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "SARO",
+    "company": "StandardAero Inc",
+    "sentiment_score": 57,
+    "ai_score": 5,
+    "ai_reasoning": "Attractive forward P/E of 15.7 and PEG of 0.52 for an aerospace MRO business with secular tailwinds from aging aircraft fleets. However, insider selling of -48% is an enormous red flag — this is likely post-IPO lockup selling but the magnitude demands caution. Thin 4.6% margins leave little room for error.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Aftermarket aerospace demand remains robust; but massive insider selling must stabilize before conviction can build",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "VKTX",
+    "company": "Viking Therapeutics Inc",
+    "sentiment_score": 73,
+    "ai_score": 6,
+    "ai_reasoning": "Viking Therapeutics in the GLP-1/obesity space has a $93 analyst target (210% upside) but is pre-revenue with -70% ROE and 20.5% short float. The stock is sitting near its 52-week low, which for a clinical-stage biotech could represent either a buying opportunity or a warning about trial risk. Binary outcome stock.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Positive Phase 3 readouts for VK2735 (oral or injectable obesity drug) would be transformative, but trial failure would be devastating.",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "CSGP",
+    "company": "Costar Group Inc",
+    "sentiment_score": 58,
+    "ai_score": 7,
+    "ai_reasoning": "CoStar's 64% drawdown from highs is severe for a company with near-zero debt (D/E 0.14), strong cash position, and dominant market position in commercial real estate data. The 575x trailing P/E reflects heavy Homes.com investment suppressing current earnings, but forward P/E of 19.6x with PEG 0.53 prices in a strong recovery. Insider buying (1.06%) is a positive signal.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Homes.com investment cycle maturing into profitability and commercial real estate recovery would rapidly normalize the earnings profile toward the forward estimate.",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "ALLE",
+    "company": "Allegion plc",
+    "sentiment_score": 37,
+    "ai_score": 5,
+    "ai_reasoning": "Quality business with 34.18% ROE and strong margins (20.64% operating), but premium valuation persists even after the decline (P/B 5.54, P/S 2.8). PEG of 1.66 suggests fair-to-expensive for the growth rate. The selloff appears orderly rather than panicked, aligning more with a re-rating to fair value than an opportunity.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Commercial construction recovery or institutional security upgrade cycle",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "TFPM",
+    "company": "Triple Flag Precious Metals Corp",
+    "sentiment_score": 48,
+    "ai_score": 7,
+    "ai_reasoning": "Precious metals streaming company with zero debt, 62% profit margins, negative beta (-0.2), and PEG under 1.0. The pullback from highs is counterintuitive given gold's strength, suggesting technical selling rather than fundamental deterioration. Streaming model provides leveraged exposure to metals with minimal operational risk.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Continued gold price strength and new streaming agreements expanding cash flow",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "WING",
+    "company": "Wingstop Inc",
+    "sentiment_score": 57,
+    "ai_score": 5,
+    "ai_reasoning": "Wingstop has excellent unit economics (28% operating margin, 16.6% ROA) but the 59% drawdown with 13.6% short float and negative insider transactions suggest the market is repricing growth expectations. Forward P/E of 28.7x is still premium. Negative book value (no P/B or D/E available) adds balance sheet risk.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Same-store sales acceleration and international unit growth could reignite the growth narrative, but the short interest signals ongoing skepticism.",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "PIPR",
+    "company": "Piper Sandler Co's",
+    "sentiment_score": 38,
+    "ai_score": 6,
+    "ai_reasoning": "Strong ROE (22.05%) and margins for a mid-cap investment bank, with minimal debt (0.09). The -8.92% daily change suggests an earnings miss or guidance cut drove a sharp selloff. Capital markets firms are highly cyclical and dependent on deal flow, which faces macro uncertainty.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "M&A and IPO activity recovery as rate environment clarifies",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "CTAS",
+    "company": "Cintas Corp",
+    "sentiment_score": 43,
+    "ai_score": 6,
+    "ai_reasoning": "Best-in-class operator with 41% ROE and 19.5% ROA, but at 31x forward earnings and 14x book, it's still expensive even after a 26% decline. This is a quality compounder being repriced from euphoric to merely premium. The minimal cash yield (0.27%) offers no downside cushion.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Uniform rental revenue is recession-resistant; any economic soft landing would quickly re-rate this name",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "CWT",
+    "company": "California Water Service Group",
+    "sentiment_score": 48,
+    "ai_score": 6,
+    "ai_reasoning": "Regulated water utility with predictable cash flows but low ROE (7.19%), sub-1.0 current ratio (0.69), and meaningful debt (1.01 D/E). The 17% decline from highs is modest for a utility and may reflect interest rate sensitivity. Fwd P/E of 15.29 is fair but not deeply discounted for the sector.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Rate case approvals boosting allowed returns and interest rate cuts improving relative yield attractiveness",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "SNN",
+    "company": "Smith & Nephew plc ADR",
+    "sentiment_score": 43,
+    "ai_score": 7,
+    "ai_reasoning": "Orthopedic and wound care leader at 12.55 Fwd P/E with solid margins and 2.57 current ratio. Trading at a significant discount to US med-tech peers (MDT, BSX) despite comparable fundamentals. The 20% decline from highs and low short float (0.72%) suggest the selloff lacks strong bearish conviction.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Operational improvement plan delivering margin expansion and hip/knee procedure volume recovery",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "XYL",
+    "company": "Xylem Inc",
+    "sentiment_score": 42,
+    "ai_score": 5,
+    "ai_reasoning": "Water infrastructure is a strong secular theme, but 28.66 trailing P/E with only 9% ROE and modest margins suggests the premium valuation was never fully justified. The selloff is moderate and partially reflects Evoqua integration execution risk. Not cheap enough yet to be a compelling contrarian bet.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Evoqua synergies materializing and infrastructure spending boosting order backlog",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "STE",
+    "company": "Steris Plc",
+    "sentiment_score": 53,
+    "ai_score": 6,
+    "ai_reasoning": "Quality medical sterilization business with defensive characteristics, but at 19.3x forward earnings it's not cheap enough to be a strong contrarian buy. The 20% decline from highs reflects rotation out of healthcare and tariff concerns. Insider selling at -8.0% is a significant red flag that tempers the thesis.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Hospital capital equipment spending recovery; surgical volume normalization post-GLP-1 disruption fears",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "FSV",
+    "company": "FirstService Corp",
+    "sentiment_score": 43,
+    "ai_score": 6,
+    "ai_reasoning": "Quality real estate services company (FirstService Residential + Brands) but at 19.6x forward earnings and 37x trailing, the premium has only partially corrected. Thin 2.9% net margins are structural to the property management business. Low short float (0.97%) and RSI of 30 suggest technical oversold bounce potential, but fundamentals don't scream bargain.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Property restoration demand from weather events; residential property management is recession-resilient but growth is priced in",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "OLMA",
+    "company": "Olema Pharmaceuticals Inc",
+    "sentiment_score": 62,
+    "ai_score": 5,
+    "ai_reasoning": "Olema's 60% drawdown with 18.7% short float and -4.5% insider transactions are warning signs. However, the $43 analyst target (200% upside) and $5.80/share cash on a $14.32 stock suggest the market may be overdiscounting the oncology pipeline. Pre-revenue with -36.6% ROE makes this purely a clinical bet.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Phase 3 data for palazestrant in breast cancer would be transformative, but high short interest suggests smart money is skeptical.",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "ZBH",
+    "company": "Zimmer Biomet Holdings Inc",
+    "sentiment_score": 48,
+    "ai_score": 7,
+    "ai_reasoning": "Fwd P/E of 9.19 vs trailing 21.53 signals dramatic earnings improvement ahead for this orthopedic device leader. Low beta (0.48) and manageable debt (D/E 0.59) with strong current ratio of 1.73. The selloff appears disproportionate to the modest fundamental headwinds in elective procedures.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Elective surgery volumes normalizing post-backlog, combined with new product launches in robotics-assisted surgery; analyst target $97 (17% upside)",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "ERIE",
+    "company": "Erie Indemnity Co",
+    "sentiment_score": 21,
+    "ai_score": 3,
+    "ai_reasoning": "Trading well above analyst target of $115 at $214.96 despite the 43% drawdown, which suggests the prior valuation was wildly stretched. No Fwd P/E or PEG available limits visibility. The 9.47% short float is elevated and 45.95% insider ownership creates liquidity risk. The decline looks like a justified reversion from speculative excess.",
+    "ai_classification": "structural",
+    "ai_catalyst": "None apparent — valuation still appears rich relative to growth profile",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "NHI",
+    "company": "National Health Investors Inc",
+    "sentiment_score": 32,
+    "ai_score": 5,
+    "ai_reasoning": "Healthcare REIT with decent margins but expensive valuations (P/S 9.82, PEG 4.48) and limited growth. The modest 16% decline from highs is not deep enough to create a compelling entry given rising rate sensitivity and senior housing operational challenges.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Interest rate cuts improving REIT valuations and reducing cost of capital",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "LH",
+    "company": "Labcorp Holdings Inc",
+    "sentiment_score": 53,
+    "ai_score": 6,
+    "ai_reasoning": "Modest selloff (-12.9% from 52W high) for a quality diagnostics business with decent margins. Fwd P/E of 13.16 is reasonable but insider selling (-8.53%) and post-COVID volume normalization temper enthusiasm. The decline is relatively shallow compared to peers.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Specialty testing mix shift improving margins; drug development services provide counter-cyclical revenue stream",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "GRAB",
+    "company": "Grab Holdings Limited",
+    "sentiment_score": 58,
+    "ai_score": 7,
+    "ai_reasoning": "Southeast Asian super-app turning profitable with 7.9% margins, PEG of 0.4 signals strong earnings growth ahead. 45% cash yield provides massive downside cushion, and 40% insider ownership aligns management with shareholders. The 25% decline from highs looks like emotional overreaction to broader tech/China-adjacent selloff.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Continued margin expansion and potential profitability inflection driving earnings beats over next 2-3 quarters",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "DRS",
+    "company": "Leonardo DRS Inc",
+    "sentiment_score": 37,
+    "ai_score": 5,
+    "ai_reasoning": "Defense sector fundamentals remain solid with strong insider ownership (71.7%) and low debt (0.17), but P/E of 38.7 and PEG of 2.9 suggest the stock was richly valued before the pullback. The ~19% decline from highs is modest given the premium valuation, and ROE of 10.5% doesn't justify the multiple.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Defense budget clarity or new contract wins could re-rate, but valuation needs to compress further",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "CIGI",
+    "company": "Colliers International Group Inc",
+    "sentiment_score": 48,
+    "ai_score": 7,
+    "ai_reasoning": "Colliers has 14.3% insider ownership (skin in the game) and a forward P/E of 12.2x with a PEG of 0.91, suggesting the 40% drawdown overshoots fundamentals. The 54% upside to analyst target and asset-light real estate services model make this a high-quality compounder on sale. Debt at 1.49x equity is the main risk.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Real estate transaction recovery and recurring revenue growth from investment management segment should drive earnings toward the forward estimate.",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "CMPX",
+    "company": "Compass Therapeutics Inc",
+    "sentiment_score": 41,
+    "ai_score": 2,
+    "ai_reasoning": "A 72% drawdown with RSI at 24 and SMA200 at -57% signals something fundamentally broke — likely a clinical trial failure or setback. Pre-revenue biotech at $1.96 with 21.6% short float and a $11.25 analyst target suggests extreme speculative risk. The 10.7% daily move indicates volatility, not recovery.",
+    "ai_classification": "structural",
+    "ai_catalyst": "Clinical data readout could provide a bounce, but the magnitude of the decline suggests the market has repriced the pipeline's probability of success.",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "GPCR",
+    "company": "Structure Therapeutics Inc ADR",
+    "sentiment_score": 58,
+    "ai_score": 7,
+    "ai_reasoning": "Structure Therapeutics has nearly half its market cap in cash ($20.42/share vs $42.21 price), zero debt, and a $108.50 analyst target (157% upside). The 55% drawdown in a GLP-1 competitor is likely driven by sector-wide sentiment swings rather than company-specific failure. RSI at 31 is oversold and the 24.8x current ratio provides exceptional runway.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Clinical data readouts for oral GLP-1 receptor agonist program; the cash-rich balance sheet means dilution risk is minimal for the foreseeable future.",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "KTOS",
+    "company": "Kratos Defense & Security Solutions Inc",
+    "sentiment_score": 62,
+    "ai_score": 5,
+    "ai_reasoning": "Defense drone play with strong thematic tailwinds but razor-thin margins (1.6% profit margin) don't justify P/E of 471 or Fwd P/E of 59. The -27.7% insider selling is a serious red flag. Low debt and high current ratio provide safety, but valuation needs significant revenue acceleration to justify.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Major DoD drone contract awards could rerate, but insider selling undermines conviction",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "BLDR",
+    "company": "Builders Firstsource Inc",
+    "sentiment_score": 58,
+    "ai_score": 6,
+    "ai_reasoning": "Housing-exposed industrial at Fwd P/E 12 with strong current ratio and insider buying (+1.62%). However, margins have compressed significantly (profit margin 1.97%) and Debt/Eq of 1.32 adds risk in a rising rate environment. The 50% drawdown prices in significant housing weakness.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Any easing in mortgage rates or housing starts recovery would rerate this quickly",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "SONY",
+    "company": "Sony Group Corp ADR",
+    "sentiment_score": 43,
+    "ai_score": 6,
+    "ai_reasoning": "Negative trailing EPS (-$0.20) and profit margin (-1.43%) raise legitimate concerns, but operating margin remains healthy at 12.24% suggesting one-time charges. Fwd P/E of 15.07 and 11.27% cash yield are attractive. Low institutional ownership (7.75%) for an ADR limits near-term buying pressure.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Gaming cycle recovery with PS5 installed base monetization, plus entertainment IP optionality across film, music, and sensors",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "ORLA",
+    "company": "Orla Mining Ltd",
+    "sentiment_score": 54,
+    "ai_score": 8,
+    "ai_reasoning": "PEG of 0.18 is the lowest in this set, with Fwd P/E compressing from 51.73 to 7.19 — implying massive earnings growth from gold mining ramp-up. Outstanding 43.46% operating margin and 10.98% insider ownership in a gold miner that is 56% above its 52W low yet 39% below its high. Strong cash yield of 9.17%.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Gold price tailwinds combined with production ramp at Camino Rojo and South Railroad development; analyst target $23.54 (77% upside)",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "ITRG",
+    "company": "Integra Resources Corp",
+    "sentiment_score": 48,
+    "ai_score": 7,
+    "ai_reasoning": "Pre-revenue mining company with PEG of 0.09, Fwd P/E of 3.76, and 11.52% cash yield trading at $2.69 vs analyst target of $7.05. Near-zero debt (D/E 0.12) and current ratio of 3.52 mean no near-term solvency risk. 26.66% operating margin shows the mine economics are turning positive. The 44.76% decline from highs in a gold bull market is excessive.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Gold bull market and production ramp at DeLamar project; analyst target of $7.05 implies 162% upside with minimal dilution risk given strong balance sheet",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "BIO",
+    "company": "Bio-Rad Laboratories Inc",
+    "sentiment_score": 43,
+    "ai_score": 6,
+    "ai_reasoning": "Extraordinary 22.23% cash yield ($57/share cash on a $256 stock) provides a massive downside cushion — the company is trading near book value (P/B 1.0). However, weak ROE (2.5%) and an expensive PEG of 5.54 suggest the business itself is underperforming. The -8.41% daily drop hints at a specific negative event.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Cash-rich balance sheet could support buybacks, M&A, or activist involvement; life science research spending recovery would lift margins",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "DG",
+    "company": "Dollar General Corp",
+    "sentiment_score": 42,
+    "ai_score": 5,
+    "ai_reasoning": "Turnaround story with real execution risk — ROE of 18.99% is strong but margins have compressed significantly (5.16% operating). High debt (D/E 1.85) limits flexibility during a consumer spending slowdown. Fwd P/E of 14.36 is reasonable but not cheap enough to compensate for structural competitive pressure from Walmart and e-commerce.",
+    "ai_classification": "structural",
+    "ai_catalyst": "Back-to-basics strategy under new management could stabilize store-level economics; defensive positioning benefits in a recession",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "RTX",
+    "company": "RTX Corp",
+    "sentiment_score": 47,
+    "ai_score": 5,
+    "ai_reasoning": "Premium valuation persists even after selloff — Fwd P/E of 22.9 and PEG of 2.27 are expensive for a defense contractor. Operating margins at 10.34% are modest. Insider selling of -12.99% adds concern. The defense spending thesis is well-priced in despite the drawdown.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Global defense spending upcycle and commercial aerospace aftermarket recovery provide steady revenue growth",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "TW",
+    "company": "Tradeweb Markets Inc",
+    "sentiment_score": 32,
+    "ai_score": 5,
+    "ai_reasoning": "Exceptional business quality — 40% profit margins, nearly zero debt, 5.4x current ratio — but P/S of 12.2 and P/E of 27.6 mean this was never cheap. The 25% pullback brings it closer to fair value but not bargain territory. Electronic trading volumes are secular growers but the premium is still substantial.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Fixed income trading volume acceleration could justify re-rating, but valuation still rich",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "MAZE",
+    "company": "Maze Therapeutics Inc",
+    "sentiment_score": 52,
+    "ai_score": 4,
+    "ai_reasoning": "Pre-revenue biotech with 49% drawdown, no P/E, and -47.5% ROE is highly speculative. The 15.5x current ratio and strong cash position ($6.19/share vs $27.17 price) provide runway, but the 229% move from 52-week low suggests this has already had its bounce and may be settling into a new range. The $63.55 analyst target implies massive upside but requires clinical validation.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Clinical milestone data for genetically-targeted therapies, but binary risk makes position sizing critical.",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "BILI",
+    "company": "Bilibili Inc ADR",
+    "sentiment_score": 59,
+    "ai_score": 8,
+    "ai_reasoning": "Chinese video/gaming platform now profitable with PEG of 0.63 and Fwd P/E of 16.5 — cheap for a growth name. Exceptional 46.8% cash yield means nearly half the market cap is backed by cash. The 17% decline from recent highs reflects broad China ADR risk sentiment rather than company-specific deterioration.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Continued profitability improvement and potential share buybacks leveraging massive cash position",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "MOS",
+    "company": "Mosaic Company",
+    "sentiment_score": 48,
+    "ai_score": 6,
+    "ai_reasoning": "Trading at 0.61x book and 0.61x sales with a 10.6x forward P/E, Mosaic is statistically cheap. However, the 39% drawdown from highs and deteriorating SMA200 (-19%) reflect genuine commodity cycle headwinds in potash/phosphate pricing. Slight insider buying (0.05%) is a faint positive signal.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Agricultural commodity price recovery or supply disruptions would rapidly re-rate this name given its deep value metrics.",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "ICUI",
+    "company": "ICU Medical Inc",
+    "sentiment_score": 63,
+    "ai_score": 7,
+    "ai_reasoning": "Medical devices company with near-zero current earnings but Fwd P/E of 12.8 signals a major earnings inflection expected. Strong balance sheet (current ratio 2.36, 10.4% cash yield) and 103%+ institutional ownership show smart money conviction. The modest 26% drawdown is contained relative to peers.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Earnings recovery from integration costs normalizing; hospital capital spending rebound",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "CLB",
+    "company": "Core Laboratories Inc",
+    "sentiment_score": 26,
+    "ai_score": 3,
+    "ai_reasoning": "Oil services company with thin 5.9% margins, no PEG data, and 9.4% short float in a declining oil price environment. ROE of 11.9% is mediocre for the risk profile. The 31% decline reflects real structural headwinds from energy transition and reduced upstream capex. No insider buying despite the decline.",
+    "ai_classification": "structural",
+    "ai_catalyst": "Oil price recovery above $80 could help, but the secular trend in core analysis services is challenging",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "ORI",
+    "company": "Old Republic International Corp",
+    "sentiment_score": 33,
+    "ai_score": 6,
+    "ai_reasoning": "Cheap at 9.65x earnings with 17.25% ROE and low debt, but forward P/E of 11.85 being higher than trailing P/E signals expected earnings decline. The sub-1.0 current ratio (0.53) is typical for insurance but limits flexibility. Only 11% off highs — this is a mild pullback, not a panic selloff.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Title insurance recovery tied to housing transaction volume pickup; special dividend history provides floor",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "IP",
+    "company": "International Paper Co",
+    "sentiment_score": 47,
+    "ai_score": 5,
+    "ai_reasoning": "Negative ROE, negative margins, and no trailing P/E reflect genuine operational struggles post-DS Smith merger integration. However, Fwd P/E of 12 and insider buying (+1.54%) suggest management sees a turnaround. Heavy institutional ownership at 100%+ creates crowding risk.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Merger synergy realization and packaging demand recovery, but execution risk is real",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "LRMR",
+    "company": "Larimar Therapeutics Inc",
+    "sentiment_score": 56,
+    "ai_score": 3,
+    "ai_reasoning": "Larimar at $3.94 with -132.6% ROE, -95.4% ROA, and only $1.32/share in cash is running low on runway (current ratio just 2.19 for a biotech). The 51.8% insider ownership and 10.5% insider buying are notable positives, but the stock's proximity to its 52-week low and the likely need for dilutive financing create significant downside risk.",
+    "ai_classification": "structural",
+    "ai_catalyst": "Positive nomlabofusp data for Friedreich's ataxia and insider buying suggest conviction, but cash constraints create near-term dilution risk that could pressure the stock further.",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "ARE",
+    "company": "Alexandria Real Estate Equities Inc",
+    "sentiment_score": 31,
+    "ai_score": 3,
+    "ai_reasoning": "Negative EPS (-$6.27), negative ROE (-6.43%), and negative profit margin (-36.32%) indicate fundamental distress, not just sentiment. Office REIT sector faces structural headwinds from remote work. Trading at P/B 0.45 suggests the market questions asset values. High debt (D/E 0.83) in a rising-rate environment compounds risk.",
+    "ai_classification": "structural",
+    "ai_catalyst": "Life science lab space demand is more resilient than traditional office, but refinancing risk and tenant downsizing remain real headwinds",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "BDX",
+    "company": "Becton Dickinson & Co",
+    "sentiment_score": 48,
+    "ai_score": 7,
+    "ai_reasoning": "Becton Dickinson trades at a reasonable 11.1x forward P/E with solid institutional backing (96.8%) and a 24% upside to analyst target. The modest 20% drawdown from highs with stable fundamentals (ROE 7%, D/E 0.77) suggests the selloff overreacts to near-term margin pressure in a durable medtech franchise.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Forward P/E compression to 11x signals earnings recovery already priced in; reversion toward $186 analyst target as margins stabilize.",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "AJG",
+    "company": "Arthur J. Gallagher & Co",
+    "sentiment_score": 64,
+    "ai_score": 8,
+    "ai_reasoning": "Premier insurance broker with 18.2% operating margins and 10.8% profit margins trading at Fwd P/E of 14 with PEG of 0.86 — this is a best-in-class compounder at a discount. The 41% drawdown from highs is irrational for a business with sticky recurring brokerage revenue. Low short float (2.5%) confirms no structural bear thesis.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Hard insurance market continues driving organic revenue growth; Assurex acquisition integration upside",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "BMA",
+    "company": "Banco Macro SA ADR",
+    "sentiment_score": 54,
+    "ai_score": 8,
+    "ai_reasoning": "Banco Macro at 6.28x forward P/E with a PEG of 0.10 signals massive expected earnings growth that the market is discounting due to Argentine macro risk. The 69% upside to analyst target ($116.51 vs $68.86) and low debt (D/E 0.29) make this a classic emerging market fear trade. RSI at 33.6 indicates oversold conditions.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Continued Argentine economic stabilization and peso normalization under current policy regime would unlock substantial earnings growth already visible in the forward P/E.",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "HSY",
+    "company": "Hershey Company",
+    "sentiment_score": 48,
+    "ai_score": 7,
+    "ai_reasoning": "Hershey's RSI of 28.7 is deeply oversold, and the 23.2% ROE demonstrates a high-quality business temporarily pressured by cocoa cost inflation. Forward P/E of 18.3x with a PEG of 0.93 is reasonable for a consumer staple with pricing power. The 28.2% insider ownership (Hershey Trust) ensures long-term alignment.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Cocoa price normalization and pricing power pass-through should restore margins; the brand moat is intact and the selloff reflects transient input cost fear.",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "IR",
+    "company": "Ingersoll Rand Inc",
+    "sentiment_score": 47,
+    "ai_score": 4,
+    "ai_reasoning": "Ingersoll Rand's trailing P/E of 52x with only 5.7% ROE is hard to justify even after a 23% drawdown. Massive insider selling (-42.4%) is a major red flag that management sees limited near-term upside. Forward P/E of 20x is reasonable for industrials but the current earnings don't support the valuation.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Industrial cycle recovery could boost earnings toward the forward estimate, but insider selling undermines conviction.",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "BIPC",
+    "company": "Brookfield Infrastructure Corp",
+    "sentiment_score": 48,
+    "ai_score": 6,
+    "ai_reasoning": "Brookfield Infrastructure Corp has negative EPS (-$5.60) and negative profit margins, but the 61% operating margin suggests accounting losses (depreciation/amortization heavy infrastructure). The 9.9% insider ownership and Brookfield brand provide credibility. However, missing P/E and unclear earnings trajectory make valuation difficult to assess.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Rate cuts would benefit this leveraged infrastructure vehicle, and the $45 analyst target implies 20% upside, but earnings clarity is needed.",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "PHG",
+    "company": "Koninklijke Philips NV ADR",
+    "sentiment_score": 38,
+    "ai_score": 6,
+    "ai_reasoning": "Fwd P/E of 13.11 and 13.19% cash yield are attractive for a global healthcare equipment company. However, missing ROE and ROA data, along with ongoing legal/regulatory overhang from the sleep apnea recall, represent real risks. The 21.76% decline from highs is moderate.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Resolution of Respironics recall liabilities and connected care growth could drive re-rating; analyst target $32.33 (24% upside)",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "SMMT",
+    "company": "Summit Therapeutics Inc",
+    "sentiment_score": 46,
+    "ai_score": 3,
+    "ai_reasoning": "Pre-revenue biotech burning cash at an extreme rate (ROE -271%, ROA -234%) with 25.8% short float signaling deep skepticism. P/B of 22.9 on minimal tangible assets is speculative. The 82.7% insider ownership is a double-edged sword — concentrated control with no diversified institutional validation.",
+    "ai_classification": "structural",
+    "ai_catalyst": "Binary clinical trial outcomes; no fundamental floor if trials disappoint",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "LOAR",
+    "company": "Loar Holdings Inc",
+    "sentiment_score": 36,
+    "ai_score": 3,
+    "ai_reasoning": "LOAR trades at extreme valuations — 73.6x trailing P/E, 52.5x forward P/E, PEG of 6.34, and 10.5x sales — even after a 44% drawdown. A 7.5% short float and the premium valuation suggest the market is rightly questioning whether aerospace defense tailwinds justify this price. Good margins (24.8% operating) but the stock needs to grow into its valuation.",
+    "ai_classification": "structural",
+    "ai_catalyst": "Sustained defense budget growth and margin expansion could eventually justify premium, but current multiples leave no margin of safety.",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "AMTM",
+    "company": "Amentum Holdings Inc",
+    "sentiment_score": 58,
+    "ai_score": 7,
+    "ai_reasoning": "Government services contractor at Fwd P/E of 9.3 with PEG of 0.84 — deeply discounted for a business with recurring government contract revenue. 19.3% insider ownership and P/S of 0.44 suggest the market is mispricing post-spinoff. The 33% drawdown seems excessive for a stable-revenue defense/intelligence services business.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Government spending resilience and contract wins providing earnings visibility; analyst target implies 42% upside",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "GGAL",
+    "company": "Grupo Financiero Galicia ADR",
+    "sentiment_score": 69,
+    "ai_score": 9,
+    "ai_reasoning": "Argentine bank trading at Fwd P/E of 4.9 with a PEG of 0.04 — absurdly cheap growth metrics reflecting maximum fear of Argentine macro risk. RSI of 29.6 signals extreme oversold conditions. P/B of 1.21 and P/S of 0.53 provide margin of safety. Argentina's economic reforms under Milei are creating structural banking sector tailwinds that the market is ignoring.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Argentine economic stabilization, inflation normalization, and banking sector credit growth driving massive earnings expansion",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "TRUP",
+    "company": "Trupanion Inc",
+    "sentiment_score": 58,
+    "ai_score": 6,
+    "ai_reasoning": "Pet insurance leader with 30.5% insider ownership and a growing addressable market, but 1.7% profit margin and 1.4% operating margin show the business model hasn't proven scalable profitability. The 58% drawdown is severe but 11.9% short float suggests ongoing skepticism. Fwd P/E of 35 is still not cheap.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Pet insurance penetration growth in North America; margin improvement from scale",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "HLMN",
+    "company": "Hillman Solutions Corp",
+    "sentiment_score": 53,
+    "ai_score": 7,
+    "ai_reasoning": "PEG of 0.8 and Fwd P/E of 11.5 indicate the market is underpricing growth for this fastener/hardware distributor. Strong current ratio of 2.95 and 110% institutional ownership show balance sheet strength and professional backing. Insider selling is minimal at -0.37%.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "Housing and construction activity stabilization would drive rerating toward analyst target of $12.12 (54% upside)",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "VSEC",
+    "company": "VSE Corp",
+    "sentiment_score": 58,
+    "ai_score": 6,
+    "ai_reasoning": "Aerospace aftermarket services company with strong defense/aviation tailwinds but extremely rich trailing P/E of 154 and 11.6% short float suggest the market questions sustainability. Fwd P/E of 34 is still pricey. Low debt and high current ratio provide safety, and analyst target implies 47% upside.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Defense budget expansion and aviation MRO demand growth, but needs earnings to catch up to valuation",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "WTRG",
+    "company": "Essential Utilities Inc",
+    "sentiment_score": 22,
+    "ai_score": 4,
+    "ai_reasoning": "Regulated utility with predictable but slow growth (PEG 3.19). Only 10% off highs — this is normal utility volatility, not a contrarian opportunity. Debt/Eq of 1.21 is high and cash yield of 0.32% provides no cushion. The rate base growth story is intact but already priced at 15.8x forward.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Rate case approvals could provide modest uplift, but limited upside from current levels",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "SITE",
+    "company": "SiteOne Landscape Supply Inc",
+    "sentiment_score": 37,
+    "ai_score": 5,
+    "ai_reasoning": "SiteOne at 23.8x forward P/E with thin margins (3.2% net, 4.7% operating) is vulnerable to any slowdown in residential construction and landscaping spend. The 25% drawdown is moderate and institutional ownership above 111% indicates heavy ETF/index inclusion. Quality franchise but not yet cheap enough.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Housing market recovery and landscape spending rebound would drive earnings, but current forward multiple already prices in a reasonable recovery.",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "LBRDK",
+    "company": "Liberty Broadband Corp",
+    "sentiment_score": 22,
+    "ai_score": 4,
+    "ai_reasoning": "Massive negative profit margin (-1050%) and negative ROE (-28.6%) reflect structural issues with the Charter tracking stock model. Trading near book value at P/B 0.98, but the -59% drawdown from highs with minimal revenue relative to market cap is concerning. Liberty restructuring complexity adds opacity.",
+    "ai_classification": "structural",
+    "ai_catalyst": "Potential simplification or merger with Charter, but timeline is uncertain",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "GLIBK",
+    "company": "GCI Liberty Inc",
+    "sentiment_score": 32,
+    "ai_score": 5,
+    "ai_reasoning": "Liberty/GCI tracking stock with negative EPS (-$10.13), no P/E, and no analyst target is difficult to value. Trading at 0.8x book with 31% cash yield and 19% insider ownership suggests some asset value, but the lack of earnings visibility and complex corporate structure (Liberty tracking stocks) creates uncertainty.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Corporate simplification or asset monetization within the Liberty family could unlock value, but timing is unpredictable.",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "MMED",
+    "company": "MiniMed Group Inc",
+    "sentiment_score": 36,
+    "ai_score": 2,
+    "ai_reasoning": "No revenue, no earnings, no meaningful financial data, and 90% insider ownership with only 0.1% institutional ownership — this is essentially uninvestable by contrarian standards. P/B near 1 with negligible cash ($0.04/sh) offers no safety net. The 10% short float on a stock with this profile is telling.",
+    "ai_classification": "structural",
+    "ai_catalyst": "No identifiable near-term catalyst; requires fundamental business proof before consideration",
+    "ai_confidence": "high"
+  },
+  {
+    "ticker": "NG",
+    "company": "Novagold Resources Inc",
+    "sentiment_score": 42,
+    "ai_score": 5,
+    "ai_reasoning": "Pre-production gold miner (Donlin project) burning cash with no revenue — a perpetual optionality play on gold prices. P/B of 7.95 is steep for a company with no production. The 44% drawdown in a strong gold environment is actually a negative signal, suggesting project-specific concerns.",
+    "ai_classification": "structural",
+    "ai_catalyst": "Gold price strength and Donlin permitting progress, but this has been a waiting story for over a decade",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "AGBK",
+    "company": "AGI Inc",
+    "sentiment_score": 53,
+    "ai_score": 6,
+    "ai_reasoning": "Chinese bank ADR at Fwd P/E of 3.34 and PEG of 0.14 — statistically cheap but missing most fundamental data points makes proper analysis impossible. 81.6% insider (state) ownership and minimal institutional interest (5.7%) reflect typical Chinese SOE dynamics. The 44% drawdown tracks broader China ADR risk aversion.",
+    "ai_classification": "emotional",
+    "ai_catalyst": "China stimulus measures and ADR sentiment recovery, but data opacity limits conviction",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "GFL",
+    "company": "GFL Environmental Inc",
+    "sentiment_score": 37,
+    "ai_score": 4,
+    "ai_reasoning": "Waste management is a great business model but GFL's execution concerns persist — Fwd P/E of 49, Debt/Eq of 1.36, and thin 3.5% profit margins don't inspire confidence at this valuation. The 26% drawdown brings it closer to fair value rather than creating a buying opportunity.",
+    "ai_classification": "cyclical",
+    "ai_catalyst": "Asset divestitures and deleveraging could unlock value, but premium valuation limits upside",
+    "ai_confidence": "low"
+  },
+  {
+    "ticker": "KRMN",
+    "company": "Karman Holdings Inc",
+    "sentiment_score": 41,
+    "ai_score": 3,
+    "ai_reasoning": "Recently public aerospace company with extreme valuation metrics — P/E 501, P/S 18.5, P/B 22.7 — and high leverage (Debt/Eq 1.53). The 44% drawdown is a post-IPO valuation normalization, not a contrarian opportunity. Fwd P/E of 67 is still extremely rich even after the decline. Insider selling of -1.6% adds to caution.",
+    "ai_classification": "structural",
+    "ai_catalyst": "Defense spending tailwinds exist but valuation needs years of growth to justify current price",
+    "ai_confidence": "medium"
+  },
+  {
+    "ticker": "ELE",
+    "company": "Elemental Royalty Corp",
+    "sentiment_score": 16,
+    "ai_score": 3,
+    "ai_reasoning": "A 127x trailing P/E with near-zero ROE (0.36%) and ROA (0.32%) on a royalty company suggests the business model is not yet generating meaningful returns. No forward P/E or analyst target available makes valuation opaque. The 41% insider ownership is the only positive signal in an otherwise uncompelling profile.",
+    "ai_classification": "structural",
+    "ai_catalyst": "Royalty revenue scale-up from producing mines, but timeline and magnitude are unclear without forward estimates.",
+    "ai_confidence": "medium"
+  }
+]
