@@ -1,5 +1,13 @@
 # Notes for Claude working on this site
 
+## Pretor moved out
+
+The Pretor landing page used to live in `pretor/` and was served both at
+`/pretor/` here and at pretor.ar. It now has its own repo,
+[pretor-website](https://github.com/fedesapuppo/pretor-website), deployed
+to pretor.ar. What is left at `pretor/index.html` is only a redirect stub
+so old inbound links keep working. Do not edit the page here.
+
 ## Blog post drop cap (removed)
 
 Blog posts previously used a `::first-letter` drop cap on the first
