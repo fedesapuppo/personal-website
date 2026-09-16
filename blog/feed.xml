@@ -5,8 +5,17 @@
     <link>https://fedesapuppo.com/blog/</link>
     <description>Field notes from a Ruby on Rails developer. Bug autopsies, refactor diaries, and lessons from the Rails Way.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 01 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://fedesapuppo.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>How I lost a programming competition but got the USD 500 prize either way</title>
+      <link>https://fedesapuppo.com/blog/hackcba-lost-but-sold.html</link>
+      <guid>https://fedesapuppo.com/blog/hackcba-lost-but-sold.html</guid>
+      <pubDate>Tue, 15 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Four friends at HackCBA, three vibe coders who had never used git, and a night spent teaching branches, pull requests, Linear, TDD and grill-with-docs. We lost. I still left with a paying client, because the product was sold before the hackathon started.</description>
+      <author>fedesapuppo@gmail.com (Federico Sapuppo)</author>
+    </item>
 
     <item>
       <title>The legal assistant that couldn't be just one agent</title>

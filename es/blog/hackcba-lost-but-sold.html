@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cuatro amigos, 24 horas en HackCBA y tres vibe coders que nunca habían usado git. Perdimos. Igual me volví con un cliente que paga, porque el producto ya estaba vendido antes de la ceremonia de apertura.">
+    <title>Cómo perdí una competencia de programación y me llevé los USD 500 igual | Federico Sapuppo</title>
+<link rel="canonical" href="https://fedesapuppo.com/es/blog/hackcba-lost-but-sold.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="Cómo perdí una competencia de programación y me llevé los USD 500 igual">
+    <meta property="og:description" content="Perdimos HackCBA. El producto que construimos ya estaba vendido.">
+    <meta property="article:published_time" content="2026-09-15">
+    <meta property="article:author" content="Federico Sapuppo">
+    <meta property="og:image" content="https://fedesapuppo.com/og-image.jpg">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="1600">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://fedesapuppo.com/og-image.jpg">
+    <meta name="twitter:title" content="Cómo perdí una competencia de programación y me llevé los USD 500 igual">
+    <meta name="twitter:description" content="Perdimos HackCBA. El producto que construimos ya estaba vendido.">
+
+    <link rel="alternate" hreflang="en" href="https://fedesapuppo.com/blog/hackcba-lost-but-sold.html">
+    <link rel="alternate" hreflang="es-AR" href="https://fedesapuppo.com/es/blog/hackcba-lost-but-sold.html">
+    <link rel="alternate" hreflang="x-default" href="https://fedesapuppo.com/blog/hackcba-lost-but-sold.html">
+
+    <link rel="alternate" type="application/rss+xml" title="Off The Rails: Federico Sapuppo" href="https://fedesapuppo.com/blog/feed.xml">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Cómo perdí una competencia de programación y me llevé los USD 500 igual",
+      "datePublished": "2026-09-15",
+      "inLanguage": "es-AR",
+      "author": {
+        "@type": "Person",
+        "name": "Federico Sapuppo"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Federico Sapuppo"
+      },
+      "description": "Cuatro amigos en HackCBA: git, Linear, TDD y grill-with-docs para un equipo de vibe coders, y un producto que ya estaba vendido antes de que empezara la hackathon."
+    }
+    </script>
+</head>
+<body class="blog-post">
+    <nav class="navbar">
+        <div class="container">
+            <a href="../../index.html" class="logo" aria-label="Federico Sapuppo home"><img src="../../favicon.svg" alt=""></a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#about">Sobre mí</a></li>
+                <li><a href="../../index.html#experience">Experiencia</a></li>
+                <li><a href="../../index.html#off-the-rails">Blog</a></li>
+                <li><a href="../../index.html#contact">Contacto</a></li>
+                <li><a href="../../blog/hackcba-lost-but-sold.html" lang="en" hreflang="en" aria-label="Read in English">EN</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="post-hero">
+        <div class="container">
+            <a href="../../blog/hackcba-lost-but-sold.html" class="post-lang-pill" lang="en" hreflang="en" aria-label="Read in English">
+                <span class="post-lang-pill-code" aria-hidden="true">EN</span>
+                <span class="post-lang-pill-full">Also in English</span>
+            </a>
+            <a href="../../index.html#off-the-rails" class="post-back-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Volver a OffTheRails
+            </a>
+            <span class="post-eyebrow">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Notas de campo · Lectura de 8 min
+            </span>
+            <h1 class="post-title">Cómo perdí una competencia de programación y me llevé los USD 500 igual</h1>
+            <div class="post-meta">
+                <div class="post-meta-author">
+                    <div class="post-author-avatar">FS</div>
+                    <span>Federico Sapuppo</span>
+                </div>
+                <span class="post-meta-divider"></span>
+                <time datetime="2026-09-15">15 de septiembre de 2026</time>
+                <span class="post-meta-divider"></span>
+                <span>Alta Gracia, GMT-3</span>
+            </div>
+            <div class="post-meta-tags">
+                <span class="post-meta-tag">Hackathon</span>
+                <span class="post-meta-tag">Mastra</span>
+                <span class="post-meta-tag">Git</span>
+                <span class="post-meta-tag">TDD</span>
+                <span class="post-meta-tag">Equipos</span>
+            </div>
+        </div>
+    </header>
+
+    <article class="post-body">
+        <div class="container">
+            <div class="post-content">
+                <p>El 11 de septiembre entré a <a href="https://www.hackcba.com" target="_blank" rel="noopener noreferrer">HackCBA</a>, en Casa Naranja X, Córdoba, con tres amigos y una bolsa de dormir. Veinticuatro horas después habíamos perdido. El equipo ganador tenía un gran producto. Igual me volví a casa con un cliente que paga por lo que construimos, porque lo había vendido nueve días antes de la ceremonia de apertura.</p>
+
+                <h2>El producto ya estaba vendido</h2>
+
+                <p>Multimpresos es una imprenta de Córdoba capital. Tres personas contestan WhatsApp todo el día con una lista de precios de unas cuarenta páginas. Cada actualización se hace a mano, producto por producto.</p>
+
+                <p>Antes que yo, el dueño pagó por un agente de IA. Duró cuatro o cinco meses. Inventó direcciones de locales y sucursales en el norte que no existen. Cotizó en 14.000 pesos un trabajo de 1.500.000. Hubo clientes que llegaron al local con el celular en la mano mostrando la cotización falsa.</p>
+
+                <p>Tuve dos llamadas con el dueño el 2 de septiembre. La tarde de la hackathon me confirmó el costo mensual por WhatsApp: "si es más barato y más cómodo y práctico, vamos por este camino". Cinco horas más tarde los organizadores anunciaron las consignas. Le pregunté al equipo si alguien tenía una idea mejor. Nadie tenía. Así que construimos el agente que yo ya había vendido, y lo llamamos Dante.</p>
+
+                <p>Dante tiene una sola regla. El motor calcula el precio. El modelo solo lo escribe. Cada mensaje que entra abre un turno, y el turno se resuelve en tres fases, de las que la del medio nunca pasa por un modelo. Primero la extracción, que lee el mensaje y lo convierte en una intención tipada. Después la resolución, que busca la fila en el catálogo y calcula el importe con una función pura y testeada. Al final la escritura, que recibe un número ya cerrado y solo lo redacta.</p>
+
+                <p>Si no hay una coincidencia exacta en el catálogo, la conversación pasa a una persona. Sin adivinar, sin "más o menos". Ahí es donde mueren las sucursales inventadas.</p>
+
+                <h2>Cuatro personas, cuatro carriles</h2>
+
+                <ul>
+                    <li>Talisman hizo seguridad. Un modelo de amenazas en la primera hora, un hook de <a href="https://github.com/gitleaks/gitleaks" target="_blank" rel="noopener noreferrer">gitleaks</a>, el cercado del texto no confiable (encerrar el mensaje del cliente entre marcas, para que el modelo lo lea como dato y nunca como una orden) y una auditoría completa antes de la demo.</li>
+                    <li>Pato conectó <a href="https://elevenlabs.io" target="_blank" rel="noopener noreferrer">ElevenLabs</a>. El dueño cambia un precio con un audio. El audio nunca escribe: propone, y una persona confirma. Pato tenía tres horas, de 21:00 a medianoche del viernes.</li>
+                    <li>Juan Bautista hizo el catálogo y la base de datos. Las filas del seed tipeadas desde la lista de precios, la función de precios, la matemática de módulos y los casos de precio.</li>
+                    <li>Yo hice la integración en <a href="https://mastra.ai/" target="_blank" rel="noopener noreferrer">Mastra</a>. El servicio, los tipos compartidos, el bot de Telegram, el turno de tres fases y el cableado entre carriles.</li>
+                </ul>
+
+                <h2>Ninguno sabía git</h2>
+
+                <p>Mis tres amigos son vibe coders. Buenos. Con un agente van rapidísimo. Ninguno había usado git en equipo.</p>
+
+                <p>Las primeras dos horas lo dejaron claro. Los commits iban derecho a <code>main</code>. Dos de ellos se llamaban "test: debe bloquear esto": una prueba del hook con secretos falsos, empujada a la rama de la que todos los demás tiraban. Las ramas volvían a traerse <code>main</code> adentro y se llenaban de conflictos. Nadie leía el código de nadie.</p>
+
+                <p>Así que frené el trabajo y enseñé tres cosas. Tickets en <a href="https://linear.app" target="_blank" rel="noopener noreferrer">Linear</a>, cada uno con dueño y horario. Una rama por ticket, con el nombre del id. Un pull request con review, y los tests y el typecheck en verde antes del merge.</p>
+
+                <p>El primer pull request se mergeó a las 23:14 del viernes. A las ocho de la mañana del sábado ya eran 41. Mi commit favorito de la noche es de Pato: "Address the review on #2: separate our failures from the owner's", o sea, atender el review del PR #2 y separar nuestros errores de los del dueño. Ese fue el momento en que el equipo dejó de ver el review como un trámite.</p>
+
+                <h2>Primero el test, y dejá que el agente te interrogue</h2>
+
+                <p>Un agente escribe código rápido. También escribe un test que le da la razón a su código. Así que la regla fue el test primero. Juan Bautista acordó los casos de precio antes de que existiera una línea de la función de precios. Uno de sus commits lo dice bien: "No amount leaves the engine without VAT, and a test that can prove it". Ningún importe sale del motor sin IVA, y hay un test que lo demuestra.</p>
+
+                <p>El segundo hábito fue grill-with-docs. Es una skill que te entrevista sobre un diseño, una pregunta difícil por vez, y va escribiendo la decisión: un ADR para lo que es difícil de revertir, un glosario para las palabras. La persona decide antes de que el agente adivine.</p>
+
+                <p>Escribimos 28 ADRs en menos de un día. Los títulos se leen como reglas: "Una conversación escalada terminó". "El store de comprobantes no tiene lector". "Un porcentaje no es un importe". Cuando dos carriles no coincidían a las dos de la mañana, la respuesta estaba en un archivo y no en la memoria de alguien.</p>
+
+                <p>El mejor bug de la noche fue uno que ningún test podía ver. Dos ramas hicieron cada una lo correcto. Una cercaba el mensaje del cliente adentro del turno. La otra movía ese cercado al webhook, más arriba. Por separado las dos estaban en verde. Juntas, cada mensaje llegaba al redactor con el cercado puesto dos veces, porque cada rama corría su propia mitad y ninguna sabía de la otra. Un choque así recién aparece cuando las dos ramas se integran, y git no tiene nada para decir al respecto.</p>
+
+                <p>Talisman auditó todo antes de la demo. Encontró ocho problemas. Verificamos cada uno contra el código antes de tocar nada. Tres se arreglaron. Cuatro los rechazamos por escrito. Uno quedó postergado.</p>
+
+                <h2>Perdimos</h2>
+
+                <p>En la demo Dante cotizó un producto real de la lista real, mandó a una persona una pregunta que no podía responder, tomó un cambio de precio por audio y leyó un comprobante de seña. El <a href="https://github.com/patriciocarena/HackCBA" target="_blank" rel="noopener noreferrer">repo</a> es público.</p>
+
+                <p>Los ganadores tenían un gran producto. Las reglas de HackCBA son claras sobre desde dónde tiene que arrancar un proyecto: "Podés venir con la idea pensada, pero no con el repo empezado". El repo público que el equipo ganador presentó abre con un commit a las 20:17 del viernes, trece minutos antes de que empezara el hacking. Ese commit importa 338 archivos y 70.089 líneas desde un repo anterior. El README describe ese código como "la demo que se presentó a YC".</p>
+
+                <p>El primer puesto pagaba USD 500. El acuerdo con la imprenta vale más que eso, y estaba firmado antes de que escribiéramos el primer commit. Perder nos costó el trofeo, no la plata.</p>
+
+                <p>El código no se detuvo el sábado. En la hackathon los cuatro mergeamos 160 commits a <code>main</code>. En los dos días siguientes yo sumé 645 más.</p>
+
+                <h2>Lo que la demo tapaba</h2>
+
+                <p>La demo anduvo. Una auditoría del mismo commit, dos días después, dice sobre qué estaba parada.</p>
+
+                <figure>
+                    <a href="../../blog/screenshots/dante-arch-1.png" target="_blank" rel="noopener noreferrer"><img src="../../blog/screenshots/dante-arch-1.png" alt="Diagrama de arquitectura del prototipo de la hackathon: un webhook de Telegram que alimenta tres caminos cableados a mano para texto del cliente, foto del cliente y audio del dueño, con siete stores en memoria marcados en rojo como perdidos al reiniciar, y una caja con lo que falta: WhatsApp, respuestas por voz, workflows, observabilidad, el guard de importes de salida y el gate de administrador en las señas."></a>
+                    <figcaption>El prototipo auditado el 12 de septiembre. En rojo, lo que vivía en memoria y moría en el siguiente deploy. Abrilo en tamaño completo para leer las cajas.</figcaption>
+                </figure>
+
+                <p>Siete stores vivían en un Map adentro del proceso. Un precio que el dueño había confirmado por audio desaparecía en el siguiente deploy. Una foto mandada por el cliente daba una seña por acreditada sin que ninguna persona la revisara. El turno eran tres fases cableadas a mano, no un workflow, y un solo agente redactaba. Estaban cargadas tres de las treinta y ocho familias de productos de la imprenta, o sea el 7,9 por ciento de la lista. Una quinta parte del código fuente eran comentarios.</p>
+
+                <p>Nada de eso se nota en una demo de tres minutos. Todo eso decide si una imprenta puede contestarle a un cliente el lunes.</p>
+
+                <h2>Cómo es ahora</h2>
+
+                <figure>
+                    <a href="../../blog/screenshots/dante-arch-2.png" target="_blank" rel="noopener noreferrer"><img src="../../blog/screenshots/dante-arch-2.png" alt="Diagrama de arquitectura del sistema actual: WhatsApp por Kapso y Telegram para administradores alimentan un agente Dante que despacha a tres workflows de Mastra para el turno del cliente, el comprobante y la edición de precios, con gates humanos en la seña y en la edición de precios, trece tablas en SQLite, cinco agentes, cuatro scorers sobre tráfico real y observabilidad."></a>
+                    <figcaption>El mismo producto dos días después, con la persistencia, los gates humanos y los workflows ya adentro.</figcaption>
+                </figure>
+
+                <p>Lo que sobrevivió es el núcleo del dominio: la función pura de precios, la regla de coincidencia exacta o escalar a una persona, y el cercado del texto no confiable. Todo lo demás se movió. Tres workflows de Mastra reemplazaron el cableado a mano. Trece tablas reemplazaron los Map, así lo que el dueño confirma es una fila. La seña suspende la corrida hasta que una persona aprieta un botón, y una edición de precio solo se aplica si la fila no cambió por debajo. Un procesador de salida compara el importe que escribió el redactor contra el que calculó el motor, y frena la respuesta si no coinciden. Cuatro scorers corren sobre tráfico real. Hoy hay cuarenta y dos familias sembradas, y los ADRs pasaron de 28 a 56.</p>
+
+                <h2>La parte que no era código</h2>
+
+                <p>Dormimos en el piso del lugar. La comida era buena, no paraba nunca y era gratis. Me fui con tres amigos que ahora abren pull requests, y con algunos nuevos de otros equipos. Nunca me divertí tanto perdiendo.</p>
+
+                <p>Lo que le diría a un equipo de vibe coders antes de su primera hackathon:</p>
+
+                <ul>
+                    <li>Enseñá git antes del primer commit. Diez minutos de ramas te salvan la noche.</li>
+                    <li>Llevá un cliente real. Así el resultado no depende del jurado.</li>
+                </ul>
+
+                <p>Dante llega a la imprenta esta semana. El jurado ya dio su veredicto el sábado. El lunes el que tiene que contestarle a un cliente es Dante, y esa es la única nota que me importa.</p>
+
+                <div class="post-signature">
+                    <p><em>Soy Federico Sapuppo. Construyo agentes de IA que cotizan con datos reales en vez de inventarlos. El repo de la hackathon es <a href="https://github.com/patriciocarena/HackCBA" target="_blank" rel="noopener noreferrer">público</a>.</em></p>
+                </div>
+
+                <div class="post-back-bottom">
+                    <a href="../../index.html#off-the-rails">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                        Más de OffTheRails
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-socials">
+                <a href="https://github.com/fedesapuppo" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://linkedin.com/in/federicosapuppo" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="mailto:fedesapuppo@hotmail.com" class="footer-social-link" aria-label="Email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <div class="footer-divider"></div>
+            <p>&copy; 2026 Federico Sapuppo. Built with passion for clean, maintainable code.</p>
+        </div>
+    </footer>
+</body>
+</html>
