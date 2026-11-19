@@ -5,8 +5,17 @@
     <link>https://fedesapuppo.com/blog/</link>
     <description>Field notes from a Ruby on Rails developer. Bug autopsies, refactor diaries, and lessons from the Rails Way.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 15 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://fedesapuppo.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Three days, one month of work</title>
+      <link>https://fedesapuppo.com/blog/grokbot-three-days.html</link>
+      <guid>https://fedesapuppo.com/blog/grokbot-three-days.html</guid>
+      <pubDate>Wed, 18 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Grokbot copied my co-founder's workflow and did a month of a new hire's work in three days. It also found one photo among thousands, registered my face at the gate over WhatsApp, and passed impersonation tests before I gave it the keys.</description>
+      <author>fedesapuppo@gmail.com (Federico Sapuppo)</author>
+    </item>
 
     <item>
       <title>How I lost a programming competition but got the USD 500 prize either way</title>

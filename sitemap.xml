@@ -9,8 +9,22 @@
 
   <url>
     <loc>https://fedesapuppo.com/blog/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fedesapuppo.com/blog/grokbot-three-days.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fedesapuppo.com/blog/grokbot-three-days.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fedesapuppo.com/es/blog/grokbot-three-days.html"/>
+  </url>
+  <url>
+    <loc>https://fedesapuppo.com/es/blog/grokbot-three-days.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fedesapuppo.com/blog/grokbot-three-days.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fedesapuppo.com/es/blog/grokbot-three-days.html"/>
   </url>
   <url>
     <loc>https://fedesapuppo.com/blog/hackcba-lost-but-sold.html</loc>
